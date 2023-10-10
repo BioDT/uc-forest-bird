@@ -34,6 +34,16 @@ RUN mkdir /LANDIS-II && \
     for f in /LANDIS-II/Core-Model-v7-LINUX/build/Release/*.json; do sed -i '/"\/root\/\.dotnet\/.*"/d' $f; done && \
     rm -rf /tmp/* /root/.[!.]*
 
+RUN cd /LANDIS-II && \
+    git clone --depth 1 -b v4.0.1 https://github.com/LANDIS-II-Foundation/Extension-PnET-Succession.git && \
+    cp Extension-PnET-Succession/deploy/*.dll Core-Model-v7-LINUX/build/extensions/ && \
+    cp -r Extension-PnET-Succession/deploy/Defaults Core-Model-v7-LINUX/build/extensions/ && \
+    cp -r Extension-PnET-Succession/deploy/Defaults Core-Model-v7-LINUX/build/extensions/ && \
+    dotnet /LANDIS-II/Core-Model-v7-LINUX/build/Release/Landis.Extensions.dll add Extension-PnET-Succession/deploy/installer/PnET-Succession.txt && \
+    mkdir /LANDIS-II/Core-Model-v7-LINUX/build/Release/..\\extensions && \
+    for f in /LANDIS-II/Core-Model-v7-LINUX/build/extensions/Defaults/*; do ln -s $f Core-Model-v7-LINUX/build/Release/..\\extensions/Defaults\\$(basename $f); done && \
+    rm -rf Extension-PnET-Succession/
+
 # Run LANDIS-II like this:
 # dotnet /LANDIS-II/Core-Model-v7-LINUX/build/Release/Landis.Console.dll scenario.txt
 
