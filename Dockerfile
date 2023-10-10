@@ -26,27 +26,27 @@ RUN UBUNTU_VERSION=$(grep -oP '(?<=^VERSION_ID=")[^"]+' /etc/os-release) && \
     apt-get clean && \
     rm -rf /tmp/* /root/.[!.]*
 
-RUN mkdir /LANDIS-II && \
-    cd /LANDIS-II && \
-    git clone --depth 1 -b v7 https://github.com/LANDIS-II-Foundation/Core-Model-v7-LINUX.git && \
-    cd Core-Model-v7-LINUX/Tool-Console/src/ && \
+ENV LANDIS_DIR=/LANDIS-II/build
+
+RUN REPO=/LANDIS-II/Core-Model-v7-LINUX && \
+    git clone --depth 1 -b v7 https://github.com/LANDIS-II-Foundation/Core-Model-v7-LINUX.git $REPO && \
+    cd $REPO/Tool-Console/src/ && \
     dotnet build -c Release && \
-    for f in /LANDIS-II/Core-Model-v7-LINUX/build/Release/*.json; do sed -i '/"\/root\/\.dotnet\/.*"/d' $f; done && \
-    mv /LANDIS-II/Core-Model-v7-LINUX/build /LANDIS-II/build && \
-    rm -rf /LANDIS-II/Core-Model-v7-LINUX/ && \
+    for f in $REPO/build/Release/*.json; do sed -i '/"\/root\/\.dotnet\/.*"/d' $f; done && \
+    mv $REPO/build $LANDIS_DIR && \
+    rm -rf $REPO && \
     rm -rf /tmp/* /root/.[!.]*
 
-RUN cd /LANDIS-II && \
-    git clone --depth 1 -b v4.0.1 https://github.com/LANDIS-II-Foundation/Extension-PnET-Succession.git && \
-    cp Extension-PnET-Succession/deploy/*.dll build/extensions/ && \
-    cp -r Extension-PnET-Succession/deploy/Defaults build/extensions/ && \
-    cp -r Extension-PnET-Succession/deploy/Defaults build/extensions/ && \
-    dotnet /LANDIS-II/build/Release/Landis.Extensions.dll add Extension-PnET-Succession/deploy/installer/PnET-Succession.txt && \
-    mkdir /LANDIS-II/build/Release/..\\extensions && \
-    for f in /LANDIS-II/build/extensions/Defaults/*; do ln -s $f build/Release/..\\extensions/Defaults\\$(basename $f); done && \
-    rm -rf Extension-PnET-Succession/
+RUN REPO=/LANDIS-II/Extension-PnET-Succession && \
+    git clone --depth 1 -b v4.0.1 https://github.com/LANDIS-II-Foundation/Extension-PnET-Succession.git $REPO && \
+    cp $REPO/deploy/*.dll $LANDIS_DIR/extensions/ && \
+    cp -r $REPO/deploy/Defaults $LANDIS_DIR/extensions/ && \
+    dotnet $LANDIS_DIR/Release/Landis.Extensions.dll add $REPO/deploy/installer/PnET-Succession.txt && \
+    mkdir $LANDIS_DIR/Release/..\\extensions && \
+    for f in $LANDIS_DIR/extensions/Defaults/*; do ln -s $f $LANDIS_DIR/Release/..\\extensions/Defaults\\$(basename $f); done && \
+    rm -rf $REPO
 
 # Run LANDIS-II like this:
-# dotnet /LANDIS-II/build/Release/Landis.Console.dll scenario.txt
+# dotnet $LANDIS_DIR/Release/Landis.Console.dll scenario.txt
 
 CMD ["bash"]
