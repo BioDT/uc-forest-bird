@@ -28,7 +28,7 @@ RUN UBUNTU_VERSION=$(grep -oP '(?<=^VERSION_ID=")[^"]+' /etc/os-release) && \
 
 RUN mkdir /LANDIS-II && \
     cd /LANDIS-II && \
-    git clone https://github.com/LANDIS-II-Foundation/Core-Model-v7-LINUX.git && \
+    git clone --depth 1 -b v7 https://github.com/LANDIS-II-Foundation/Core-Model-v7-LINUX.git && \
     cd Core-Model-v7-LINUX/Tool-Console/src/ && \
     dotnet build -c Release && \
     for f in /LANDIS-II/Core-Model-v7-LINUX/build/Release/*.json; do sed -i '/"\/root\/\.dotnet\/.*"/d' $f; done && \
