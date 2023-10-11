@@ -93,7 +93,16 @@ RUN mkdir $LANDIS_DIR/Release/..\\extensions && \
       ln -s $(realpath --relative-to=$(dirname $TGT) $SRC) $TGT \
     ; done
 
-ENV DOTNET_NOLOGO=1
+# Create executable
+RUN mkdir -p $LANDIS_DIR/bin && \
+    echo '#!/bin/bash\n\
+export DOTNET_NOLOGO=true\n\
+export DOTNET_CLI_TELEMETRY_OPTOUT=true\n\
+dotnet $LANDIS_DIR/Release/Landis.Console.dll "$@"\n\
+' > $LANDIS_DIR/bin/landis && \
+    chmod a+x $LANDIS_DIR/bin/landis
 
-ENTRYPOINT ["dotnet", "$LANDIS_DIR/Release/Landis.Console.dll"]
-CMD ["--help"]
+ENV PATH=$LANDIS_DIR/bin:$PATH
+
+ENTRYPOINT ["landis"]
+CMD ["scenario.txt"]
