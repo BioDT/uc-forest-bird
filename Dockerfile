@@ -36,7 +36,7 @@ RUN for url in \
     rm -rf /tmp/wine-*
 
 
-FROM docker.io/ubuntu:16.04
+FROM docker.io/ubuntu:18.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
