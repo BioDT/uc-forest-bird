@@ -1,3 +1,41 @@
+FROM docker.io/ubuntu:22.04 AS wine
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN dpkg --add-architecture i386 && \
+    apt-get update -qy && \
+    apt-get install -qy --no-install-recommends \
+        wget \
+        ca-certificates \
+        xvfb \
+        wine \
+        wine32 \
+        && \
+    apt-get clean
+
+ENV WINEPREFIX=/wine \
+    WINEARCH=win32
+
+RUN for url in \
+      'https://github.com/LANDIS-II-Foundation/Extension-PnET-Succession/////////raw/master/deploy/installer/LANDIS-II-V7 PnET-Succession 4.0.1-setup.exe' \
+      'https://github.com/LANDIS-II-Foundation/Extension-Biomass-Harvest/////////raw/master/deploy/installer/LANDIS-II-V7 Biomass Harvest 4.4-setup.exe' \
+      'https://github.com/LANDIS-II-Foundation/Extension-Base-Fire///////////////raw/master/deploy/installer/LANDIS-II-V7 Base Fire 4.0-setup.exe' \
+      'https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass-PnET/////raw/master/deploy/installer/LANDIS-II-V7 Output-PnET 4.0-setup.exe' \
+      'https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass-Reclass//raw/master/deploy/installer/LANDIS-II-V7 Output Biomass Reclass 3.1-setup.exe' \
+      'https://github.com/LANDIS-II-Foundation/Extension-Output-Max-Species-Age//raw/master/deploy/installer/LANDIS-II-V7 Output Max Species Age 3.0-setup.exe' \
+    ; do \
+      echo "$url" && \
+      wget -q "$url" -O setup.exe && \
+      xvfb-run wine setup.exe /verysilent /suppressmsgboxes && \
+      rm setup.exe && \
+      ls -l "$WINEPREFIX/drive_c/Program Files/LANDIS-II-v7/extensions" && \
+      echo "ok" \
+    ; done && \
+    mv "$WINEPREFIX/drive_c/Program Files/LANDIS-II-v7" / && \
+    rm -r /LANDIS-II-v7/examples && \
+    rm -rf /tmp/wine-*
+
+
 FROM docker.io/ubuntu:16.04
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -26,25 +64,34 @@ RUN UBUNTU_VERSION=$(grep -oP '(?<=^VERSION_ID=")[^"]+' /etc/os-release) && \
     apt-get clean && \
     rm -rf /tmp/* /root/.[!.]*
 
-ENV LANDIS_DIR=/LANDIS-II/build
+ENV LANDIS_DIR=/LANDIS-II-v7
 
-RUN REPO=/LANDIS-II/Core-Model-v7-LINUX && \
+# Build core model
+RUN REPO=$LANDIS_DIR/Core-Model-v7-LINUX && \
     git clone --depth 1 -b v7 https://github.com/LANDIS-II-Foundation/Core-Model-v7-LINUX.git $REPO && \
     cd $REPO/Tool-Console/src/ && \
     dotnet build -c Release && \
     for f in $REPO/build/Release/*.json; do sed -i '/"\/root\/\.dotnet\/.*"/d' $f; done && \
-    mv $REPO/build $LANDIS_DIR && \
+    mv $REPO/build/* $LANDIS_DIR && \
     rm -rf $REPO && \
     rm -rf /tmp/* /root/.[!.]*
 
-RUN REPO=/LANDIS-II/Extension-PnET-Succession && \
-    git clone --depth 1 -b v4.0.1 https://github.com/LANDIS-II-Foundation/Extension-PnET-Succession.git $REPO && \
-    cp $REPO/deploy/*.dll $LANDIS_DIR/extensions/ && \
-    cp -r $REPO/deploy/Defaults $LANDIS_DIR/extensions/ && \
-    dotnet $LANDIS_DIR/Release/Landis.Extensions.dll add $REPO/deploy/installer/PnET-Succession.txt && \
-    mkdir $LANDIS_DIR/Release/..\\extensions && \
-    for SRC in $LANDIS_DIR/extensions/Defaults/*; do TGT="$LANDIS_DIR/Release/..\\extensions/Defaults\\$(basename $SRC)"; ln -s $(realpath --relative-to=$(dirname $TGT) $SRC) $TGT ; done && \
-    rm -rf $REPO
+# Copy extension files
+COPY --from=wine /LANDIS-II-v7 $LANDIS_DIR
+
+# Register extensions
+RUN for SRC in $LANDIS_DIR/plug-ins-installer-files/*.txt \
+    ; do \
+      dotnet $LANDIS_DIR/Release/Landis.Extensions.dll add "$SRC" \
+    ; done
+
+# Create Windows paths for accessing files under extensions/Defaults
+RUN mkdir $LANDIS_DIR/Release/..\\extensions && \
+    for SRC in $LANDIS_DIR/extensions/Defaults/* \
+    ; do \
+      TGT="$LANDIS_DIR/Release/..\\extensions/Defaults\\$(basename $SRC)"; \
+      ln -s $(realpath --relative-to=$(dirname $TGT) $SRC) $TGT \
+    ; done
 
 # Run LANDIS-II like this:
 # dotnet $LANDIS_DIR/Release/Landis.Console.dll scenario.txt
