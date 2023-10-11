@@ -76,7 +76,7 @@ RUN REPO=$LANDIS_DIR/Core-Model-v7-LINUX && \
     for f in $REPO/build/Release/*.json; do sed -i '/"\/root\/\.dotnet\/.*"/d' $f; done && \
     mv $REPO/build/* $LANDIS_DIR && \
     rm -rf $REPO && \
-    rm -rf /tmp/* /root/.[!.]*
+    rm -rf /tmp/* /tmp/.[!.]* /root/.[!.]*
 
 # Copy extension files
 COPY --from=wine /LANDIS-II-v7 $LANDIS_DIR
