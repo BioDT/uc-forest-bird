@@ -43,7 +43,7 @@ RUN REPO=/LANDIS-II/Extension-PnET-Succession && \
     cp -r $REPO/deploy/Defaults $LANDIS_DIR/extensions/ && \
     dotnet $LANDIS_DIR/Release/Landis.Extensions.dll add $REPO/deploy/installer/PnET-Succession.txt && \
     mkdir $LANDIS_DIR/Release/..\\extensions && \
-    for f in $LANDIS_DIR/extensions/Defaults/*; do ln -s $f $LANDIS_DIR/Release/..\\extensions/Defaults\\$(basename $f); done && \
+    for SRC in $LANDIS_DIR/extensions/Defaults/*; do TGT="$LANDIS_DIR/Release/..\\extensions/Defaults\\$(basename $SRC)"; ln -s $(realpath --relative-to=$(dirname $TGT) $SRC) $TGT ; done && \
     rm -rf $REPO
 
 # Run LANDIS-II like this:
