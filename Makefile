@@ -1,10 +1,12 @@
 IMAGE_ROOT?=localhost
-IMAGE=landis-ii
+IMAGE=landis
 SIF=${IMAGE}.sif
-TAG=0.1
+TAG=0.1.1
 
 build: Dockerfile
 	podman build --format docker \
+		--label "org.opencontainers.image.source=https://github.com/BioDT/uc-forest-bird" \
+		--label "org.opencontainers.image.description=LANDIS-II v7 environment" \
 		-t ${IMAGE_ROOT}/${IMAGE}:${TAG} \
 		.
 
