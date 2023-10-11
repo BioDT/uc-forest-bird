@@ -50,9 +50,10 @@ RUN apt-get update -qy && \
         && \
     apt-get clean
 
-ENV DOTNET_CLI_TELEMETRY_OPTOUT=1 \
+ENV DOTNET_CLI_TELEMETRY_OPTOUT=true \
     NUGET_PACKAGES=/nuget/packages
 
+# Install dotnet
 RUN UBUNTU_VERSION=$(grep -oP '(?<=^VERSION_ID=")[^"]+' /etc/os-release) && \
     wget https://packages.microsoft.com/config/ubuntu/$UBUNTU_VERSION/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \
     dpkg -i packages-microsoft-prod.deb && \
@@ -71,6 +72,7 @@ RUN REPO=$LANDIS_DIR/Core-Model-v7-LINUX && \
     git clone --depth 1 -b v7 https://github.com/LANDIS-II-Foundation/Core-Model-v7-LINUX.git $REPO && \
     cd $REPO/Tool-Console/src/ && \
     dotnet build -c Release && \
+    # Remove /root/.dotnet paths from config files\
     for f in $REPO/build/Release/*.json; do sed -i '/"\/root\/\.dotnet\/.*"/d' $f; done && \
     mv $REPO/build/* $LANDIS_DIR && \
     rm -rf $REPO && \
