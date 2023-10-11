@@ -93,7 +93,7 @@ RUN mkdir $LANDIS_DIR/Release/..\\extensions && \
       ln -s $(realpath --relative-to=$(dirname $TGT) $SRC) $TGT \
     ; done
 
-# Run LANDIS-II like this:
-# dotnet $LANDIS_DIR/Release/Landis.Console.dll scenario.txt
+ENV DOTNET_NOLOGO=1
 
-CMD ["bash"]
+ENTRYPOINT ["dotnet", "$LANDIS_DIR/Release/Landis.Console.dll"]
+CMD ["--help"]
