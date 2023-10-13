@@ -63,7 +63,7 @@ RUN UBUNTU_VERSION=$(grep -oP '(?<=^VERSION_ID=")[^"]+' /etc/os-release) && \
         dotnet-sdk-2.2 \
         && \
     apt-get clean && \
-    rm -rf /tmp/* /root/.[!.]*
+    rm -rf /tmp/* /tmp/.[!.]* /root/.[!.]*
 
 ENV LANDIS_DIR=/LANDIS-II-v7
 
