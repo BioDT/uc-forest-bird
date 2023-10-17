@@ -17,8 +17,9 @@ Then, use your GitHub username and the created token in the login prompt of `sin
 
 ### Running the container on LUMI
 
+Example submission script:
 ```bash
-singularity run --bind "$PWD" landis_0.1.2.sif scenario.txt
+sbatch scripts/submit_single.lumi.sh
 ```
 
 
