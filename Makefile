@@ -1,7 +1,7 @@
 IMAGE_ROOT?=localhost
 IMAGE=landis
 SIF=${IMAGE}.sif
-TAG=0.1.2
+TAG=0.2.1
 
 build: Dockerfile
 	podman build --format docker \
