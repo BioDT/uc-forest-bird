@@ -7,17 +7,9 @@
 #SBATCH --cpus-per-task=1
 #SBATCH -t 04:00:00
 
-SIF="$PWD/landis_0.1.2.sif"
+SIF="$PWD/landis_0.2.1.sif"
 
 pushd LANDIS_run/
 date
 singularity run  --bind "$PWD" "$SIF" scenario.txt
 date
-
-# Fix Windows file paths
-rmdir Metadata/ Metadata\\*/
-for f in Metadata*.xml; do
-    f_new="${f//\\//}";
-    mkdir -p "$(dirname "$f_new")";
-    mv "$f" "$f_new";
-done

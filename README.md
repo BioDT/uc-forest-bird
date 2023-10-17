@@ -6,9 +6,9 @@
 
 Pull the pre-built image on LUMI:
 ```bash
-singularity pull --docker-login docker://ghcr.io/biodt/landis:0.1.2
+singularity pull --docker-login docker://ghcr.io/biodt/landis:0.2.1
 ```
-This creates singularity image file `landis_0.1.2.sif`.
+This creates singularity image file `landis_0.2.1.sif`.
 
 Note that the image is for now private, which means that login is required.
 Follow [these instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic)

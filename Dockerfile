@@ -95,6 +95,16 @@ RUN mkdir $LANDIS_DIR/Release/..\\extensions && \
       ln -s $(realpath --relative-to=$(dirname $TGT) $SRC) $TGT \
     ; done
 
+# Update metadata library with Linux path fix
+RUN REPO=/tmp/Library-Metadata && \
+    git clone https://github.com/LANDIS-II-Foundation/Library-Metadata.git $REPO && \
+    cd $REPO/src/ && \
+    git checkout 047ddde83fb47eaaaaa75a9caf1c4b99a9ea2a77 && \
+    dotnet build -c Release && \
+    cp -v $REPO/src/bin/Release/netstandard2.0/*.dll $LANDIS_DIR/extensions/ && \
+    rm -rf $REPO && \
+    rm -rf /tmp/* /tmp/.[!.]* /root/.[!.]*
+
 # Create executable
 RUN mkdir -p $LANDIS_DIR/bin && \
     echo '#!/bin/bash\n\
