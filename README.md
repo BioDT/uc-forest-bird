@@ -1,53 +1,58 @@
 # Container with LANDIS-II v7
 
-## Usage
+## Usage on LUMI
 
-### Pulling the image on LUMI
+### Pulling the image
 
-Pull the pre-built image on LUMI:
-```bash
-singularity pull --docker-login docker://ghcr.io/biodt/landis:0.2.1
-```
-This creates singularity image file `landis_0.2.1.sif`.
+Pull the pre-built image (replace `VERSION` with the desired version number):
+
+    singularity pull --docker-login docker://ghcr.io/biodt/landis:VERSION
+
+This creates singularity image file `landis_VERSION.sif`.
 
 Note that the image is for now private, which means that login is required.
 Follow [these instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic)
 and create a classic personal access token with scope 'read:packages'.
 Then, use your GitHub username and the created token in the login prompt of `singularity pull`.
 
-### Running the container on LUMI
+### Running the container
 
 Example submission script:
-```bash
-sbatch scripts/submit_single.lumi.sh
-```
+
+    sbatch scripts/submit_single.lumi.sh
 
 
-## Advanced: Building a new image
+## Building a new image
 
-Build the parent image on a local machine
-(tested on Ubuntu 22.04 with podman, `sudo apt install podman-docker`).
+Follow these instructions if you need to update the container image based on `Dockerfile`.
 
-The container recipe is encoded in `Dockerfile` and `Makefile`.
+**First:** Update the image version number in `Makefile`.
 
-Set image path for building and pushing:
-```bash
-export IMAGE_ROOT=ghcr.io/biodt
-```
+Then, build and push the new image on a local machine following the instructions below.
 
-Build the image:
-```bash
-make
-```
+### Ubuntu
 
-Push the image:
-```bash
-podman login ${IMAGE_ROOT%%/*}
-make push
-```
-(login using classic personal access token with scope 'write:packages').
+If you don't have docker or podman, install using
 
-For testing, convert the local image to singularity:
-```bash
-make singularity
-```
+    sudo apt install podman-docker
+
+If using podman, define
+
+    export BUILDAH_FORMAT=docker
+
+Build the image
+
+    make build
+
+Login using GitHub Personal Access Token in order to be able to push:
+
+    docker login ghcr.io
+
+Push the image
+
+    make push
+
+For testing, you can also convert the local image to singularity:
+
+    make singularity
+

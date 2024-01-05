@@ -1,20 +1,23 @@
-IMAGE_ROOT?=localhost
+IMAGE_ROOT?=ghcr.io/biodt
 IMAGE=landis
-SIF=${IMAGE}.sif
-TAG=0.2.1
+IMAGE_VERSION=0.2.1
+NETLOGO_VERSION=6.3.0
+JAVA_VERSION=17
+R_VERSION=4.3.2
+
 
 build: Dockerfile
-	podman build --format docker \
+	docker build \
 		--label "org.opencontainers.image.source=https://github.com/BioDT/uc-forest-bird" \
 		--label "org.opencontainers.image.description=LANDIS-II v7 environment" \
-		-t ${IMAGE_ROOT}/${IMAGE}:${TAG} \
+		-t ${IMAGE_ROOT}/${IMAGE}:${IMAGE_VERSION} \
 		.
 
 push:
-	podman push ${IMAGE_ROOT}/${IMAGE}:${TAG}
+	docker push ${IMAGE_ROOT}/${IMAGE}:${IMAGE_VERSION}
 
 singularity:
-	rm -f $(SIF) $(SIF:.sif=.tar)
-	podman save ${IMAGE}:${TAG} -o $(SIF:.sif=.tar)
-	singularity build $(SIF) docker-archive://$(SIF:.sif=.tar)
-	rm -f $(SIF:.sif=.tar)
+	rm -f $(IMAGE).sif $(IMAGE).tar
+	docker save $(IMAGE_ROOT)/$(IMAGE):$(IMAGE_VERSION) -o $(IMAGE).tar
+	singularity build $(IMAGE).sif docker-archive://$(IMAGE).tar
+	rm -f $(IMAGE).tar
