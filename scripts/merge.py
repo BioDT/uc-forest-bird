@@ -1,10 +1,16 @@
+'''
+ Script to read LUKE volume and age files, assign all nodata values (32766) to one shared nodata value (32767) and merge all tiles in inputdirectory; takes inputdirectory and outputfilename
+ '''
+
+import sys
 import rasterio
 import rasterio.merge
-from pathlib import Path
+import glob
 
-out_fpath = 'out.tif'
+inputdir = sys.argv[1]
+outfile = sys.argv[2]
 
-files = list(Path('.').glob('data/koivu*.tif'))
+files = glob.glob(inputdir + '*.tif')
 
 with rasterio.open(files[0]) as f:
     out_meta = f.meta.copy()
@@ -19,6 +25,6 @@ out_meta.update({
     })
 
 
-with rasterio.open(out_fpath, 'w', **out_meta) as f:
+with rasterio.open(outfile, 'w', **out_meta) as f:
     f.write(arr)
 
