@@ -47,7 +47,8 @@ resample_rasters_mean <- function(input_directory, output_directory) {
     # Create a new temp raster
     r2 <- r
     
-    res(r2) <- 100 #rescale temp raster to new resolution
+    #rescale temp raster to new resolution
+    res(r2) <- 100 
     
     # Resample the raster to 100m x 100m using mean aggregation
     r_resampled <- resample(r, r2, method = "average")
