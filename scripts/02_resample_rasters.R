@@ -44,11 +44,13 @@ resample_rasters_mean <- function(input_directory, output_directory) {
     # Load the raster file
     r <- rast(raster_file_path)
     
-    # Calculate the resampling factor to achieve 100m x 100m pixels
-    resampling_factor <- c(100, 100) / res(r)
+    # Create a new temp raster
+    r2 <- r
+    
+    res(r2) <- 100 #rescale temp raster to new resolution
     
     # Resample the raster to 100m x 100m using mean aggregation
-    r_resampled <- aggregate(r, fact = resampling_factor, fun = "mean")
+    r_resampled <- resample(r, r2, method = "average")
     
     # Define the output file path
     output_file <- file.path(output_directory, basename(raster_file_path))
