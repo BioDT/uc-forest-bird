@@ -7,3 +7,5 @@
 *.img
 *.xml
 .Rproj.user
+.RData
+.Rhistory
