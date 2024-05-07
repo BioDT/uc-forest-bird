@@ -58,8 +58,9 @@ resample_rasters_mean <- function(input_directory, output_directory) {
     # Write the resampled raster to a new file with integer data type INT2S
     writeRaster(r_resampled, filename = output_file, overwrite = TRUE, datatype = "INT2S")
     
-    # Remove the raster object to avoid memory problems
+    # Remove the rasters to avoid memory problems
     remove(r)
+    remove(r2)
   }
   
   # Apply the processing function to all raster files in the input directory
