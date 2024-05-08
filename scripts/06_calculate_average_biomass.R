@@ -33,20 +33,6 @@ if (!dir.exists(output_directory)) {
   dir.create(output_directory, recursive = TRUE)
 }
 
-# Function to calculate average biomass for a specific map code and tree raster
-calculate_average_biomass <- function(initial_map, tree_raster, map_code) {
-  # Find positions of map code in the initial community map
-  map_code_positions <- which(initial_map == map_code, cells = TRUE)
-  
-  # Extract biomass values for the specified map code from the tree raster
-  biomass_values <- extract(tree_raster, map_code_positions)
-  
-  # Calculate the average biomass
-  average_biomass <- mean(biomass_values, na.rm = TRUE)
-  
-  return(average_biomass)
-}
-
 # Read the raster files for tree species
 Spruce <- rast(file.path(input_directory, "Spruce_B.tif"))
 Pine <- rast(file.path(input_directory, "Pine_B.tif"))
@@ -60,94 +46,32 @@ initial_community_map <- rast(file.path(input_directory, "Initial.community.tif"
 # Get unique map codes in the initial community map
 unique_map_codes <- 0:147
 
-
-################Spruce##############################
-# Define the output file path
-output_file_path <- file.path(output_directory, "Spruce_average_biomass.txt")
-
-# Open a connection to the output file
-output_file <- file(output_file_path, "w")
-
-# Iterate over unique map codes
-for (map_code in unique_map_codes) {
-  # Calculate average biomass for Spruce
-  avg_biomass_spruce <- mean(Spruce[initial_community_map == map_code], na.rm = TRUE)
+# Function to calculate average biomass for a given species
+calculate_avg_biomass <- function(species_raster, species_name, output_directory, initial_community_map, unique_map_codes) {
+  # Define the output file path
+  output_file_path <- file.path(output_directory, paste0(species_name, "_average_biomass.txt"))
   
-  # Prepare the line to write to the file
-  output_line <- paste("MapCode", map_code, ": Average biomass for Spruce:", avg_biomass_spruce)
+  # Open a connection to the output file
+  output_file <- file(output_file_path, "w")
   
-  # Write the line to the file
-  writeLines(output_line, output_file)
+  # Iterate over unique map codes
+  for (map_code in unique_map_codes) {
+    # Calculate average biomass for the species
+    avg_biomass <- mean(species_raster[initial_community_map == map_code], na.rm = TRUE)
+    
+    # Prepare the line to write to the file
+    output_line <- paste("MapCode", map_code, ": Average biomass for", species_name, ":", avg_biomass)
+    
+    # Write the line to the file
+    writeLines(output_line, output_file)
+  }
+  
+  # Close the connection to the output file
+  close(output_file)
 }
 
-# Close the connection to the output file
-close(output_file)
-
-
-################Pine##############################
-# Define the output file path
-output_file_path <- file.path(output_directory, "Pine_average_biomass.txt")
-
-# Open a connection to the output file
-output_file <- file(output_file_path, "w")
-
-# Iterate over unique map codes
-for (map_code in unique_map_codes) {
-  # Calculate average biomass for Pine
-  avg_biomass_pine <- mean(Pine[initial_community_map == map_code], na.rm = TRUE)
-  
-  # Prepare the line to write to the file
-  output_line <- paste("MapCode", map_code, ": Average biomass for Pine:", avg_biomass_pine)
-  
-  # Write the line to the file
-  writeLines(output_line, output_file)
-}
-
-# Close the connection to the output file
-close(output_file)
-
-
-################Birch##############################
-# Define the output file path
-output_file_path <- file.path(output_directory, "Birch_average_biomass.txt")
-
-# Open a connection to the output file
-output_file <- file(output_file_path, "w")
-
-# Iterate over unique map codes
-for (map_code in unique_map_codes) {
-  # Calculate average biomass for Birch
-  avg_biomass_birch <- mean(Birch[initial_community_map == map_code], na.rm = TRUE)
-  
-  # Prepare the line to write to the file
-  output_line <- paste("MapCode", map_code, ": Average biomass for Birch:", avg_biomass_birch)
-  
-  # Write the line to the file
-  writeLines(output_line, output_file)
-}
-
-# Close the connection to the output file
-close(output_file)
-
-
-################Other##############################
-# Define the output file path
-output_file_path <- file.path(output_directory, "Other_average_biomass.txt")
-
-# Open a connection to the output file
-output_file <- file(output_file_path, "w")
-
-# Iterate over unique map codes
-for (map_code in unique_map_codes) {
-  # Calculate average biomass for Other
-  avg_biomass_other <- mean(Other[initial_community_map == map_code], na.rm = TRUE)
-  
-  # Prepare the line to write to the file
-  output_line <- paste("MapCode", map_code, ": Average biomass for Other:", avg_biomass_other)
-  
-  # Write the line to the file
-  writeLines(output_line, output_file)
-}
-
-# Close the connection to the output file
-close(output_file)
+# Calculate average biomass for each species
+calculate_avg_biomass(Spruce, "Spruce", output_directory, initial_community_map, unique_map_codes)
+calculate_avg_biomass(Pine, "Pine", output_directory, initial_community_map, unique_map_codes)
+calculate_avg_biomass(Birch, "Birch", output_directory, initial_community_map, unique_map_codes)
+calculate_avg_biomass(Other, "Other", output_directory, initial_community_map, unique_map_codes)
