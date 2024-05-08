@@ -244,4 +244,4 @@ r6[r1 == 5 & r5 ==3 & r4==2 ] <-108   # Young Mixed other/birch
 
 r6[r1 == 5 & r2==1 & r3==1 & r4==1 & r5==1 ] <- 109   # Young Mixed spruce/pine/dec
 
-writeRaster(r6, filename = file.path(output_directory, "Initial.community.tif"), overwrite = TRUE, datatype = "INT2S")
+writeRaster(r6, filename = file.path(output_directory, "Initial.community.tif"), overwrite = TRUE, datatype = 'INT1U')
