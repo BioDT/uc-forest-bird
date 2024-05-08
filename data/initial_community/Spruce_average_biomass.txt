@@ -1,148 +1,148 @@
-MapCode 0 : Average biomass for Spruce: 179.778350515464
-MapCode 1 : Average biomass for Spruce: 278.732237719556
-MapCode 2 : Average biomass for Spruce: 499.722569089048
-MapCode 3 : Average biomass for Spruce: 458.201570399053
-MapCode 4 : Average biomass for Spruce: 1100.52290580029
-MapCode 5 : Average biomass for Spruce: 955.78990228013
-MapCode 6 : Average biomass for Spruce: 3028.11267605634
-MapCode 7 : Average biomass for Spruce: 3138.5
-MapCode 8 : Average biomass for Spruce: NaN
-MapCode 9 : Average biomass for Spruce: 1878.47093023256
-MapCode 10 : Average biomass for Spruce: 2410.02365184484
-MapCode 11 : Average biomass for Spruce: 2693.88566286743
-MapCode 12 : Average biomass for Spruce: 1653.26356589147
-MapCode 13 : Average biomass for Spruce: 998.968421052632
-MapCode 14 : Average biomass for Spruce: 769
-MapCode 15 : Average biomass for Spruce: 249.759078830824
-MapCode 16 : Average biomass for Spruce: 158.484008528785
-MapCode 17 : Average biomass for Spruce: 584.631305802199
-MapCode 18 : Average biomass for Spruce: 954.059248554913
-MapCode 19 : Average biomass for Spruce: 913.714285714286
-MapCode 20 : Average biomass for Spruce: 599.608143880411
-MapCode 21 : Average biomass for Spruce: 249.126666666667
-MapCode 22 : Average biomass for Spruce: 416.211609498681
-MapCode 23 : Average biomass for Spruce: 903.279069767442
-MapCode 24 : Average biomass for Spruce: 445
-MapCode 25 : Average biomass for Spruce: 407.706057227796
-MapCode 26 : Average biomass for Spruce: 179.724671307038
-MapCode 27 : Average biomass for Spruce: 355.348534919586
-MapCode 28 : Average biomass for Spruce: 618.272727272727
-MapCode 29 : Average biomass for Spruce: 7414.52736318408
-MapCode 30 : Average biomass for Spruce: 469.199854726575
-MapCode 31 : Average biomass for Spruce: 208.051162790698
-MapCode 32 : Average biomass for Spruce: 232.85447761194
-MapCode 33 : Average biomass for Spruce: 4388.72592592593
-MapCode 34 : Average biomass for Spruce: 4232
-MapCode 35 : Average biomass for Spruce: 5670
-MapCode 36 : Average biomass for Spruce: 5789.57291666667
-MapCode 37 : Average biomass for Spruce: 4515.55813953488
-MapCode 38 : Average biomass for Spruce: 5025.07006206955
-MapCode 39 : Average biomass for Spruce: 2292.78161965423
-MapCode 40 : Average biomass for Spruce: 1297.65844402277
-MapCode 41 : Average biomass for Spruce: 1201.33333333333
-MapCode 42 : Average biomass for Spruce: 505.846394984326
-MapCode 43 : Average biomass for Spruce: 215.227064220183
-MapCode 44 : Average biomass for Spruce: 1231.1642751672
-MapCode 45 : Average biomass for Spruce: 1979.20192307692
-MapCode 46 : Average biomass for Spruce: 735.666666666667
-MapCode 47 : Average biomass for Spruce: 1023.48181818182
-MapCode 48 : Average biomass for Spruce: 466.769953051643
-MapCode 49 : Average biomass for Spruce: 767.938461538462
-MapCode 50 : Average biomass for Spruce: 1736.25
-MapCode 51 : Average biomass for Spruce: NaN
-MapCode 52 : Average biomass for Spruce: 735.017699115044
-MapCode 53 : Average biomass for Spruce: 220.407407407407
-MapCode 54 : Average biomass for Spruce: 584.831797235023
-MapCode 55 : Average biomass for Spruce: 1377
-MapCode 56 : Average biomass for Spruce: 10546.0354796321
-MapCode 57 : Average biomass for Spruce: 491.558025908826
-MapCode 58 : Average biomass for Spruce: 151.575
-MapCode 59 : Average biomass for Spruce: 339.978723404255
-MapCode 60 : Average biomass for Spruce: 6174.80175438597
-MapCode 61 : Average biomass for Spruce: 6682.33333333333
-MapCode 62 : Average biomass for Spruce: NaN
-MapCode 63 : Average biomass for Spruce: 8588.32878787879
-MapCode 64 : Average biomass for Spruce: 6667.1821192053
-MapCode 65 : Average biomass for Spruce: 6435.0170973023
-MapCode 66 : Average biomass for Spruce: 2478.19605224102
-MapCode 67 : Average biomass for Spruce: 1295.72212389381
-MapCode 68 : Average biomass for Spruce: 1002.40506329114
-MapCode 69 : Average biomass for Spruce: 692.44
-MapCode 70 : Average biomass for Spruce: 368.247311827957
-MapCode 71 : Average biomass for Spruce: 1511.26490337709
-MapCode 72 : Average biomass for Spruce: 2539.64285714286
-MapCode 73 : Average biomass for Spruce: 518
-MapCode 74 : Average biomass for Spruce: 760.552845528455
-MapCode 75 : Average biomass for Spruce: 525.433734939759
-MapCode 76 : Average biomass for Spruce: 283
-MapCode 77 : Average biomass for Spruce: 2338.75
-MapCode 78 : Average biomass for Spruce: NaN
-MapCode 79 : Average biomass for Spruce: 788.501165501165
-MapCode 80 : Average biomass for Spruce: 292.746031746032
-MapCode 81 : Average biomass for Spruce: 446.847222222222
-MapCode 82 : Average biomass for Spruce: NaN
-MapCode 83 : Average biomass for Spruce: 8236.69230769231
-MapCode 84 : Average biomass for Spruce: 519.718009478673
-MapCode 85 : Average biomass for Spruce: NaN
-MapCode 86 : Average biomass for Spruce: NaN
-MapCode 87 : Average biomass for Spruce: 4912.425
-MapCode 88 : Average biomass for Spruce: NaN
-MapCode 89 : Average biomass for Spruce: NaN
-MapCode 90 : Average biomass for Spruce: 7882.36363636364
-MapCode 91 : Average biomass for Spruce: NaN
-MapCode 92 : Average biomass for Spruce: 4473.54198473282
-MapCode 93 : Average biomass for Spruce: 2241.68156424581
-MapCode 94 : Average biomass for Spruce: 1251.45454545455
-MapCode 95 : Average biomass for Spruce: 1093.25
-MapCode 96 : Average biomass for Spruce: NaN
-MapCode 97 : Average biomass for Spruce: 759.25
-MapCode 98 : Average biomass for Spruce: 814.27476635514
-MapCode 99 : Average biomass for Spruce: NaN
-MapCode 100 : Average biomass for Spruce: NaN
-MapCode 101 : Average biomass for Spruce: NaN
-MapCode 102 : Average biomass for Spruce: NaN
-MapCode 103 : Average biomass for Spruce: NaN
-MapCode 104 : Average biomass for Spruce: NaN
-MapCode 105 : Average biomass for Spruce: NaN
-MapCode 106 : Average biomass for Spruce: NaN
-MapCode 107 : Average biomass for Spruce: NaN
-MapCode 108 : Average biomass for Spruce: NaN
-MapCode 109 : Average biomass for Spruce: NaN
-MapCode 110 : Average biomass for Spruce: 1417.53204569334
-MapCode 111 : Average biomass for Spruce: 1610.10176766394
-MapCode 112 : Average biomass for Spruce: 1177.20809248555
-MapCode 113 : Average biomass for Spruce: 896.255666410847
-MapCode 114 : Average biomass for Spruce: 448.275082560151
-MapCode 115 : Average biomass for Spruce: 701.216672306493
-MapCode 116 : Average biomass for Spruce: 2603.83346055743
-MapCode 117 : Average biomass for Spruce: 2806.05115916184
-MapCode 118 : Average biomass for Spruce: 2427.33809718252
-MapCode 119 : Average biomass for Spruce: 1671.47384601967
-MapCode 120 : Average biomass for Spruce: 763.731699908879
-MapCode 121 : Average biomass for Spruce: 1454.31914730465
-MapCode 122 : Average biomass for Spruce: 3339.55359543812
-MapCode 123 : Average biomass for Spruce: 4300.56942619361
-MapCode 124 : Average biomass for Spruce: 3994.13447782546
-MapCode 125 : Average biomass for Spruce: 2116.75013213531
-MapCode 126 : Average biomass for Spruce: 818.679829025036
-MapCode 127 : Average biomass for Spruce: 2296.07591240876
-MapCode 128 : Average biomass for Spruce: 2924.07567567568
-MapCode 129 : Average biomass for Spruce: NaN
-MapCode 130 : Average biomass for Spruce: NaN
-MapCode 131 : Average biomass for Spruce: NaN
-MapCode 132 : Average biomass for Spruce: 242
-MapCode 133 : Average biomass for Spruce: NaN
-MapCode 134 : Average biomass for Spruce: 1874.18078221722
-MapCode 135 : Average biomass for Spruce: 720.855515986381
-MapCode 136 : Average biomass for Spruce: 905.547172682452
-MapCode 137 : Average biomass for Spruce: 666.879437229437
-MapCode 138 : Average biomass for Spruce: 3684
-MapCode 139 : Average biomass for Spruce: 1149.9014953344
-MapCode 140 : Average biomass for Spruce: 1466.3444006753
-MapCode 141 : Average biomass for Spruce: 1215.8085106383
-MapCode 142 : Average biomass for Spruce: 4809.89675343668
-MapCode 143 : Average biomass for Spruce: 1189.47855270058
-MapCode 144 : Average biomass for Spruce: 1655.34
-MapCode 145 : Average biomass for Spruce: 1309.8328358209
-MapCode 146 : Average biomass for Spruce: NaN
-MapCode 147 : Average biomass for Spruce: 1336
+MapCode 0 : Average biomass for Spruce : 179.778350515464
+MapCode 1 : Average biomass for Spruce : 278.732237719556
+MapCode 2 : Average biomass for Spruce : 499.722569089048
+MapCode 3 : Average biomass for Spruce : 458.201570399053
+MapCode 4 : Average biomass for Spruce : 1100.52290580029
+MapCode 5 : Average biomass for Spruce : 955.78990228013
+MapCode 6 : Average biomass for Spruce : 3028.11267605634
+MapCode 7 : Average biomass for Spruce : 3138.5
+MapCode 8 : Average biomass for Spruce : NaN
+MapCode 9 : Average biomass for Spruce : 1878.47093023256
+MapCode 10 : Average biomass for Spruce : 2410.02365184484
+MapCode 11 : Average biomass for Spruce : 2693.88566286743
+MapCode 12 : Average biomass for Spruce : 1653.26356589147
+MapCode 13 : Average biomass for Spruce : 998.968421052632
+MapCode 14 : Average biomass for Spruce : 769
+MapCode 15 : Average biomass for Spruce : 249.759078830824
+MapCode 16 : Average biomass for Spruce : 158.484008528785
+MapCode 17 : Average biomass for Spruce : 584.631305802199
+MapCode 18 : Average biomass for Spruce : 954.059248554913
+MapCode 19 : Average biomass for Spruce : 913.714285714286
+MapCode 20 : Average biomass for Spruce : 599.608143880411
+MapCode 21 : Average biomass for Spruce : 249.126666666667
+MapCode 22 : Average biomass for Spruce : 416.211609498681
+MapCode 23 : Average biomass for Spruce : 903.279069767442
+MapCode 24 : Average biomass for Spruce : 445
+MapCode 25 : Average biomass for Spruce : 407.706057227796
+MapCode 26 : Average biomass for Spruce : 179.724671307038
+MapCode 27 : Average biomass for Spruce : 355.348534919586
+MapCode 28 : Average biomass for Spruce : 618.272727272727
+MapCode 29 : Average biomass for Spruce : 7414.52736318408
+MapCode 30 : Average biomass for Spruce : 469.199854726575
+MapCode 31 : Average biomass for Spruce : 208.051162790698
+MapCode 32 : Average biomass for Spruce : 232.85447761194
+MapCode 33 : Average biomass for Spruce : 4388.72592592593
+MapCode 34 : Average biomass for Spruce : 4232
+MapCode 35 : Average biomass for Spruce : 5670
+MapCode 36 : Average biomass for Spruce : 5789.57291666667
+MapCode 37 : Average biomass for Spruce : 4515.55813953488
+MapCode 38 : Average biomass for Spruce : 5025.07006206955
+MapCode 39 : Average biomass for Spruce : 2292.78161965423
+MapCode 40 : Average biomass for Spruce : 1297.65844402277
+MapCode 41 : Average biomass for Spruce : 1201.33333333333
+MapCode 42 : Average biomass for Spruce : 505.846394984326
+MapCode 43 : Average biomass for Spruce : 215.227064220183
+MapCode 44 : Average biomass for Spruce : 1231.1642751672
+MapCode 45 : Average biomass for Spruce : 1979.20192307692
+MapCode 46 : Average biomass for Spruce : 735.666666666667
+MapCode 47 : Average biomass for Spruce : 1023.48181818182
+MapCode 48 : Average biomass for Spruce : 466.769953051643
+MapCode 49 : Average biomass for Spruce : 767.938461538462
+MapCode 50 : Average biomass for Spruce : 1736.25
+MapCode 51 : Average biomass for Spruce : NaN
+MapCode 52 : Average biomass for Spruce : 735.017699115044
+MapCode 53 : Average biomass for Spruce : 220.407407407407
+MapCode 54 : Average biomass for Spruce : 584.831797235023
+MapCode 55 : Average biomass for Spruce : 1377
+MapCode 56 : Average biomass for Spruce : 10546.0354796321
+MapCode 57 : Average biomass for Spruce : 491.558025908826
+MapCode 58 : Average biomass for Spruce : 151.575
+MapCode 59 : Average biomass for Spruce : 339.978723404255
+MapCode 60 : Average biomass for Spruce : 6174.80175438597
+MapCode 61 : Average biomass for Spruce : 6682.33333333333
+MapCode 62 : Average biomass for Spruce : NaN
+MapCode 63 : Average biomass for Spruce : 8588.32878787879
+MapCode 64 : Average biomass for Spruce : 6667.1821192053
+MapCode 65 : Average biomass for Spruce : 6435.0170973023
+MapCode 66 : Average biomass for Spruce : 2478.19605224102
+MapCode 67 : Average biomass for Spruce : 1295.72212389381
+MapCode 68 : Average biomass for Spruce : 1002.40506329114
+MapCode 69 : Average biomass for Spruce : 692.44
+MapCode 70 : Average biomass for Spruce : 368.247311827957
+MapCode 71 : Average biomass for Spruce : 1511.26490337709
+MapCode 72 : Average biomass for Spruce : 2539.64285714286
+MapCode 73 : Average biomass for Spruce : 518
+MapCode 74 : Average biomass for Spruce : 760.552845528455
+MapCode 75 : Average biomass for Spruce : 525.433734939759
+MapCode 76 : Average biomass for Spruce : 283
+MapCode 77 : Average biomass for Spruce : 2338.75
+MapCode 78 : Average biomass for Spruce : NaN
+MapCode 79 : Average biomass for Spruce : 788.501165501165
+MapCode 80 : Average biomass for Spruce : 292.746031746032
+MapCode 81 : Average biomass for Spruce : 446.847222222222
+MapCode 82 : Average biomass for Spruce : NaN
+MapCode 83 : Average biomass for Spruce : 8236.69230769231
+MapCode 84 : Average biomass for Spruce : 519.718009478673
+MapCode 85 : Average biomass for Spruce : NaN
+MapCode 86 : Average biomass for Spruce : NaN
+MapCode 87 : Average biomass for Spruce : 4912.425
+MapCode 88 : Average biomass for Spruce : NaN
+MapCode 89 : Average biomass for Spruce : NaN
+MapCode 90 : Average biomass for Spruce : 7882.36363636364
+MapCode 91 : Average biomass for Spruce : NaN
+MapCode 92 : Average biomass for Spruce : 4473.54198473282
+MapCode 93 : Average biomass for Spruce : 2241.68156424581
+MapCode 94 : Average biomass for Spruce : 1251.45454545455
+MapCode 95 : Average biomass for Spruce : 1093.25
+MapCode 96 : Average biomass for Spruce : NaN
+MapCode 97 : Average biomass for Spruce : 759.25
+MapCode 98 : Average biomass for Spruce : 814.27476635514
+MapCode 99 : Average biomass for Spruce : NaN
+MapCode 100 : Average biomass for Spruce : NaN
+MapCode 101 : Average biomass for Spruce : NaN
+MapCode 102 : Average biomass for Spruce : NaN
+MapCode 103 : Average biomass for Spruce : NaN
+MapCode 104 : Average biomass for Spruce : NaN
+MapCode 105 : Average biomass for Spruce : NaN
+MapCode 106 : Average biomass for Spruce : NaN
+MapCode 107 : Average biomass for Spruce : NaN
+MapCode 108 : Average biomass for Spruce : NaN
+MapCode 109 : Average biomass for Spruce : NaN
+MapCode 110 : Average biomass for Spruce : 1417.53204569334
+MapCode 111 : Average biomass for Spruce : 1610.10176766394
+MapCode 112 : Average biomass for Spruce : 1177.20809248555
+MapCode 113 : Average biomass for Spruce : 896.255666410847
+MapCode 114 : Average biomass for Spruce : 448.275082560151
+MapCode 115 : Average biomass for Spruce : 701.216672306493
+MapCode 116 : Average biomass for Spruce : 2603.83346055743
+MapCode 117 : Average biomass for Spruce : 2806.05115916184
+MapCode 118 : Average biomass for Spruce : 2427.33809718252
+MapCode 119 : Average biomass for Spruce : 1671.47384601967
+MapCode 120 : Average biomass for Spruce : 763.731699908879
+MapCode 121 : Average biomass for Spruce : 1454.31914730465
+MapCode 122 : Average biomass for Spruce : 3339.55359543812
+MapCode 123 : Average biomass for Spruce : 4300.56942619361
+MapCode 124 : Average biomass for Spruce : 3994.13447782546
+MapCode 125 : Average biomass for Spruce : 2116.75013213531
+MapCode 126 : Average biomass for Spruce : 818.679829025036
+MapCode 127 : Average biomass for Spruce : 2296.07591240876
+MapCode 128 : Average biomass for Spruce : 2924.07567567568
+MapCode 129 : Average biomass for Spruce : NaN
+MapCode 130 : Average biomass for Spruce : NaN
+MapCode 131 : Average biomass for Spruce : NaN
+MapCode 132 : Average biomass for Spruce : 242
+MapCode 133 : Average biomass for Spruce : NaN
+MapCode 134 : Average biomass for Spruce : 1874.18078221722
+MapCode 135 : Average biomass for Spruce : 720.855515986381
+MapCode 136 : Average biomass for Spruce : 905.547172682452
+MapCode 137 : Average biomass for Spruce : 666.879437229437
+MapCode 138 : Average biomass for Spruce : 3684
+MapCode 139 : Average biomass for Spruce : 1149.9014953344
+MapCode 140 : Average biomass for Spruce : 1466.3444006753
+MapCode 141 : Average biomass for Spruce : 1215.8085106383
+MapCode 142 : Average biomass for Spruce : 4809.89675343668
+MapCode 143 : Average biomass for Spruce : 1189.47855270058
+MapCode 144 : Average biomass for Spruce : 1655.34
+MapCode 145 : Average biomass for Spruce : 1309.8328358209
+MapCode 146 : Average biomass for Spruce : NaN
+MapCode 147 : Average biomass for Spruce : 1336
