@@ -1,148 +1,148 @@
-MapCode 0 : Average biomass for Other: 52.8821656050955
-MapCode 1 : Average biomass for Other: 441.790693377676
-MapCode 2 : Average biomass for Other: 394.340910045796
-MapCode 3 : Average biomass for Other: 279.72244065822
-MapCode 4 : Average biomass for Other: 299.353114850901
-MapCode 5 : Average biomass for Other: 2956.95808383234
-MapCode 6 : Average biomass for Other: 50.0704225352113
-MapCode 7 : Average biomass for Other: 258.75
-MapCode 8 : Average biomass for Other: NaN
-MapCode 9 : Average biomass for Other: 858.348837209302
-MapCode 10 : Average biomass for Other: 388.265846736045
-MapCode 11 : Average biomass for Other: 394.951169766047
-MapCode 12 : Average biomass for Other: 50.2325581395349
-MapCode 13 : Average biomass for Other: 45
-MapCode 14 : Average biomass for Other: 1169.5
-MapCode 15 : Average biomass for Other: 177.40832595217
-MapCode 16 : Average biomass for Other: 655.073916133618
-MapCode 17 : Average biomass for Other: 314.279017143419
-MapCode 18 : Average biomass for Other: 342.890173410405
-MapCode 19 : Average biomass for Other: 45
-MapCode 20 : Average biomass for Other: 763.273435066957
-MapCode 21 : Average biomass for Other: 201.8
-MapCode 22 : Average biomass for Other: 1307.96147757256
-MapCode 23 : Average biomass for Other: 1959.21860465116
-MapCode 24 : Average biomass for Other: 4860
-MapCode 25 : Average biomass for Other: 2531.97593831289
-MapCode 26 : Average biomass for Other: 1549.05104408353
-MapCode 27 : Average biomass for Other: 2639.92553425865
-MapCode 28 : Average biomass for Other: 687.272727272727
-MapCode 29 : Average biomass for Other: 274.475124378109
-MapCode 30 : Average biomass for Other: 123.396181384248
-MapCode 31 : Average biomass for Other: 162.209302325581
-MapCode 32 : Average biomass for Other: 5443.4776119403
-MapCode 33 : Average biomass for Other: 88.5
-MapCode 34 : Average biomass for Other: 60
-MapCode 35 : Average biomass for Other: 2610
-MapCode 36 : Average biomass for Other: 195
-MapCode 37 : Average biomass for Other: 717.78488372093
-MapCode 38 : Average biomass for Other: 592.209761074739
-MapCode 39 : Average biomass for Other: 61.6651501364877
-MapCode 40 : Average biomass for Other: 49.5683111954459
-MapCode 41 : Average biomass for Other: 810
-MapCode 42 : Average biomass for Other: 234.098746081505
-MapCode 43 : Average biomass for Other: 834.256880733945
-MapCode 44 : Average biomass for Other: 390.179119256493
-MapCode 45 : Average biomass for Other: 696.182692307692
-MapCode 46 : Average biomass for Other: 45
-MapCode 47 : Average biomass for Other: 1018.93766233766
-MapCode 48 : Average biomass for Other: 285.197183098592
-MapCode 49 : Average biomass for Other: 2094.85384615385
-MapCode 50 : Average biomass for Other: 3777.725
-MapCode 51 : Average biomass for Other: NaN
-MapCode 52 : Average biomass for Other: 3881.52520200077
-MapCode 53 : Average biomass for Other: 1937.78148148148
-MapCode 54 : Average biomass for Other: 3985.37788018433
-MapCode 55 : Average biomass for Other: 1530
-MapCode 56 : Average biomass for Other: 350.580157687254
-MapCode 57 : Average biomass for Other: 140.295426360064
-MapCode 58 : Average biomass for Other: 70.875
-MapCode 59 : Average biomass for Other: 5805
-MapCode 60 : Average biomass for Other: 82.8254385964912
-MapCode 61 : Average biomass for Other: 90
-MapCode 62 : Average biomass for Other: NaN
-MapCode 63 : Average biomass for Other: 100.772727272727
-MapCode 64 : Average biomass for Other: 917.08940397351
-MapCode 65 : Average biomass for Other: 486.627589152253
-MapCode 66 : Average biomass for Other: 67.6935292371624
-MapCode 67 : Average biomass for Other: 49.8849557522124
-MapCode 68 : Average biomass for Other: 637.392405063291
-MapCode 69 : Average biomass for Other: 231.74625
-MapCode 70 : Average biomass for Other: 1218.04659498208
-MapCode 71 : Average biomass for Other: 371.39770761423
-MapCode 72 : Average biomass for Other: 552.785714285714
-MapCode 73 : Average biomass for Other: 45
-MapCode 74 : Average biomass for Other: 365.471544715447
-MapCode 75 : Average biomass for Other: 166.174698795181
-MapCode 76 : Average biomass for Other: 1755
-MapCode 77 : Average biomass for Other: 5051.25
-MapCode 78 : Average biomass for Other: NaN
-MapCode 79 : Average biomass for Other: 4078.38461538462
-MapCode 80 : Average biomass for Other: 2283.55555555556
-MapCode 81 : Average biomass for Other: 3464.30555555556
-MapCode 82 : Average biomass for Other: NaN
-MapCode 83 : Average biomass for Other: 308
-MapCode 84 : Average biomass for Other: 121.030805687204
-MapCode 85 : Average biomass for Other: NaN
-MapCode 86 : Average biomass for Other: NaN
-MapCode 87 : Average biomass for Other: 55.125
-MapCode 88 : Average biomass for Other: NaN
-MapCode 89 : Average biomass for Other: NaN
-MapCode 90 : Average biomass for Other: 90
-MapCode 91 : Average biomass for Other: NaN
-MapCode 92 : Average biomass for Other: 268.282442748092
-MapCode 93 : Average biomass for Other: 62.3463687150838
-MapCode 94 : Average biomass for Other: 45
-MapCode 95 : Average biomass for Other: 742.5
-MapCode 96 : Average biomass for Other: NaN
-MapCode 97 : Average biomass for Other: 1991.25
-MapCode 98 : Average biomass for Other: 438.518691588785
-MapCode 99 : Average biomass for Other: NaN
-MapCode 100 : Average biomass for Other: NaN
-MapCode 101 : Average biomass for Other: NaN
-MapCode 102 : Average biomass for Other: NaN
-MapCode 103 : Average biomass for Other: NaN
-MapCode 104 : Average biomass for Other: NaN
-MapCode 105 : Average biomass for Other: NaN
-MapCode 106 : Average biomass for Other: NaN
-MapCode 107 : Average biomass for Other: NaN
-MapCode 108 : Average biomass for Other: NaN
-MapCode 109 : Average biomass for Other: NaN
-MapCode 110 : Average biomass for Other: 518.741980193593
-MapCode 111 : Average biomass for Other: 846.030984913903
-MapCode 112 : Average biomass for Other: 1364.53554132167
-MapCode 113 : Average biomass for Other: 637.938586168671
-MapCode 114 : Average biomass for Other: 1117.99547884888
-MapCode 115 : Average biomass for Other: 1610.01915579161
-MapCode 116 : Average biomass for Other: 665.282111671725
-MapCode 117 : Average biomass for Other: 1291.18063605291
-MapCode 118 : Average biomass for Other: 2854.42343813802
-MapCode 119 : Average biomass for Other: 877.732355057454
-MapCode 120 : Average biomass for Other: 1613.87101346563
-MapCode 121 : Average biomass for Other: 2626.88727858293
-MapCode 122 : Average biomass for Other: 565.518904538043
-MapCode 123 : Average biomass for Other: 1410.22733245729
-MapCode 124 : Average biomass for Other: 4121.46065808298
-MapCode 125 : Average biomass for Other: 705.180761099366
-MapCode 126 : Average biomass for Other: 1697.20028495827
-MapCode 127 : Average biomass for Other: 3041.60729927007
-MapCode 128 : Average biomass for Other: 432.481081081081
-MapCode 129 : Average biomass for Other: NaN
-MapCode 130 : Average biomass for Other: NaN
-MapCode 131 : Average biomass for Other: NaN
-MapCode 132 : Average biomass for Other: 540
-MapCode 133 : Average biomass for Other: NaN
-MapCode 134 : Average biomass for Other: 801.511254924029
-MapCode 135 : Average biomass for Other: 660.012992603608
-MapCode 136 : Average biomass for Other: 993.175482378721
-MapCode 137 : Average biomass for Other: 1794.49177489177
-MapCode 138 : Average biomass for Other: 1257.41824249166
-MapCode 139 : Average biomass for Other: 913.398274313825
-MapCode 140 : Average biomass for Other: 1473.11916150816
-MapCode 141 : Average biomass for Other: 2927.99934533552
-MapCode 142 : Average biomass for Other: 1590.73735010237
-MapCode 143 : Average biomass for Other: 1030.74556895648
-MapCode 144 : Average biomass for Other: 1530.83333333333
-MapCode 145 : Average biomass for Other: 3073.39701492537
-MapCode 146 : Average biomass for Other: NaN
-MapCode 147 : Average biomass for Other: 630
+MapCode 0 : Average biomass for Other : 52.8821656050955
+MapCode 1 : Average biomass for Other : 441.790693377676
+MapCode 2 : Average biomass for Other : 394.340910045796
+MapCode 3 : Average biomass for Other : 279.72244065822
+MapCode 4 : Average biomass for Other : 299.353114850901
+MapCode 5 : Average biomass for Other : 2956.95808383234
+MapCode 6 : Average biomass for Other : 50.0704225352113
+MapCode 7 : Average biomass for Other : 258.75
+MapCode 8 : Average biomass for Other : NaN
+MapCode 9 : Average biomass for Other : 858.348837209302
+MapCode 10 : Average biomass for Other : 388.265846736045
+MapCode 11 : Average biomass for Other : 394.951169766047
+MapCode 12 : Average biomass for Other : 50.2325581395349
+MapCode 13 : Average biomass for Other : 45
+MapCode 14 : Average biomass for Other : 1169.5
+MapCode 15 : Average biomass for Other : 177.40832595217
+MapCode 16 : Average biomass for Other : 655.073916133618
+MapCode 17 : Average biomass for Other : 314.279017143419
+MapCode 18 : Average biomass for Other : 342.890173410405
+MapCode 19 : Average biomass for Other : 45
+MapCode 20 : Average biomass for Other : 763.273435066957
+MapCode 21 : Average biomass for Other : 201.8
+MapCode 22 : Average biomass for Other : 1307.96147757256
+MapCode 23 : Average biomass for Other : 1959.21860465116
+MapCode 24 : Average biomass for Other : 4860
+MapCode 25 : Average biomass for Other : 2531.97593831289
+MapCode 26 : Average biomass for Other : 1549.05104408353
+MapCode 27 : Average biomass for Other : 2639.92553425865
+MapCode 28 : Average biomass for Other : 687.272727272727
+MapCode 29 : Average biomass for Other : 274.475124378109
+MapCode 30 : Average biomass for Other : 123.396181384248
+MapCode 31 : Average biomass for Other : 162.209302325581
+MapCode 32 : Average biomass for Other : 5443.4776119403
+MapCode 33 : Average biomass for Other : 88.5
+MapCode 34 : Average biomass for Other : 60
+MapCode 35 : Average biomass for Other : 2610
+MapCode 36 : Average biomass for Other : 195
+MapCode 37 : Average biomass for Other : 717.78488372093
+MapCode 38 : Average biomass for Other : 592.209761074739
+MapCode 39 : Average biomass for Other : 61.6651501364877
+MapCode 40 : Average biomass for Other : 49.5683111954459
+MapCode 41 : Average biomass for Other : 810
+MapCode 42 : Average biomass for Other : 234.098746081505
+MapCode 43 : Average biomass for Other : 834.256880733945
+MapCode 44 : Average biomass for Other : 390.179119256493
+MapCode 45 : Average biomass for Other : 696.182692307692
+MapCode 46 : Average biomass for Other : 45
+MapCode 47 : Average biomass for Other : 1018.93766233766
+MapCode 48 : Average biomass for Other : 285.197183098592
+MapCode 49 : Average biomass for Other : 2094.85384615385
+MapCode 50 : Average biomass for Other : 3777.725
+MapCode 51 : Average biomass for Other : NaN
+MapCode 52 : Average biomass for Other : 3881.52520200077
+MapCode 53 : Average biomass for Other : 1937.78148148148
+MapCode 54 : Average biomass for Other : 3985.37788018433
+MapCode 55 : Average biomass for Other : 1530
+MapCode 56 : Average biomass for Other : 350.580157687254
+MapCode 57 : Average biomass for Other : 140.295426360064
+MapCode 58 : Average biomass for Other : 70.875
+MapCode 59 : Average biomass for Other : 5805
+MapCode 60 : Average biomass for Other : 82.8254385964912
+MapCode 61 : Average biomass for Other : 90
+MapCode 62 : Average biomass for Other : NaN
+MapCode 63 : Average biomass for Other : 100.772727272727
+MapCode 64 : Average biomass for Other : 917.08940397351
+MapCode 65 : Average biomass for Other : 486.627589152253
+MapCode 66 : Average biomass for Other : 67.6935292371624
+MapCode 67 : Average biomass for Other : 49.8849557522124
+MapCode 68 : Average biomass for Other : 637.392405063291
+MapCode 69 : Average biomass for Other : 231.74625
+MapCode 70 : Average biomass for Other : 1218.04659498208
+MapCode 71 : Average biomass for Other : 371.39770761423
+MapCode 72 : Average biomass for Other : 552.785714285714
+MapCode 73 : Average biomass for Other : 45
+MapCode 74 : Average biomass for Other : 365.471544715447
+MapCode 75 : Average biomass for Other : 166.174698795181
+MapCode 76 : Average biomass for Other : 1755
+MapCode 77 : Average biomass for Other : 5051.25
+MapCode 78 : Average biomass for Other : NaN
+MapCode 79 : Average biomass for Other : 4078.38461538462
+MapCode 80 : Average biomass for Other : 2283.55555555556
+MapCode 81 : Average biomass for Other : 3464.30555555556
+MapCode 82 : Average biomass for Other : NaN
+MapCode 83 : Average biomass for Other : 308
+MapCode 84 : Average biomass for Other : 121.030805687204
+MapCode 85 : Average biomass for Other : NaN
+MapCode 86 : Average biomass for Other : NaN
+MapCode 87 : Average biomass for Other : 55.125
+MapCode 88 : Average biomass for Other : NaN
+MapCode 89 : Average biomass for Other : NaN
+MapCode 90 : Average biomass for Other : 90
+MapCode 91 : Average biomass for Other : NaN
+MapCode 92 : Average biomass for Other : 268.282442748092
+MapCode 93 : Average biomass for Other : 62.3463687150838
+MapCode 94 : Average biomass for Other : 45
+MapCode 95 : Average biomass for Other : 742.5
+MapCode 96 : Average biomass for Other : NaN
+MapCode 97 : Average biomass for Other : 1991.25
+MapCode 98 : Average biomass for Other : 438.518691588785
+MapCode 99 : Average biomass for Other : NaN
+MapCode 100 : Average biomass for Other : NaN
+MapCode 101 : Average biomass for Other : NaN
+MapCode 102 : Average biomass for Other : NaN
+MapCode 103 : Average biomass for Other : NaN
+MapCode 104 : Average biomass for Other : NaN
+MapCode 105 : Average biomass for Other : NaN
+MapCode 106 : Average biomass for Other : NaN
+MapCode 107 : Average biomass for Other : NaN
+MapCode 108 : Average biomass for Other : NaN
+MapCode 109 : Average biomass for Other : NaN
+MapCode 110 : Average biomass for Other : 518.741980193593
+MapCode 111 : Average biomass for Other : 846.030984913903
+MapCode 112 : Average biomass for Other : 1364.53554132167
+MapCode 113 : Average biomass for Other : 637.938586168671
+MapCode 114 : Average biomass for Other : 1117.99547884888
+MapCode 115 : Average biomass for Other : 1610.01915579161
+MapCode 116 : Average biomass for Other : 665.282111671725
+MapCode 117 : Average biomass for Other : 1291.18063605291
+MapCode 118 : Average biomass for Other : 2854.42343813802
+MapCode 119 : Average biomass for Other : 877.732355057454
+MapCode 120 : Average biomass for Other : 1613.87101346563
+MapCode 121 : Average biomass for Other : 2626.88727858293
+MapCode 122 : Average biomass for Other : 565.518904538043
+MapCode 123 : Average biomass for Other : 1410.22733245729
+MapCode 124 : Average biomass for Other : 4121.46065808298
+MapCode 125 : Average biomass for Other : 705.180761099366
+MapCode 126 : Average biomass for Other : 1697.20028495827
+MapCode 127 : Average biomass for Other : 3041.60729927007
+MapCode 128 : Average biomass for Other : 432.481081081081
+MapCode 129 : Average biomass for Other : NaN
+MapCode 130 : Average biomass for Other : NaN
+MapCode 131 : Average biomass for Other : NaN
+MapCode 132 : Average biomass for Other : 540
+MapCode 133 : Average biomass for Other : NaN
+MapCode 134 : Average biomass for Other : 801.511254924029
+MapCode 135 : Average biomass for Other : 660.012992603608
+MapCode 136 : Average biomass for Other : 993.175482378721
+MapCode 137 : Average biomass for Other : 1794.49177489177
+MapCode 138 : Average biomass for Other : 1257.41824249166
+MapCode 139 : Average biomass for Other : 913.398274313825
+MapCode 140 : Average biomass for Other : 1473.11916150816
+MapCode 141 : Average biomass for Other : 2927.99934533552
+MapCode 142 : Average biomass for Other : 1590.73735010237
+MapCode 143 : Average biomass for Other : 1030.74556895648
+MapCode 144 : Average biomass for Other : 1530.83333333333
+MapCode 145 : Average biomass for Other : 3073.39701492537
+MapCode 146 : Average biomass for Other : NaN
+MapCode 147 : Average biomass for Other : 630
