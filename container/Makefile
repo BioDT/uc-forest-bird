@@ -1,9 +1,6 @@
 IMAGE_ROOT?=ghcr.io/biodt
 IMAGE=landis
 IMAGE_VERSION=0.2.1
-NETLOGO_VERSION=6.3.0
-JAVA_VERSION=17
-R_VERSION=4.3.2
 
 
 build: Dockerfile
