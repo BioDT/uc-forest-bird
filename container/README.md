@@ -1,25 +1,19 @@
-# Container with LANDIS-II v7
+# Containers for the pDT
 
 ## Usage on LUMI
 
 ### Pulling the image
 
-Pull the pre-built image (replace `VERSION` with the desired version number):
+Pull the pre-built image (replace `NAME` and `VERSION` with the image name and version):
 
-    singularity pull --docker-login docker://ghcr.io/biodt/landis:VERSION
+    singularity pull --docker-login docker://ghcr.io/biodt/NAME:VERSION
 
-This creates singularity image file `landis_VERSION.sif`.
+This creates singularity image file `NAME_VERSION.sif`.
 
 Note that the image is for now private, which means that login is required.
 Follow [these instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic)
 and create a classic personal access token with scope 'read:packages'.
 Then, use your GitHub username and the created token in the login prompt of `singularity pull`.
-
-### Running the container
-
-Example submission script:
-
-    sbatch scripts/submit_single.lumi.sh
 
 
 ## Building a new image
