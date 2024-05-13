@@ -6,6 +6,10 @@
 *.gis
 *.img
 *.xml
+*.xslx
+*.txt
+*.bat
+*.bmp
 .Rproj.user
 .RData
 .Rhistory
