@@ -1,0 +1,834 @@
+LandisData   "Initial Communities"
+>> FOR AREA 14
+
+>>No forest
+MapCode 0
+
+>>No forest.	
+MapCode 1
+
+>> young spruce
+MapCode 2
+   piceabies 24 (500)
+      
+>> young pine
+MapCode 3
+   pinussyl 48 (1566)
+
+>> young birch   
+MapCode 4
+    betulaSP 80 (363)
+      
+>> young other
+MapCode 5
+    other 79 (2957)
+
+>> young other
+MapCode 110
+    piceabies 31 (1418)
+    pinussyl 31 (2103)
+
+>> young other
+MapCode 111
+    piceabies 31 (1610)
+    betulaSP 31 (2640)
+
+>> young other
+MapCode 112
+    piceabies 25 (1177)
+    other 25 (1365)
+
+>> young other
+MapCode 113
+    pinussyl 30 (1797)
+    betulaSP 30 (2044)
+
+>> young other
+MapCode 114
+    other 25 (1118)
+    pinussyl 25 (1365)
+
+>> young other
+MapCode 115
+    betulaSP 27 (2396)
+	other 27 (1610)
+
+>> young other
+MapCode 134
+    piceabies 29 (1874)
+    pinussyl 29 (1250)
+    betulaSP 29 (1511)
+    other 29 (802)
+
+>> young other
+MapCode 135
+    piceabies 30 (721)
+    pinussyl 30 (2058)
+    betulaSP 30 (1133)
+    other 30 (660)
+
+>> young other
+MapCode 136
+    piceabies 30 (906)
+    pinussyl 30 (1139)
+    betulaSP 30 (2976)
+    other 30 (993)
+
+>> young other
+MapCode 137
+    piceabies 26 (667)
+    pinussyl 26 (990)
+    betulaSP 26 (1290)
+    other 26 (1794)
+
+>> young other
+MapCode 6
+   piceabies 32 (3028) 
+   pinussyl 32 (2399)
+
+>> young Young Mixed spruce/birch 
+MapCode 7
+   piceabies 26 (3139)
+   betulaSP 26 (2544)
+   
+
+>> young Young Mixed spruce/other
+>>MapCode 8
+>>   piceabies 20 (700)
+>>   other 20 (500)
+
+>> young Young Mixed pine/spruce
+MapCode 9
+   piceabies 21 (1878)
+   pinussyl 21 (464)
+   betulaSP 21 (537)
+
+>> young Young Mixed pine/birch
+MapCode 10
+   piceabies 27 (2410)
+   pinussyl 27 (635)
+   other 27 (858)
+
+>> young Young Mixed pine/other
+MapCode 11
+   piceabies 29 (2694)
+   betulaSP 29 (1135)
+   other 29 (395)
+
+>> young Young Mixed birch/Spruce
+MapCode 12
+   pinussyl 33 (3995)
+   piceabies 33 (1653)
+
+>> young Young Mixed birch/pine
+MapCode 13
+   pinussyl 35 (4568)
+   betulaSP 35 (882)
+   piceabies 35 (999)
+
+>> Young Mixed birch/other
+MapCode 14
+   other 38 (1170)
+   piceabies 38 (5198)
+   pinussyl 38 (2000)
+
+>> young Other /spruce 
+MapCode 15
+   pinussyl 26 (1772)
+   betulaSP 26 (1086)
+
+>> young Other /pine 
+MapCode 16
+   pinussyl 26 (1482)
+   other 26 (655)
+
+>> Young Mixed other/birch  
+MapCode 17
+   pinussyl 31 (2403)  
+   betulaSP 31 (609)
+   other 31 (314)
+  	
+>> Young Mixed spruce/pine/dec
+MapCode 18
+   betulaSP 24 (2811)
+   piceabies 24 (954)
+
+>> middle spruce
+MapCode 19
+   betulaSP 37 (5358)
+   piceabies 37 (914)
+   pinussyl 37 (1375)
+   
+>> middle spruce
+MapCode 20
+   betulaSP 27 (3554)
+   piceabies 27 (600)
+   other 27 (763)
+
+
+>> middle birch
+MapCode 21
+   betulaSP 23 (2222)
+   pinussyl 23 (1033)
+  
+>> middle other
+MapCode 22
+   other 26 (1308)
+   betulaSP 26 (3454)
+
+>> middle spruce/pine
+MapCode 23
+   other 22 (1959)
+   piceabies 22 (903)
+
+>> middle Mixed spruce/birch
+MapCode 24
+   other 29 (4860)
+   pinussyl 29 (1540)
+   piceabies 29 (445)
+
+>> middle spruce/other 
+MapCode 25
+   piceabies 25 (408)
+   other 25 (2532)
+   betulaSP 25 (1080)
+
+>> middle pine/spruce
+MapCode 26
+    pinussyl 21 (1039)
+    other 21 (1549)
+
+>> middle pine/birch 
+MapCode 27
+   other 26 (2640)
+   betulaSP 26 (276)
+
+>> middle spruce/other 
+MapCode 28
+   piceabies 19 (618)
+   pinussyl 19 (840)
+   other 19 (687)
+   betulaSP 19 (977)
+ 
+>> MIDDLE FOREST TYPE
+
+>> middle birch/Spruce 
+MapCode 29
+   piceabies 53 (7415)
+   
+   
+>> middle birch/pine 
+MapCode 30
+   pinussyl 53 (4066)
+   
+
+>> middle birch/other   
+MapCode 31
+   betulaSP 53 (5397)
+   
+  	
+>> middle other/spruce
+MapCode 32
+   other 51 (5443)
+
+>> middle other/spruce
+MapCode 116
+   piceabies 52 (2604)
+   pinussyl 52 (3718)
+   
+
+>> middle other/spruce
+MapCode 117
+   piceabies 49 (2806)
+   betulaSP 49 (4000)
+   
+
+>> middle other/spruce
+MapCode 118
+   other 50 (2854)
+   piceabies 50 (2427)
+ 
+
+>> middle other/spruce
+MapCode 119
+   pinussyl 49 (2909)
+   betulaSP 49 (3120)
+   
+
+>> middle other/spruce
+MapCode 120
+   other 50 (1614)
+   pinussyl 50 (2137)
+  
+
+>> middle other/spruce
+MapCode 121
+   other 47 (2627)
+   betulaSP 47 (3607)
+
+
+>> middle other/spruce
+MapCode 138
+   other 51 (1257)
+   betulaSP 51 (2886)
+   pinussyl 51 (2407)
+   piceabies 51 (3684)
+
+>> middle other/spruce
+MapCode 139
+   other 50 (913)
+   betulaSP 50 (1735)
+   pinussyl 50 (3256)
+   piceabies 50 (1150)
+
+>> middle other/spruce
+MapCode 140
+   other 46 (1473)
+   betulaSP 46 (4363)
+   pinussyl 46 (1889)
+   piceabies 46 (1466)
+
+>> middle other/spruce
+MapCode 141
+   other 49 (2928)
+   betulaSP 49 (2149)
+   pinussyl 49 (1523)
+   piceabies 49 (1216)
+   
+
+>> middle other/pine
+MapCode 33
+   pinussyl 55 (3613)
+   piceabies 55 (4389)
+   betulaSP 55 (911)
+ 
+>> middle other/birch
+MapCode 34
+   betulaSP 53 (3851)
+   piceabies 53 (4232)
+   pinussyl 53 (1705)
+   
+>> mature spruce/pine/dec
+MapCode 35
+   piceabies 51 (5670)
+   other 51 (2610)
+
+
+>> mature spruce
+MapCode 36
+   piceabies 54 (5790)
+   pinussyl 54 (2227)
+   betulaSP 54 (1740)
+
+>> mature pine 
+MapCode 37
+   pinussyl 50 (1434)
+   piceabies 50 (4516)
+   other 50 (718)
+   betulaSP 50 (3665)
+ 
+>> mature Birch 
+MapCode 38
+   betulaSP 53 (1979)
+   piceabies 53 (5025)
+   other 53 (592)
+   pinussyl 53 (2644)
+
+>> mature other
+MapCode 39
+   piceabies 55 (2293)
+   pinussyl 55 (5789)
+   
+
+>> mature spruce/pine
+MapCode 40
+   piceabies 54 (1298)
+   pinussyl 54 (5825)
+   betulaSP 54 (724)
+
+>> mature spruce/birch 
+MapCode 41
+   piceabies 56 (1201)
+   pinussyl 56 (5940)
+   other 56 (810)
+  
+
+>> mature spruceOther 
+MapCode 42
+   pinussyl 51 (3040)
+   betulaSP 51 (1856)
+   piceabies 51 (506)
+
+>> mature pine/spruce 
+MapCode 43
+   other 50 (834)
+   pinussyl 50 (1942)
+
+>> mature pine/birch
+MapCode 44
+   pinussyl 53 (4303)
+   betulaSP 53 (916)
+   other 53 (390)
+   piceabies 53 (1231)
+
+>> mature pineOther 
+MapCode 45
+   betulaSP 49 (5901)
+   piceabies 49 (1979)
+ 	
+>> mature Birch-spruce
+MapCode 46
+   piceabies 53 (736)
+   betulaSP 53 (6624)
+   pinussyl 53 (1650)
+
+>> mature Birch-spruce
+MapCode 47
+   piceabies 48 (1023)
+   betulaSP 48 (5826)
+   other 48 (1019)
+
+>> mature birch/other
+MapCode 48
+   pinussyl 52 (1919)
+   betulaSP 52 (4165)
+   piceabies 52 (467)
+   
+>> mature other/spruce 
+MapCode 49
+   betulaSP 45 (5668)
+   other 45 (2095)
+
+>> mature other/pine 
+MapCode 50
+   piceabies 48 (1736)
+   other 48 (3778)
+
+>> mature other/spruce/pine
+>>MapCode 51
+>>   piceabies 50 (190)
+>>   pinussyl 50 (350)
+>>   other 50 (1000)
+
+>> mature other/spruce/birch
+MapCode 52
+   piceabies 50 (735)
+   betulaSP 50 (1705)
+   other 50 (3882)
+
+
+>> old spruce 
+MapCode 53
+ other 49 (1938)
+ pinussyl 49 (1327)
+ 
+
+>> old punus
+MapCode 54
+ other 48 (3985)
+ betulaSP 48 (2903)
+
+>> old Birch 
+MapCode 55
+   betulaSP 42 (2176)
+   piceabies 42 (1377)
+   pinussyl 42 (1870)
+   other 42 (1530)
+
+>> MATURE FORESTS
+
+>> old Other 
+MapCode 56
+   piceabies 78 (10546)
+ 
+ 
+>> old spruce/pine
+MapCode 57
+    pinussyl 85 (4409)
+
+>> old spruce/birch
+MapCode 58
+    betulaSP 63 (5216)
+
+>> old spruce/other
+MapCode 59
+   other 65 (5805)
+
+>> old spruce/other
+MapCode 122
+   piceabies 72 (3340)
+   pinussyl 72 (4633)
+   
+
+>> old spruce/other
+MapCode 123
+   piceabies 69 (4301)
+   betulaSP 69 (5049)
+   
+
+>> old spruce/other
+MapCode 124
+   other 67 (4121)
+   piceabies 67 (3994)
+ 
+
+>> old spruce/other
+MapCode 125
+   pinussyl 68 (3527)
+   betulaSP 68 (3550)
+  
+
+>> old spruce/other
+MapCode 126
+   other 73 (1697)
+   pinussyl 73 (2532)
+
+
+>> old spruce/other
+MapCode 127
+   other 66 (3042)
+   betulaSP 66 (4050)
+
+>> old spruce/other
+MapCode 142
+   other 69 (1591)
+   betulaSP 69 (3579)
+   pinussyl 69 (2977)
+   piceabies 69 (4810)
+
+
+>> old spruce/other
+MapCode 143
+   other 70 (1031)
+   betulaSP 70 (1541)
+   pinussyl 70 (3459)
+   piceabies 70 (1189)
+
+
+>> old spruce/other
+MapCode 144
+   other 65 (1531)
+   betulaSP 65 (4830)
+   pinussyl 65 (2168)
+   piceabies 65 (1655)
+
+
+>> old spruce/other
+MapCode 145
+   other 65 (3073)
+   betulaSP 65 (2087)
+   pinussyl 65 (1637)
+   piceabies 65 (1310)
+
+
+>> old pine/spruce
+MapCode 60
+   pinussyl 81 (4806)  
+   piceabies 81 (6175)
+   betulaSP 81 (835)
+
+>> old pine/birch
+MapCode 61
+   piceabies 75 (6682) 
+   betulaSP 75 (5767)
+   pinussyl 75 (2493)
+
+>> old pine/other
+>> MapCode 62
+>>   piceabies 80 (8000) 
+>>   other 80 (4500)
+
+>> old Birch/spruce
+MapCode 63
+   piceabies 77  (8588)
+   betulaSP 77 (1476)
+   pinussyl 77 (3523)
+
+>> old Birch/pine
+MapCode 64
+  pinussyl 74 (2357)  
+  piceabies 74 (6667)
+  other 74 (917)
+  betulaSP 74 (5066)
+
+>> old Birch/other
+MapCode 65
+   piceabies 74 (6435)  
+   other 74  (487) 
+   betulaSP 74 (1507)
+   pinussyl 74 (3981)
+   
+>> old other/spruce
+MapCode 66
+   piceabies 82 (2478) 
+   pinussyl 82 (5931)
+
+>> old other/pine
+MapCode 67
+   pinussyl 79 (5895)
+   piceabies 79 (1296)
+   betulaSP 79 (690)
+
+>> old other/Birch
+MapCode 68
+   other 84  (637)
+   pinussyl 84 (5185)
+   piceabies 84 (1002)
+
+>> old spruce/pine/ other/Birch
+MapCode 69
+   pinussyl 71  (4193)
+   betulaSP 71 (2546)
+   
+>> old spruce/pine/ other/Birch
+MapCode 70
+   pinussyl 80 (2864)
+   other 80 (1218)
+   betulaSP 80 (373)
+
+>> old spruce/pine/ other/Birch
+MapCode 71
+   pinussyl 75 (5039)
+   betulaSP 75 (713)
+   other 75 (371)
+   piceabies 75 (1511)
+
+>> old spruce/pine/ other/Birch
+MapCode 72
+   piceabies 68 (2540) 
+   betulaSP 68 (7095)
+   pinussyl 68 (1418)
+
+>> old spruce/pine/ other/Birch
+MapCode 73
+   pinussyl 66 (1337)
+   betulaSP 66 (5043)
+   piceabies 66 (518)
+
+>> old spruce/other/Birch
+MapCode 74
+   other 65 (365)
+   betulaSP 65 (5250)
+   piceabies 65 (761)
+
+>> old spruce/pine/ other/Birch
+MapCode 75
+   pinussyl 68 (2188)
+   betulaSP 68 (4548)
+   piceabies 68 (525)
+
+>> old spruce/pine/ other/Birch
+MapCode 76
+   other 71 (1755)
+   betulaSP 71 (5376)
+
+>> old spruce/pine/ other/Birch
+MapCode 77
+   other 65 (5051)
+   piceabies 65 (2339)
+
+>> old other/spruce/pine
+>>MapCode 78
+>>   pinussyl 80 (150)
+>>   piceabies 80 (200)
+>>   other 80 (900)
+
+>> old spruce/pine/ other/Birch
+MapCode 79
+   pinussyl 65 (801)
+   betulaSP 65 (1606)
+   other 65 (4078)
+
+>> old spruce/pine/ other/Birch
+MapCode 80
+   pinussyl 73 (1585)
+   other 73 (2284)
+
+>> old spruce/pine/ other/Birch
+MapCode 81
+   other 66 (3464)
+   betulaSP 66 (2401)
+
+
+>> OLD FOREST TYP
+
+>> old spruce/pine/ other/Birch
+MapCode 83
+ piceabies 125 (8237)
+
+
+>> old spruce/pine/ other/Birch
+MapCode 84
+ pinussyl 128 (5453)
+
+   
+>> old spruce/pine/ other/Birch
+>>MapCode 85
+>> betulaSP 110
+
+
+>> old spruce/pine/ other/Birch
+MapCode 128
+ pinussyl 127  (4133)
+ piceabies 127 (2924)
+ 
+
+>> old spruce/pine/ other/Birch
+>>MapCode 129
+>>   piceabies  110 (3500)
+>>   betulaSP 110 (3100)
+
+
+>> old spruce/pine/ other/Birch
+>>MapCode 130
+>>   piceabies 110  (3000)
+>>   other 110 (2300)
+
+>> old spruce/pine/ other/Birch
+>>MapCode 131
+>>   pinussyl 110  (2800)
+>>   betulaSP 110 (2400)
+ 
+
+>> old spruce/pine/ other/Birch
+MapCode 132
+   pinussyl 131 (1210)
+   other 131 (540)
+
+>> old spruce/pine/ other/Birch
+>>MapCode 133
+>> betulaSP 110  (1000)
+>>  other 110 (1000)
+
+>> old spruce/pine/ other/Birch
+>>MapCode 146
+>>   pinussyl 110 (1850) 
+>>   other 110 (1400)
+>>   piceabies 110 (3000)
+>>   betulaSP 110 (1400)
+
+>> old spruce/pine/ other/Birch
+MapCode 147
+   pinussyl 129 (3630) 
+   other 129 (630)
+   piceabies 129 (1336)
+   betulaSP 129 (1280)
+
+>> old spruce/pine/ other/Birch
+>>MapCode 148
+>> pinussyl 110   (1000)
+>>  other 110 (1000)
+>>  piceabies 110 (1000)
+>>  betulaSP 110 (1000)
+
+>> old spruce/pine/ other/Birch
+>>MapCode 149
+>>pinussyl 110   (1000)
+>>  other 110 (1000)
+>>  piceabies 110 (1000)
+>> betulaSP 110 (1000)
+
+>> old spruce/pine/ other/Birch
+MapCode 87
+   piceabies 125  (4912)
+   pinussyl 125 (4349)
+   betulaSP 125 (353)
+
+>> old spruce/pine/ other/Birch
+>>MapCode 88
+>> piceabies 110  (5200)
+>>   betulaSP 110 (2600)
+>>  pinussyl 110 (1300)
+
+
+>> old spruce/pine/ other/Birch
+MapCode 90
+   piceabies 124 (7882) 
+   pinussyl 124 (3110)
+   betulaSP 124 (767)
+
+>> old spruce/pine/ other/Birch
+>>MapCode 91
+>> piceabies 110  (4000)
+>>   pinussyl 110 (1100)
+>> other 110 (200)
+>> betulaSP 110 (2200)
+
+>> old spruce/pine/ other/Birch
+MapCode 92
+   piceabies 126 (4474)
+   betulaSP 126 (603)
+   other 126 (268)
+   pinussyl 126 (3522)
+
+>> old spruce/pine/ other/Birch
+MapCode 93
+   piceabies 129 (2242)
+   pinussyl 129 (5136)
+   betulaSP 129 (146)
+
+>> old spruce/pine/ other/Birch
+MapCode 94
+   piceabies 127  (1251)
+   pinussyl 127 (5310)
+   betulaSP 127 (163)
+
+>> old spruce/pine/ other/Birch
+MapCode 95
+   piceabies 127 (1093)
+   pinussyl 127 (5995)
+   other 127 (62)
+
+>> old spruce/pine/ other/Birch
+>>MapCode 96
+>>   betulaSP 110 (1600)
+>>   pinussyl 110 (3000)
+>>   piceabies 110 (700)
+
+>> old spruce/pine/ other/Birch
+MapCode 97
+   other 126  (1991)
+   pinussyl 126 (5198)
+
+>> old spruce/pine/ other/Birch
+MapCode 98
+   betulaSP 129 (465)  
+   pinussyl 129 (3653)
+   other 129 (439)
+   piceabies 129 (814)
+
+>> old spruce/pine/ other/Birch
+>>MapCode 99
+>>   piceabies 110  (13300)
+>>   betulaSP 110 (5500)
+
+>> old spruce/pine/ other/Birch
+>>MapCode 100
+>> piceabies 110  (450)
+>>   pinussyl 110 (1700)
+>>betulaSP 110 (4700)
+
+
+
+>> old spruce/pine/ other/Birch
+>>MapCode 102
+>> betulaSP 110  (4300)
+>>   pinussyl 110 (2650)
+
+>> old spruce/pine/ other/Birch
+>>MapCode 103
+>> other 110  (1000)
+>>  betulaSP 110 (1000)
+
+
+
+>> old spruce/pine/ other/Birch
+>>MapCode 107
+>> other 110  (2700)
+>>  pinussyl 110	(1300)
+
+>> old spruce/pine/ other/Birch
+>>MapCode 108
+>> other 110  (1000)
+>>   betulaSP 110 (1000)
+
