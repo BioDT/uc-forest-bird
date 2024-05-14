@@ -23,6 +23,7 @@ RUN for url in \
       'https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass-PnET/////raw/master/deploy/installer/LANDIS-II-V7 Output-PnET 4.0-setup.exe' \
       'https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass-Reclass//raw/master/deploy/installer/LANDIS-II-V7 Output Biomass Reclass 3.1-setup.exe' \
       'https://github.com/LANDIS-II-Foundation/Extension-Output-Max-Species-Age//raw/master/deploy/installer/LANDIS-II-V7 Output Max Species Age 3.0-setup.exe' \
+      'https://github.com/LANDIS-II-Foundation/Extension-Output-Cohort-Statistics/raw/master/deploy/installer/LANDIS-II-V7 Output Cohort Statistics 3.0.4-setup.exe' \
     ; do \
       echo "$url" && \
       wget -q "$url" -O setup.exe && \
