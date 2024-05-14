@@ -17,13 +17,13 @@ ENV WINEPREFIX=/wine \
     WINEARCH=win32
 
 RUN for url in \
-      'https://github.com/LANDIS-II-Foundation/Extension-PnET-Succession/////////raw/master/deploy/installer/LANDIS-II-V7 PnET-Succession 4.0.1-setup.exe' \
-      'https://github.com/LANDIS-II-Foundation/Extension-Biomass-Harvest/////////raw/master/deploy/installer/LANDIS-II-V7 Biomass Harvest 4.4-setup.exe' \
-      'https://github.com/LANDIS-II-Foundation/Extension-Base-Fire///////////////raw/master/deploy/installer/LANDIS-II-V7 Base Fire 4.0-setup.exe' \
-      'https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass-PnET/////raw/master/deploy/installer/LANDIS-II-V7 Output-PnET 4.0-setup.exe' \
-      'https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass-Reclass//raw/master/deploy/installer/LANDIS-II-V7 Output Biomass Reclass 3.1-setup.exe' \
-      'https://github.com/LANDIS-II-Foundation/Extension-Output-Max-Species-Age//raw/master/deploy/installer/LANDIS-II-V7 Output Max Species Age 3.0-setup.exe' \
-      'https://github.com/LANDIS-II-Foundation/Extension-Output-Cohort-Statistics/raw/master/deploy/installer/LANDIS-II-V7 Output Cohort Statistics 3.0.4-setup.exe' \
+      'https://github.com/LANDIS-II-Foundation/Extension-PnET-Succession///////////////////raw/master/deploy/installer/LANDIS-II-V7 PnET-Succession 4.0.1-setup.exe' \
+      'https://github.com/LANDIS-II-Foundation/Extension-Biomass-Harvest///////////////////raw/master/deploy/installer/LANDIS-II-V7 Biomass Harvest 4.4-setup.exe' \
+      'https://github.com/LANDIS-II-Foundation/Extension-Base-Fire/////////////////////////raw/master/deploy/installer/LANDIS-II-V7 Base Fire 4.0-setup.exe' \
+      'https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass-PnET///////////////raw/master/deploy/installer/LANDIS-II-V7 Output-PnET 4.0-setup.exe' \
+      'https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass-Reclass////////////raw/master/deploy/installer/LANDIS-II-V7 Output Biomass Reclass 3.1-setup.exe' \
+      'https://github.com/LANDIS-II-Foundation/Extension-Output-Max-Species-Age////////////raw/master/deploy/installer/LANDIS-II-V7 Output Max Species Age 3.0-setup.exe' \
+      'https://github.com/LANDIS-II-Foundation/Extension-Output-Cohort-Statistics//////////raw/master/deploy/installer/LANDIS-II-V7 Output Cohort Statistics 3.0.4-setup.exe' \
     ; do \
       echo "$url" && \
       wget -q "$url" -O setup.exe && \
