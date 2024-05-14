@@ -1,0 +1,1 @@
+This is the folder we use for classified rasters.
