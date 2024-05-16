@@ -28,7 +28,7 @@ project_directory <- dirname(dirname(script_path))
 ## Currently, it is working on single indicated scenario below.
 # Specify input and output directories
 input_directory <- file.path(project_directory, "models", "LANDIS-II", "BAU", "Current")
-output_directory <- file.path(project_directory, "data", "HMSC_inputs")
+output_directory <- file.path(project_directory, "data", "HMSC_inputs", "BAU", "Current", "base")
 
 # Create output directory if it doesn't exist
 if (!dir.exists(output_directory)) {
@@ -59,38 +59,38 @@ below_10_positions <- which(values(ecoregion) < 10)
 
 
 # Read the LANDIS output raster files for tree species
-spruce <- rast(file.path(input_directory, "./output/simulationname/agbiomass/piceabies/AGBiomass100.img"))
-pine <- rast(file.path(input_directory, "./output/simulationname/agbiomass/pinussyl/AGBiomass100.img"))
-birch <- rast(file.path(input_directory, "./output/simulationname/agbiomass/betulaSP/AGBiomass100.img"))
-other <- rast(file.path(input_directory, "./output/simulationname/agbiomass/other/AGBiomass100.img"))
-avg_age <- rast(file.path(input_directory, "./output/simulationname/age-all-spp/AGE-AVG-100.img"))
-med_age <- rast(file.path(input_directory, "./output/simulationname/age-all-spp/AGE-MED-100.img"))
+spruce <- rast(file.path(input_directory, "./output/simulationname/agbiomass/piceabies/AGBiomass0.img"))
+pine <- rast(file.path(input_directory, "./output/simulationname/agbiomass/pinussyl/AGBiomass0.img"))
+birch <- rast(file.path(input_directory, "./output/simulationname/agbiomass/betulaSP/AGBiomass0.img"))
+other <- rast(file.path(input_directory, "./output/simulationname/agbiomass/other/AGBiomass0.img"))
+avg_age <- rast(file.path(input_directory, "./output/simulationname/age-all-spp/AGE-AVG-0.img"))
+med_age <- rast(file.path(input_directory, "./output/simulationname/age-all-spp/AGE-MED-0.img"))
 
 #Convert volume to biomass
 e <- convert_landis_output(spruce)
 Spruce_V <- (e * 10000) / 405000  # Spruce biomass to m3
 Spruce_V[below_10_positions] <- NA  # Assign NAs to positions below 10
-writeRaster(Spruce_V, filename = file.path(output_directory, "Vol_Spruce.tif"), overwrite = TRUE, datatype = "INT2S")
+writeRaster(Spruce_V, filename = file.path(output_directory, "Vol_Spruce.tif"), overwrite = TRUE, gdal=c("COMPRESS=NONE"), datatype='INT4S')
 
 e <- convert_landis_output(pine)
 Pine_V <- (e * 10000) / 550000  # Spruce biomass to m3
 Pine_V[below_10_positions] <- NA  # Assign NAs to positions below 10
-writeRaster(Pine_V, filename = file.path(output_directory, "Vol_Pine.tif"), overwrite = TRUE, datatype = "INT2S")
+writeRaster(Pine_V, filename = file.path(output_directory, "Vol_Pine.tif"), overwrite = TRUE, gdal=c("COMPRESS=NONE"), datatype='INT4S')
 
 e <- convert_landis_output(birch)
 Birch_V <- (e * 10000) / 640000  # Spruce biomass to m3
 Birch_V[below_10_positions] <- NA  # Assign NAs to positions below 10
-writeRaster(Birch_V, filename = file.path(output_directory, "Vol_Birch.tif"), overwrite = TRUE, datatype = "INT2S")
+writeRaster(Birch_V, filename = file.path(output_directory, "Vol_Birch.tif"), overwrite = TRUE, gdal=c("COMPRESS=NONE"), datatype='INT4S')
 
 e <- convert_landis_output(other)
 Other_V <- (e * 10000) / 450000  # Spruce biomass to m3
 Other_V[below_10_positions] <- NA  # Assign NAs to positions below 10
-writeRaster(Other_V, filename = file.path(output_directory, "Vol_Other.tif"), overwrite = TRUE, datatype = "INT2S")
+writeRaster(Other_V, filename = file.path(output_directory, "Vol_Other.tif"), overwrite = TRUE, gdal=c("COMPRESS=NONE"), datatype='INT4S')
 
 age_A <- convert_landis_output(avg_age)
 age_A[below_10_positions] <- NA  # Assign NAs to positions below 10
-writeRaster(age_A, filename = file.path(output_directory, "Mean_Age.tif"), overwrite = TRUE, datatype = "INT2S")
+writeRaster(age_A, filename = file.path(output_directory, "Mean_Age.tif"), overwrite = TRUE, gdal=c("COMPRESS=NONE"), datatype='INT4S')
 
 age_M <- convert_landis_output(med_age)
 age_M[below_10_positions] <- NA  # Assign NAs to positions below 10
-writeRaster(age_M, filename = file.path(output_directory, "Med_Age.tif"), overwrite = TRUE, datatype = "INT2S")
+writeRaster(age_M, filename = file.path(output_directory, "Med_Age.tif"), overwrite = TRUE, gdal=c("COMPRESS=NONE"), datatype='INT4S')
