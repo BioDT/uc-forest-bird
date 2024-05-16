@@ -28,7 +28,7 @@ project_directory <- dirname(dirname(script_path))
 ## Currently, it is working on single indicated scenario below.
 # Specify input and output directories
 input_directory <- file.path(project_directory, "models", "LANDIS-II", "BAU", "Current")
-output_directory <- file.path(project_directory, "data", "HMSC_inputs", "BAU", "Current", "base")
+output_directory <- file.path(project_directory, "data", "HMSC_inputs", "BAU", "Current", "100yrs")
 
 # Create output directory if it doesn't exist
 if (!dir.exists(output_directory)) {
@@ -59,12 +59,12 @@ below_10_positions <- which(values(ecoregion) < 10)
 
 
 # Read the LANDIS output raster files for tree species
-spruce <- rast(file.path(input_directory, "./output/simulationname/agbiomass/piceabies/AGBiomass0.img"))
-pine <- rast(file.path(input_directory, "./output/simulationname/agbiomass/pinussyl/AGBiomass0.img"))
-birch <- rast(file.path(input_directory, "./output/simulationname/agbiomass/betulaSP/AGBiomass0.img"))
-other <- rast(file.path(input_directory, "./output/simulationname/agbiomass/other/AGBiomass0.img"))
-avg_age <- rast(file.path(input_directory, "./output/simulationname/age-all-spp/AGE-AVG-0.img"))
-med_age <- rast(file.path(input_directory, "./output/simulationname/age-all-spp/AGE-MED-0.img"))
+spruce <- rast(file.path(input_directory, "./output/simulationname/agbiomass/piceabies/AGBiomass100.img"))
+pine <- rast(file.path(input_directory, "./output/simulationname/agbiomass/pinussyl/AGBiomass100.img"))
+birch <- rast(file.path(input_directory, "./output/simulationname/agbiomass/betulaSP/AGBiomass100.img"))
+other <- rast(file.path(input_directory, "./output/simulationname/agbiomass/other/AGBiomass100.img"))
+avg_age <- rast(file.path(input_directory, "./output/simulationname/age-all-spp/AGE-AVG-100.img"))
+med_age <- rast(file.path(input_directory, "./output/simulationname/age-all-spp/AGE-MED-100.img"))
 
 #Convert volume to biomass
 e <- convert_landis_output(spruce)
