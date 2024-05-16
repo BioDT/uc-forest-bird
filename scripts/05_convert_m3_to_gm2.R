@@ -1,6 +1,6 @@
 # 05_convert_m3_to_gm2.R
 # Description:
-# This script converts volume in kg/m3 to biomass in g/m2.
+# This script converts volume in kg/m3 to biomass in g/m2.This is the unit LANDIS works.
 
 
 # Load required packages
