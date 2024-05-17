@@ -27,5 +27,5 @@ Fetch the landis container:
 
 Submit a batch job:
 
-    sbatch scripts/submit_single.lumi.sh
+    sbatch scripts/submit_single.lumi.sh current BAU
 

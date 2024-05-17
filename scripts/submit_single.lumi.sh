@@ -7,9 +7,11 @@
 #SBATCH --cpus-per-task=1 --mem-per-cpu=8G
 #SBATCH -t 24:00:00
 
+CLIMATE="$1"
+HARVEST="$2"
 LANDIS_TEMPLATE_DIR="$PWD/run_landis_template"
-LANDIS_DIR="run_landis_$SLURM_JOB_ID"
-SIF="$PWD/landis_0.3.0.sif"
+LANDIS_DIR="run_landis_${CLIMATE}_${HARVEST}_${SLURM_JOB_ID}"
+SIF="$PWD/landis_0.3.1.sif"
 export SINGULARITY_BIND="/pfs,/scratch,/projappl,/project,/flash,/appl"
 
 time0=$(date +%s.%N)
@@ -17,6 +19,8 @@ time0=$(date +%s.%N)
 # Create new run directory
 mkdir -p "$LANDIS_DIR"
 cp -p $LANDIS_TEMPLATE_DIR/* $LANDIS_DIR/
+cp "scenarios/climate_$CLIMATE.txt" $LANDIS_DIR/climate.txt
+cp "scenarios/biomass_harvest_$HARVEST.txt" $LANDIS_DIR/biomass-harvest.txt
 time1=$(date +%s.%N)
 
 # Execute landis
