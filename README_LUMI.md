@@ -2,7 +2,7 @@
 
 Note that all the input files are not included in this repository.
 
-## Preparations
+## General preparations
 
 Set the LUMI computational project:
 
@@ -15,17 +15,26 @@ Clone this repository on LUMI:
     git clone git@github.com:BioDT/uc-forest-bird.git
     cd uc-forest-bird
 
-Download `run_landis_template.zip` from cloud, transfer it to LUMI, and unzip:
+## Running LANDIS on LUMI
+
+### Preparations
+
+Download `run_landis_template.zip` and `scenarios.zip` from cloud, transfer to LUMI, and unzip:
 
     unzip run_landis_template.zip
+    unzip scenarios.zip
 
 Fetch the landis container:
 
-    singularity pull --docker-login docker://ghcr.io/biodt/landis:0.3.0
+    singularity pull --docker-login docker://ghcr.io/biodt/landis:0.3.1
 
-## Running LANDIS on LUMI
+### Running
 
-Submit a batch job:
+Submit a batch job for a single run:
 
     sbatch scripts/submit_single.lumi.sh current BAU
+
+Submit a batch job for a running all jobs in parallel on a single node:
+
+    sbatch scripts/submit_all.lumi.sh
 
