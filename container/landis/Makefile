@@ -1,6 +1,6 @@
 IMAGE_ROOT?=ghcr.io/biodt
 IMAGE=landis
-IMAGE_VERSION=0.3.0
+IMAGE_VERSION=0.3.1
 
 
 build: Dockerfile
