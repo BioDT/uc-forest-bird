@@ -3,8 +3,8 @@
 #SBATCH -o run_landis_%j.out
 #SBATCH -p largemem
 #SBATCH -N 1
-#SBATCH --ntasks-per-node=21
-#SBATCH --cpus-per-task=6
+#SBATCH --ntasks-per-node=64
+#SBATCH --cpus-per-task=2
 #SBATCH --mem=0
 #SBATCH -t 24:00:00
 
