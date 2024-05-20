@@ -4,7 +4,8 @@
 #SBATCH -p small
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=1 --mem-per-cpu=8G
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=8G
 #SBATCH -t 24:00:00
 
 CLIMATE="$1"
