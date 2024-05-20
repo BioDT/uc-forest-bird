@@ -36,3 +36,6 @@ Submit a batch job for a running all jobs in parallel on a single node:
 
     sbatch -A project_465000915 scripts/submit_all.lumi.sh
 
+To zip all run directories (with `7141504` as an example job id):
+
+    for d in run_landis_*_7141504; do zip -r $d.zip $d/ & done
