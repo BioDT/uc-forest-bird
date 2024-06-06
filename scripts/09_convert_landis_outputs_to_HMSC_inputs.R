@@ -39,7 +39,7 @@ if (!dir.exists(output_directory)) {
 convert_landis_output <- function(r_in) {
   
   # the projection of the raster (from original input raster)
-  projection =  "+proj=utm +zone=35 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+  projection = "+proj=utm +zone=35 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
   
   ## the x and y extent of the output Landis rasters
   r <- rast(nrows =1155 , ncols = 4441, crs=projection) 
