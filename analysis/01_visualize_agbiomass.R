@@ -64,7 +64,7 @@ for (climate in climate_scenarios) {
 df <- do.call(rbind, all_data)
 
 # Create a single PDF file
-pdf(file = "AGBiomass_all_species.pdf", width = 15, height = 10)
+pdf(file = file.path(base_path, "AGBiomass_all_species.pdf"), width = 15, height = 10)
 
 # Create the plot
 p <- ggplot(df, aes(x = Year, y = AGBiomass, color = Species)) +
