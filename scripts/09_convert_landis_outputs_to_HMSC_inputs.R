@@ -11,19 +11,13 @@ if (!requireNamespace("terra", quietly = TRUE)) {
 
 library(terra)
 
-# Check if the script is being run from within RStudio
-if (interactive()) {
-  # Get the path of the currently running script
-  script_path <- file.path(dirname(rstudioapi::getActiveDocumentContext()$path), "09_convert_landis_outputs_to_HMSC_inputs.R")
-  
-  # Print the script path
-  print(script_path)
-} else {
-  print("Not running in interactive mode (e.g., not in RStudio).")
-}
-
 # Specify project directory
-project_directory <- dirname(dirname(script_path))
+if (interactive()) {
+  project_directory <- dirname(dirname(rstudioapi::getActiveDocumentContext()$path))
+} else {
+  project_directory <- getwd()
+}
+print(project_directory)
 
 ## Currently, it is working on single indicated scenario below.
 # Specify input and output directories
@@ -94,3 +88,5 @@ writeRaster(age_A, filename = file.path(output_directory, "Mean_Age.tif"), overw
 age_M <- convert_landis_output(med_age)
 age_M[below_10_positions] <- NA  # Assign NAs to positions below 10
 writeRaster(age_M, filename = file.path(output_directory, "Med_Age.tif"), overwrite = TRUE, gdal=c("COMPRESS=NONE"), datatype='INT4S')
+
+
