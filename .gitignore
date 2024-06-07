@@ -11,5 +11,6 @@
 .Rhistory
 /results/*
 !/results/README.md
+!/results/*.pdf
 *.out
 run_landis_*
