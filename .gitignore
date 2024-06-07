@@ -9,5 +9,7 @@
 .Rproj.user
 .RData
 .Rhistory
+/results/*
+!/results/
 *.out
 run_landis_*
