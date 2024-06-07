@@ -9,3 +9,5 @@
 .Rproj.user
 .RData
 .Rhistory
+/results/*
+!/results/
