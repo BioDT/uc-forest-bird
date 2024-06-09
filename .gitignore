@@ -12,5 +12,6 @@
 /results/*
 !/results/README.md
 !/results/*.pdf
+!/results/visuals_based_on_total_cohorts/
 *.out
 run_landis_*
