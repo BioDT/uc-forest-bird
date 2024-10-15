@@ -6,6 +6,7 @@
 *.gis
 *.img
 *.xml
+*.nc
 .Rproj.user
 .RData
 .Rhistory
