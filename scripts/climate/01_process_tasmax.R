@@ -1,5 +1,5 @@
 # ==============================================================================
-# Script for Processing Climate Data (Temperature) from NetCDF files
+# Script for Processing Climate Data (Max Temperature) from NetCDF files
 # ==============================================================================
 # This script processes climate data stored in NetCDF format (temperature values in Kelvin),
 # reprojects the data, crops it to the study region, converts it to Celsius, computes
