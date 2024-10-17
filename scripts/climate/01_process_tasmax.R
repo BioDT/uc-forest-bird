@@ -12,6 +12,15 @@
 # - terra: For working with spatial raster data (NetCDF files).
 # - dplyr: For efficient data manipulation and handling.
 # - sf: For spatial data manipulation and reprojection.
+if (!requireNamespace("terra", quietly = TRUE)) {
+  install.packages("terra")
+}
+if (!requireNamespace("dplyr", quietly = TRUE)) {
+  install.packages("dplyr")
+}
+if (!requireNamespace("sf", quietly = TRUE)) {
+  install.packages("sf")
+}
 library(terra)    # For raster operations and handling NetCDF files
 library(dplyr)    # For data manipulation (mutate, rename, etc.)
 library(sf)       # For spatial operations and reprojection of spatial data
