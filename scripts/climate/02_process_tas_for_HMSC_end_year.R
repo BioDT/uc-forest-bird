@@ -79,14 +79,20 @@ get_seasonal_mean <- function(data, year, months) {
   seasonal_rasters <- crop(seasonal_rasters, study_extent)
   seasonal_rasters <- project(seasonal_rasters, study_crs)
   seasonal_mean <- mean(seasonal_rasters)
+  #print("original raster:")
+  #print(seasonal_mean)
   
   # Resample to study region's resolution and extent
   seasonal_mean_resampled <- resample(seasonal_mean,
                                       study_region_reproj,
                                       method = "bilinear")
+  #print("resampled raster:")
+  #print(seasonal_mean_resampled)
   
   # Project back to the study region's projection
   seasonal_mean_reproj <- project(seasonal_mean_resampled, crs(study_region))
+  #print("reprojected raster:")
+  #print(seasonal_mean_reproj)
   
   return(seasonal_mean_reproj)
 }
