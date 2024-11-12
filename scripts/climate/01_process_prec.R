@@ -133,7 +133,7 @@ for (nc_file in nc_files) {
   # Extract the prec values, ignoring the xy coordinates
   prec_values <- cropped_df[, 3:ncol(cropped_df)]
   
-  # Convert kg/m2 to mm from Kelvin to Celsius
+  # Convert kg/m2 to mm 
   prec_mm <- prec_values*86400*30
   
   # Convert the mm data to a matrix for easier manipulation
