@@ -56,6 +56,24 @@ fit <- auto.arima(ts_par)
 # Forecast for additional 132 months (11 years)
 forecasted <- forecast(fit, h = 132)
 
+###### Fit a TBATS model
+# fit_tbats <- tbats(ts_par)
+
+# Forecast for the next 132 months
+# forecasted_tbats <- forecast(fit_tbats, h = 132)
+
+###### Fit a Neural Network model (NNETAR)
+# fit_nnetar <- nnetar(ts_par)
+
+# Forecast for the next 132 months
+# forecasted_nnetar <- forecast(fit_nnetar, h = 132)
+
+##### Fit an ETS model
+# fit_ets <- ets(ts_par)
+
+# Forecast for the next 132 months
+# forecasted_ets <- forecast(fit_ets, h = 132)
+
 # Extract forecasted values and generate corresponding dates
 forecast_dates <- seq.Date(from = as.Date("2090-01-01"), by = "month", length.out = 132)
 
