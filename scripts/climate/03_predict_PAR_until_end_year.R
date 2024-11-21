@@ -89,6 +89,3 @@ forecast_df <- data.frame(year = forecast_year,
 output_file <- file.path(data_directory, "predicted_PAR_2090_2100.csv")
 # Save the predictions
 write.csv(forecast_df, output_file, row.names = FALSE)
-
-# Plot the results
-plot(forecasted, main = "PAR Forecast (2090-2100)", xlab = "Year", ylab = "PAR")
