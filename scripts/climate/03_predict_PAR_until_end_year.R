@@ -30,7 +30,7 @@ process_scenario <- function(scenario) {
   
   data_directory <- file.path(project_directory, "data", "climate", scenario, "output")
   # Load the data
-  input_file <- file.path(data_directory, "par_monthly.csv")
+  input_file <- file.path(data_directory, "par_monthly_2089.csv")
   # Read the data
   par_data <- read.csv(input_file)
   
