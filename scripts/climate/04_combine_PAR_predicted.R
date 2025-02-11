@@ -28,15 +28,17 @@ process_scenario <- function(scenario) {
   # Load the data
   par_file <- file.path(data_directory, "par_monthly_2089.csv")
   par_predicted_file <- file.path(data_directory, "predicted_PAR_2090_2100.csv")
+  par_predicted_past <- file.path(data_directory, "predicted_PAR_2006_2010.csv")
 
   
   # Read the data
-  par_predicted_data <- read.csv(par_predicted_file)
+  par_predicted_data_past <- read.csv(par_predicted_past)
+  par_predicted_data_future <- read.csv(par_predicted_file)
   par_data <- read.csv(par_file)
   
   
   # Combine the data
-  combined_data <- rbind(par_data, par_predicted_data)
+  combined_data <- rbind(par_predicted_data_past, par_data, par_predicted_data_future)
   
   output_file <- file.path(data_directory, "par_monthly.csv")
   # Write the result to a new CSV file
