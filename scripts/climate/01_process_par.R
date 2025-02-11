@@ -149,7 +149,7 @@ process_scenario <- function(scenario) {
     
     # Convert daily average PAR to µmol/m²/s (multiply by 4.6)
     # par_day_avg_umol <- par_day_avg * 4.6
-    # ASK THIS!!!!!
+    # Discussed and realized that we use the same unit, no need a conversion.
     
     # Extract time information from the cropped NetCDF data
     time_info <- time(cropped_data)
@@ -180,9 +180,9 @@ process_scenario <- function(scenario) {
   
   final_data <- do.call(rbind, final_data_list)
   
-  monthly_sum <- final_data %>%
+  monthly_avg <- final_data %>%
     group_by(year, month) %>%
-    summarise(par = sum(par_day, na.rm = TRUE))
+    summarise(par = mean(par_day, na.rm = TRUE))
     # When I take the mean, they are low values. ASK THIS!!!
   
   # ==============================================================================
@@ -191,7 +191,7 @@ process_scenario <- function(scenario) {
   # Save the final data frame (`monthly_avg`) containing monthly average PARs
   # to a CSV file for easy inspection and future analysis.
   
-  write.csv(monthly_sum, file = file.path(output_directory, "par_monthly_2089.csv"), row.names = FALSE)
+  write.csv(monthly_avg, file = file.path(output_directory, "par_monthly_2089.csv"), row.names = FALSE)
 }
 
 # Loop through each climate scenario and run the process
