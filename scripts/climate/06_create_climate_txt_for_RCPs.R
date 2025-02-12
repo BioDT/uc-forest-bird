@@ -19,7 +19,7 @@ print(project_directory)
 
 
 # List of climate scenarios (e.g., "current", "rcp45", "rcp85")
-climate_scenarios <- c("current", "rcp45", "rcp85")
+climate_scenarios <- c("rcp45", "rcp85")
 
 # Define function to process data for each scenario
 process_scenario <- function(scenario) {
