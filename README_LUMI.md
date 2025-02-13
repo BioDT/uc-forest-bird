@@ -25,8 +25,8 @@ transfer them to LUMI under `uc-forest-bird` directory, and unzip:
 Prepare a run directory with the NAME of choice:
 
     mkdir -p runs/NAME
-    mv run_landis_template runs/NAME/landis_template
-    mv scenarios runs/NAME/scenarios
+    cp -r run_landis_template runs/NAME/landis_template
+    cp -r scenarios runs/NAME/scenarios
 
 Fetch the landis container:
 
