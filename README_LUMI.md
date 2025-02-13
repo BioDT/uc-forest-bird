@@ -22,6 +22,12 @@ transfer them to LUMI under `uc-forest-bird` directory, and unzip:
     unzip run_landis_template.zip
     unzip scenarios.zip
 
+Prepare a run directory with the NAME of choice:
+
+    mkdir -p runs/NAME
+    mv run_landis_template runs/NAME/landis_template
+    mv scenarios runs/NAME/scenarios
+
 Fetch the landis container:
 
     singularity pull --docker-login docker://ghcr.io/biodt/landis:0.3.1
@@ -30,12 +36,12 @@ Fetch the landis container:
 
 Submit a batch job for a single run:
 
-    sbatch -A project_465000915 scripts/submit_single.lumi.sh current BAU
+    sbatch -A project_465000915 scripts/submit_single.lumi.sh runs/NAME current BAU
 
 Submit a batch job for a running all jobs in parallel on a single node:
 
-    sbatch -A project_465000915 scripts/submit_all.lumi.sh
+    sbatch -A project_465000915 scripts/submit_all.lumi.sh runs/NAME
 
-To zip all run directories (with `7141504` as an example job id):
+To zip run directory:
 
-    for d in run_landis_*_7141504; do zip -r $d.zip $d/ & done
+    zip -r NAME.zip runs/NAME
