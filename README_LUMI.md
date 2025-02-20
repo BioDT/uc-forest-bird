@@ -30,7 +30,9 @@ Prepare a run directory with the NAME of choice:
 
 Fetch the landis container:
 
-    singularity pull --docker-login docker://ghcr.io/biodt/landis:0.3.1
+    export SINGULARITY_DOCKER_USERNAME=...  # github username
+    export SINGULARITY_DOCKER_PASSWORD=...  # github token
+    singularity pull --disable-cache docker://ghcr.io/biodt/landis:0.3.1
 
 ### Running
 
