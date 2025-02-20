@@ -15,6 +15,11 @@ if (interactive()) {
   source(file.path("analysis", "common.R"))
 }
 
+results_directory <- file.path(results_directory, "visuals_based_on_total_cohorts")
+if(!dir.exists(results_directory)) {
+  dir.create(results_directory)
+}
+
 # Create an empty list to store the data
 all_data <- list()
 
@@ -48,7 +53,7 @@ plot_data <- combined_data %>%
 # Open a PDF device
 
 # Create a single PDF file
-pdf(file = file.path(results_directory, "visuals_based_on_total_cohorts", "AGBiomass_all_species.pdf"), width = 15, height = 5)
+pdf(file = file.path(results_directory, "AGBiomass_all_species.pdf"), width = 15, height = 5)
 
 unit = expression(paste("AGBiomass (g/m"^2, ")"))
 
@@ -87,7 +92,7 @@ plot_data <- combined_data %>%
 # Open a PDF device
 
 # Create a single PDF file
-pdf(file = file.path(results_directory, "visuals_based_on_total_cohorts", "BGBiomass_all_species.pdf"), width = 15, height = 5)
+pdf(file = file.path(results_directory, "BGBiomass_all_species.pdf"), width = 15, height = 5)
 
 unit = expression(paste("BGBiomass (g/m"^2, ")"))
 
@@ -127,7 +132,7 @@ plot_data <- combined_data %>%
 # Open a PDF device
 
 # Create a single PDF file
-pdf(file = file.path(results_directory, "visuals_based_on_total_cohorts", "AvAge_all_species.pdf"), width = 15, height = 5)
+pdf(file = file.path(results_directory, "AvAge_all_species.pdf"), width = 15, height = 5)
 
 unit = expression(paste("Age (years)"))
 
@@ -166,7 +171,7 @@ plot_data <- combined_data %>%
 # Open a PDF device
 
 # Create a single PDF file
-pdf(file = file.path(results_directory, "visuals_based_on_total_cohorts", "WoodyDebris_all_species.pdf"), width = 15, height = 5)
+pdf(file = file.path(results_directory, "WoodyDebris_all_species.pdf"), width = 15, height = 5)
 
 unit = expression(paste("Woody Debris (kgDW/m"^2, ")"))
 
