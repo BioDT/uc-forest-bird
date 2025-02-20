@@ -13,18 +13,35 @@ library(ggplot2)
 library(terra)
 library(gridExtra)
 
-# Specify project directory
+# Specify default directories
 if (interactive()) {
   project_directory <- dirname(dirname(rstudioapi::getActiveDocumentContext()$path))
 } else {
   project_directory <- getwd()
 }
-print(project_directory)
+# Be aware of the job ID "7188295", and do not forget to change it for different ones; or use command-line argument
+run_directory <- file.path(project_directory, "runs", "NAME", "run_7188295")
+results_directory <- file.path(project_directory, "results/")
 
+# Read directories from command-line argument
+args = commandArgs(trailingOnly=TRUE)
+if (length(args) > 0) {
+  run_directory <- args[1]
+}
+if (length(args) > 1) {
+  results_directory <- args[2]
+}
 
-# Define paths and scenarios
-base_path <- file.path(project_directory, "results/")
-climate_scenarios <- c("Current", "RCP4.5", "RCP8.5")
+print(sprintf("run_directory = %s", run_directory))
+stopifnot(dir.exists(run_directory))
+
+print(sprintf("results_directory = %s", results_directory))
+if(!dir.exists(results_directory)) {
+  dir.create(results_directory)
+}
+
+# Define cenarios
+climate_scenarios <- c("current", "4.5", "8.5")
 management_scenarios <- c("BAU", "EXT10", "EXT30", "GTR30", "NTLR", "NTSR", "SA")
 years <- seq(0, 100, by = 10)
 
@@ -37,8 +54,7 @@ all_data <- list()
 for (climate in climate_scenarios) {
   for (management in management_scenarios) {
     # Path to output directory
-    # Be aware of the job ID "7188295", and do not forget to change it for different ones.
-    path <- file.path(base_path, paste0("run_landis_", climate, "_", management, "_7188295"), "output", "agbiomass")
+    path <- file.path(run_directory, paste0(climate, "_", management), "output", "agbiomass")
     species_folders <- list.dirs(path, recursive = FALSE, full.names = TRUE)
     for (species_folder in species_folders) {
       species_name <- basename(species_folder)
@@ -64,7 +80,7 @@ for (climate in climate_scenarios) {
 df <- do.call(rbind, all_data)
 
 # Create a single PDF file
-pdf(file = file.path(base_path, "AGBiomass_all_species.pdf"), width = 15, height = 10)
+pdf(file = file.path(results_directory, "AGBiomass_all_species.pdf"), width = 15, height = 10)
 
 ag_unit = expression(paste("AGBiomass (g/m"^2, ")"))
 # Create the plot
