@@ -21,7 +21,10 @@ analysis_scripts=(\
 RUN_DIR="$1"
 if [ -z "$RUN_DIR" ]; then echo "set run directory"; exit 1; fi
 if [ ! -d "$RUN_DIR" ]; then echo "directory missing: $RUN_DIR"; exit 1; fi
+
 RESULTS_DIR="${2:-results}"
+mkdir -p "$RESULTS_DIR"
+
 script=${3:-analysis/${analysis_scripts[$SLURM_ARRAY_TASK_ID]}}
 
 SIF="$PWD/forest-bird_0.2.1.sif"
