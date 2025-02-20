@@ -1,7 +1,7 @@
 IMAGE_ROOT?=ghcr.io/biodt
 IMAGE=forest-bird
-IMAGE_VERSION=0.2.0
-R_VERSION=4.3.2
+IMAGE_VERSION=0.2.1
+R_VERSION=4.3.3
 
 
 build: Dockerfile
