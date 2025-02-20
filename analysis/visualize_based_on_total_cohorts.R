@@ -26,7 +26,6 @@ all_data <- list()
 # Loop through each combination of climate and management scenarios
 for (climate in climate_scenarios) {
   for (management in management_scenarios) {
-    # Construct the folder path
     file_path <- file.path(run_directory, paste0(climate, "_", management), "output", "TotalCohorts.txt")
 
     # Read the data if the file exists
