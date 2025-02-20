@@ -47,3 +47,18 @@ Submit a batch job for a running all jobs in parallel on a single node:
 To zip run directory:
 
     zip -r NAME.zip runs/NAME
+
+
+## Running analysis scripts on LUMI
+
+### First-time setup
+
+Fetch the R container:
+
+    export SINGULARITY_DOCKER_USERNAME=...  # github username
+    export SINGULARITY_DOCKER_PASSWORD=...  # github token
+    singularity pull --disable-cache docker://ghcr.io/biodt/forest-bird:0.2.1
+
+Run analysis scripts for the given run directory as input and the directory of choice as an output:
+
+    bash scripts/run_analysis.lumi.sh runs/NAME/run_JOBID/ results_output
