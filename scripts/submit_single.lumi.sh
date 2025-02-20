@@ -8,6 +8,9 @@
 #SBATCH --mem=8G
 #SBATCH -t 24:00:00
 
+# Timing
+time0=$(date +%s.%N)
+
 # Parse command-line arguments
 ROOT_DIR="$1"
 if [ -z "$ROOT_DIR" ]; then echo "set directory"; exit 1; fi
@@ -28,6 +31,8 @@ mkdir -p "$LANDIS_DIR"
 cp -p $LANDIS_TEMPLATE_DIR/* $LANDIS_DIR/
 cp "$SCENARIOS_DIR/climate_$CLIMATE.txt" $LANDIS_DIR/climate.txt
 cp "$SCENARIOS_DIR/biomass_harvest_$HARVEST.txt" $LANDIS_DIR/biomass-harvest.txt
+
+# Timing
 time1=$(date +%s.%N)
 
 # Execute landis
@@ -35,8 +40,12 @@ SIF="$PWD/landis_0.3.1.sif"
 export SINGULARITY_BIND="/pfs,/scratch,/projappl,/project,/flash,/appl"
 cd "$LANDIS_DIR"
 singularity run "$SIF" scenario.txt 2>&1 > out.txt
+
+# Timing
 time2=$(date +%s.%N)
 
-time=$(echo "$time2 - $time0" | bc)
-echo "Runtime $time s"
+# Report timing
+echo "Total runtime      $(echo $time2 - $time0 | bc) s" >> out.txt
+echo "- Directory prep   $(echo $time1 - $time0 | bc) s" >> out.txt
+echo "- LANDIS exec      $(echo $time2 - $time1 | bc) s" >> out.txt
 
