@@ -59,7 +59,9 @@ Fetch the R container:
     export SINGULARITY_DOCKER_PASSWORD=...  # github token
     singularity pull --disable-cache docker://ghcr.io/biodt/forest-bird:0.2.1
 
-Run analysis scripts for the given run directory (output directory can be changed):
+### Running
+
+Submit a batch job running all analysis scripts for the given run directory (output directory can be changed):
 
     sbatch scripts/run_analysis.lumi.sh runs/NAME/run_JOBID/ results_output
 
