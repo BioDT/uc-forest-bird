@@ -16,3 +16,4 @@
 !/results/visuals_based_on_total_cohorts/
 *.out
 run_landis_*
+runs/

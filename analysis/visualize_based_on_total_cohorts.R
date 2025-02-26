@@ -8,20 +8,17 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 
-# Specify project directory
+# Source common code
 if (interactive()) {
-  project_directory <- dirname(dirname(rstudioapi::getActiveDocumentContext()$path))
+  source(file.path(dirname(rstudioapi::getActiveDocumentContext()$path), "common.R"))
 } else {
-  project_directory <- getwd()
+  source(file.path("analysis", "common.R"))
 }
-print(project_directory)
 
-
-# Define paths and scenarios
-base_path <- file.path(project_directory, "results/")
-climate_scenarios <- c("Current", "RCP4.5", "RCP8.5")
-management_scenarios <- c("BAU", "EXT10", "EXT30", "GTR30", "NTLR", "NTSR", "SA")
-years <- seq(0, 100, by = 10)
+results_directory <- file.path(results_directory, "visuals_based_on_total_cohorts")
+if(!dir.exists(results_directory)) {
+  dir.create(results_directory)
+}
 
 # Create an empty list to store the data
 all_data <- list()
@@ -29,10 +26,8 @@ all_data <- list()
 # Loop through each combination of climate and management scenarios
 for (climate in climate_scenarios) {
   for (management in management_scenarios) {
-    # Construct the folder path
-    folder_name <- paste0("run_landis_", climate, "_", management, "_7188295")
-    file_path <- file.path(base_path, folder_name, "output", "TotalCohorts.txt")
-    
+    file_path <- file.path(run_directory, paste0(climate, "_", management), "output", "TotalCohorts.txt")
+
     # Read the data if the file exists
     if (file.exists(file_path)) {
       data <- read.csv(file_path)
@@ -57,7 +52,7 @@ plot_data <- combined_data %>%
 # Open a PDF device
 
 # Create a single PDF file
-pdf(file = file.path(base_path, "visuals_based_on_total_cohorts", "AGBiomass_all_species.pdf"), width = 15, height = 5)
+pdf(file = file.path(results_directory, "AGBiomass_all_species.pdf"), width = 15, height = 5)
 
 unit = expression(paste("AGBiomass (g/m"^2, ")"))
 
@@ -96,7 +91,7 @@ plot_data <- combined_data %>%
 # Open a PDF device
 
 # Create a single PDF file
-pdf(file = file.path(base_path, "visuals_based_on_total_cohorts", "BGBiomass_all_species.pdf"), width = 15, height = 5)
+pdf(file = file.path(results_directory, "BGBiomass_all_species.pdf"), width = 15, height = 5)
 
 unit = expression(paste("BGBiomass (g/m"^2, ")"))
 
@@ -136,7 +131,7 @@ plot_data <- combined_data %>%
 # Open a PDF device
 
 # Create a single PDF file
-pdf(file = file.path(base_path, "visuals_based_on_total_cohorts", "AvAge_all_species.pdf"), width = 15, height = 5)
+pdf(file = file.path(results_directory, "AvAge_all_species.pdf"), width = 15, height = 5)
 
 unit = expression(paste("Age (years)"))
 
@@ -175,7 +170,7 @@ plot_data <- combined_data %>%
 # Open a PDF device
 
 # Create a single PDF file
-pdf(file = file.path(base_path, "visuals_based_on_total_cohorts", "WoodyDebris_all_species.pdf"), width = 15, height = 5)
+pdf(file = file.path(results_directory, "WoodyDebris_all_species.pdf"), width = 15, height = 5)
 
 unit = expression(paste("Woody Debris (kgDW/m"^2, ")"))
 

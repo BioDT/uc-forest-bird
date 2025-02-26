@@ -13,32 +13,21 @@ library(ggplot2)
 library(terra)
 library(gridExtra)
 
-# Specify project directory
+# Source common code
 if (interactive()) {
-  project_directory <- dirname(dirname(rstudioapi::getActiveDocumentContext()$path))
+  source(file.path(dirname(rstudioapi::getActiveDocumentContext()$path), "common.R"))
 } else {
-  project_directory <- getwd()
+  source(file.path("analysis", "common.R"))
 }
-print(project_directory)
-
-
-# Define paths and scenarios
-base_path <- file.path(project_directory, "results/")
-climate_scenarios <- c("Current", "RCP4.5", "RCP8.5")
-management_scenarios <- c("BAU", "EXT10", "EXT30", "GTR30", "NTLR", "NTSR", "SA")
-years <- seq(0, 100, by = 10)
 
 # Initialize list to store data frames
 all_data <- list()
-
-
 
 # Read raster data and create a data frame
 for (climate in climate_scenarios) {
   for (management in management_scenarios) {
     # Path to output directory
-    # Be aware of the job ID "7188295", and do not forget to change it for different ones.
-    path <- file.path(base_path, paste0("run_landis_", climate, "_", management, "_7188295"), "output", "agbiomass")
+    path <- file.path(run_directory, paste0(climate, "_", management), "output", "agbiomass")
     species_folders <- list.dirs(path, recursive = FALSE, full.names = TRUE)
     for (species_folder in species_folders) {
       species_name <- basename(species_folder)
@@ -64,7 +53,7 @@ for (climate in climate_scenarios) {
 df <- do.call(rbind, all_data)
 
 # Create a single PDF file
-pdf(file = file.path(base_path, "AGBiomass_all_species.pdf"), width = 15, height = 10)
+pdf(file = file.path(results_directory, "AGBiomass_all_species.pdf"), width = 15, height = 10)
 
 ag_unit = expression(paste("AGBiomass (g/m"^2, ")"))
 # Create the plot

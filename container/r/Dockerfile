@@ -1,4 +1,4 @@
-ARG CONDA_VERSION=py311_23.9.0-0
+ARG CONDA_VERSION=py312_24.7.1-0
 
 #########################################
 # Base
@@ -37,19 +37,16 @@ RUN . /conda/etc/profile.d/conda.sh && \
         && \
     /conda/bin/conda clean -afy
 
-# Install common conda-available packages
+# Install conda-available packages
 RUN . /conda/etc/profile.d/conda.sh && \
     conda activate /conda/env && \
     conda install -c conda-forge --override-channels \
         r-terra \
-        && \
-    /conda/bin/conda clean -afy
-
-# Install other conda-available packages
-RUN . /conda/etc/profile.d/conda.sh && \
-    conda activate /conda/env && \
-    conda install -c conda-forge --override-channels \
         r-codetools \
+        r-gridExtra \
+        r-ggplot2 \
+        r-tidyr \
+        r-dplyr \
         && \
     /conda/bin/conda clean -afy
 

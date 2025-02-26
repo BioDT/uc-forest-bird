@@ -13,32 +13,21 @@ library(ggplot2)
 library(terra)
 library(gridExtra)
 
-# Specify project directory
+# Source common code
 if (interactive()) {
-  project_directory <- dirname(dirname(rstudioapi::getActiveDocumentContext()$path))
+  source(file.path(dirname(rstudioapi::getActiveDocumentContext()$path), "common.R"))
 } else {
-  project_directory <- getwd()
+  source(file.path("analysis", "common.R"))
 }
-print(project_directory)
-
-
-# Define paths and scenarios
-base_path <- file.path(project_directory, "results/")
-climate_scenarios <- c("Current", "RCP4.5", "RCP8.5")
-management_scenarios <- c("BAU", "EXT10", "EXT30", "GTR30", "NTLR", "NTSR", "SA")
-years <- seq(10, 100, by = 10)
 
 # Initialize list to store data frames
 all_data <- list()
-
-
 
 # Read raster data and create a data frame
 for (climate in climate_scenarios) {
   for (management in management_scenarios) {
     # Path to output directory
-    # Be aware of the job ID "7188295", and do not forget to change it for different ones.
-    path <- file.path(base_path, paste0("run_landis_", climate, "_", management, "_7188295"), "output", "harvest")
+    path <- file.path(run_directory, paste0(climate, "_", management), "output", "harvest")
     harvest_files <- list.files(path, pattern = "biomass-removed-[0-9]+\\.img$", full.names = TRUE)
     for (file in harvest_files) {
       year <- as.numeric(gsub("biomass-removed-|.img", "", basename(file)))
@@ -60,7 +49,7 @@ for (climate in climate_scenarios) {
 df <- do.call(rbind, all_data)
 
 # Create a single PDF file
-pdf(file = file.path(base_path, "Harvested_biomass.pdf"), width = 15, height = 5)
+pdf(file = file.path(results_directory, "Harvested_biomass.pdf"), width = 15, height = 5)
 
 harvest_unit = expression(paste("Harvested Biomass (g/m"^2, ")"))
 # Create the plot
