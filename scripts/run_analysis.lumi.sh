@@ -27,7 +27,7 @@ mkdir -p "$RESULTS_DIR"
 
 script=${3:-analysis/${analysis_scripts[$SLURM_ARRAY_TASK_ID]}}
 
-SIF="$PWD/forest-bird_0.2.1.sif"
+SIF="$PWD/forest-bird_0.3.0.sif"
 export SINGULARITY_BIND="/pfs,/scratch,/projappl,/project,/flash,/appl"
 echo $script
 singularity run "$SIF" "$script" "$RUN_DIR" "$RESULTS_DIR"

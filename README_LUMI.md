@@ -57,7 +57,7 @@ Fetch the R container:
 
     export SINGULARITY_DOCKER_USERNAME=...  # github username
     export SINGULARITY_DOCKER_PASSWORD=...  # github token
-    singularity pull --disable-cache docker://ghcr.io/biodt/forest-bird:0.2.1
+    singularity pull --disable-cache docker://ghcr.io/biodt/forest-bird:0.3.0
 
 ### Running
 
