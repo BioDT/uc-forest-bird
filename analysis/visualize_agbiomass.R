@@ -60,9 +60,9 @@ ag_unit = expression(paste("AGBiomass (g/m"^2, ")"))
 p <- ggplot(df, aes(x = Year, y = AGBiomass, color = Species)) +
   geom_line(size = 1) +
   facet_grid(Climate ~ Management, scales = "free_x") +
-  labs(title = "Above-ground biomass over time (100 years)", x = "Year", y = ag_unit, color = "") +
+  labs(title = "Above-ground biomass over time (until 2100)", x = "Year", y = ag_unit, color = "") +
   scale_color_discrete(labels = unique(df$Species)) +
-  scale_x_continuous(breaks = seq(0, 100, 25)) +
+  scale_x_continuous(breaks = seq(0, 80, 20)) +
   theme_minimal(base_size = 14) +
   theme(
     plot.title = element_text(size = 24, face = "bold"),

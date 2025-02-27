@@ -56,8 +56,8 @@ age_unit = expression(paste("Mean Age (years)"))
 p <- ggplot(df, aes(x = Year, y = MAge, color = Climate)) +
   geom_line(size = 1) +
   facet_grid(~ Management, scales = "free_x") +
-  labs(title = "Mean age over time (100 years)", x = "Year", y = age_unit, color = "Climate Scenario") +
-  scale_x_continuous(breaks = seq(0, 100, 25)) +
+  labs(title = "Mean age over time (until 2100)", x = "Year", y = age_unit, color = "Climate Scenario") +
+  scale_x_continuous(breaks = seq(0, 80, 20)) +
   theme_minimal(base_size = 14) +
   theme(
     plot.title = element_text(size = 24, face = "bold"),

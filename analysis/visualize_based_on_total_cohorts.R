@@ -60,7 +60,7 @@ unit = expression(paste("AGBiomass (g/m"^2, ")"))
 ggplot(plot_data, aes(x = Time, y = Value, color = Climate, group = Climate)) +
   geom_line(size = 1) +
   facet_wrap(~ Management, ncol = 7, scales = "free_x") +
-  scale_x_continuous(breaks = seq(0, 100, 25)) +
+  scale_x_continuous(breaks = seq(0, 80, 20)) +
   theme_minimal(base_size = 14) +
   theme(
     plot.title = element_text(size = 24, face = "bold"),
@@ -76,7 +76,7 @@ ggplot(plot_data, aes(x = Time, y = Value, color = Climate, group = Climate)) +
     strip.background = element_rect(fill = "gray90", color = "gray90"),
     axis.text.x = element_text(angle = 45, hjust = 1)
   ) +
-  labs(title = "Average above-ground biomass over time (100 years)", x = "Time", y = unit)
+  labs(title = "Average above-ground biomass over time (until 2100)", x = "Time", y = unit)
 
 # Close the PDF device
 dev.off()
@@ -99,7 +99,7 @@ unit = expression(paste("BGBiomass (g/m"^2, ")"))
 ggplot(plot_data, aes(x = Time, y = Value, color = Climate, group = Climate)) +
   geom_line(size = 1) +
   facet_wrap(~ Management, ncol = 7, scales = "free_x") +
-  scale_x_continuous(breaks = seq(0, 100, 25)) +
+  scale_x_continuous(breaks = seq(0, 80, 20)) +
   theme_minimal(base_size = 14) +
   theme(
     plot.title = element_text(size = 24, face = "bold"),
@@ -115,7 +115,7 @@ ggplot(plot_data, aes(x = Time, y = Value, color = Climate, group = Climate)) +
     strip.background = element_rect(fill = "gray90", color = "gray90"),
     axis.text.x = element_text(angle = 45, hjust = 1)
   ) +
-  labs(title = "Average below-ground biomass over time (100 years)", x = "Time", y = unit)
+  labs(title = "Average below-ground biomass over time (until 2100)", x = "Time", y = unit)
 
 # Close the PDF device
 dev.off()
@@ -139,7 +139,7 @@ unit = expression(paste("Age (years)"))
 ggplot(plot_data, aes(x = Time, y = Value, color = Climate, group = Climate)) +
   geom_line(size = 1) +
   facet_wrap(~ Management, ncol = 7, scales = "free_x") +
-  scale_x_continuous(breaks = seq(0, 100, 25)) +
+  scale_x_continuous(breaks = seq(0, 80, 20)) +
   theme_minimal(base_size = 14) +
   theme(
     plot.title = element_text(size = 24, face = "bold"),
@@ -155,7 +155,7 @@ ggplot(plot_data, aes(x = Time, y = Value, color = Climate, group = Climate)) +
     strip.background = element_rect(fill = "gray90", color = "gray90"),
     axis.text.x = element_text(angle = 45, hjust = 1)
   ) +
-  labs(title = "Average age over time (100 years)", x = "Time", y = unit)
+  labs(title = "Average age over time (until 2100)", x = "Time", y = unit)
 
 # Close the PDF device
 dev.off()
@@ -178,7 +178,7 @@ unit = expression(paste("Woody Debris (kgDW/m"^2, ")"))
 ggplot(plot_data, aes(x = Time, y = Value, color = Climate, group = Climate)) +
   geom_line(size = 1) +
   facet_wrap(~ Management, ncol = 7, scales = "free_x") +
-  scale_x_continuous(breaks = seq(0, 100, 25)) +
+  scale_x_continuous(breaks = seq(0, 80, 20)) +
   theme_minimal(base_size = 14) +
   theme(
     plot.title = element_text(size = 24, face = "bold"),
@@ -194,7 +194,7 @@ ggplot(plot_data, aes(x = Time, y = Value, color = Climate, group = Climate)) +
     strip.background = element_rect(fill = "gray90", color = "gray90"),
     axis.text.x = element_text(angle = 45, hjust = 1)
   ) +
-  labs(title = "Woody debris over time (100 years)", x = "Time", y = unit)
+  labs(title = "Woody debris over time (until 2100)", x = "Time", y = unit)
 
 # Close the PDF device
 dev.off()

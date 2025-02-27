@@ -64,9 +64,9 @@ pdf(file = file.path(results_directory, "AGBiomass_relative_change_all_species.p
 p <- ggplot(df, aes(x = Year, y = RelativeChange, color = Species)) +
   geom_line(size = 1) +
   facet_grid(Climate ~ Management, scales = "free_x") +
-  labs(title = "Relative change in above-ground biomass over time (100 years)", x = "Year", y = "Relative change (%)", color = "") +
+  labs(title = "Relative change in above-ground biomass over time (until 2100)", x = "Year", y = "Relative change (%)", color = "") +
   scale_color_discrete(labels = unique(df$Species)) +
-  scale_x_continuous(breaks = seq(0, 100, 25)) +
+  scale_x_continuous(breaks = seq(0, 80, 20)) +
   theme_minimal(base_size = 14) +
   theme(
     plot.title = element_text(size = 24, face = "bold"),
