@@ -49,7 +49,7 @@ To zip run directory:
     zip -r NAME.zip runs/NAME
 
 
-## Running analysis scripts on LUMI
+## Running analysis scripts and RStudio on LUMI
 
 ### First-time setup
 
@@ -57,11 +57,25 @@ Fetch the R container:
 
     export SINGULARITY_DOCKER_USERNAME=...  # github username
     export SINGULARITY_DOCKER_PASSWORD=...  # github token
-    singularity pull --disable-cache docker://ghcr.io/biodt/forest-bird:0.2.1
+    singularity pull --disable-cache docker://ghcr.io/biodt/forest-bird:0.3.0
 
-### Running
+### Running analysis scripts
 
 Submit a batch job running all analysis scripts for the given run directory (output directory can be changed):
 
     sbatch -A project_465000915 scripts/run_analysis.lumi.sh runs/NAME/run_JOBID/ runs/NAME/run_JOBID/results_output
+
+### Running RStudio
+
+1. Login to https://www.lumi.csc.fi/
+2. Launch Desktop app (default settings are ok)
+3. Connect to the Desktop session
+4. In the desktop view, right-click the desktop and select 'Open Terminal Here'
+5. In the terminal, run the following commands:
+
+       # Enter the project directory
+       cd /scratch/project_465000915/$USER/uc-forest-bird
+
+       # Launch RStudio
+       bash scripts/run_rstudio.lumi.sh
 
