@@ -73,9 +73,9 @@ Submit a batch job running all analysis scripts for the given run directory (out
 4. In the desktop view, right-click the desktop and select 'Open Terminal Here'
 5. In the terminal, run the following commands:
 
-      # Enter the project directory
-      cd /scratch/project_465000915/$USER/uc-forest-bird
+       # Enter the project directory
+       cd /scratch/project_465000915/$USER/uc-forest-bird
 
-      # Launch RStudio
-      bash scripts/run_rstudio.lumi.sh
+       # Launch RStudio
+       bash scripts/run_rstudio.lumi.sh
 
