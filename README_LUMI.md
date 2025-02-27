@@ -63,5 +63,5 @@ Fetch the R container:
 
 Submit a batch job running all analysis scripts for the given run directory (output directory can be changed):
 
-    sbatch scripts/run_analysis.lumi.sh runs/NAME/run_JOBID/ results_output
+    sbatch -A project_465000915 scripts/run_analysis.lumi.sh runs/NAME/run_JOBID/ results_output
 
