@@ -28,5 +28,5 @@ if(!dir.exists(results_directory)) {
 # Define scenarios
 climate_scenarios <- c("current", "4.5", "8.5")
 management_scenarios <- c("BAU", "EXT10", "EXT30", "GTR30", "NTLR", "NTSR", "SA")
-years <- seq(0, 100, by = 10)
+years <- seq(0, 80, by = 5)
 
