@@ -1,6 +1,6 @@
 IMAGE_ROOT?=ghcr.io/biodt
 IMAGE=forest-bird
-IMAGE_VERSION=0.2.1
+IMAGE_VERSION=0.3.0
 R_VERSION=4.3.3
 
 
