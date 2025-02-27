@@ -148,7 +148,7 @@ process_scenario <- function(scenario) {
     par_day_avg <- apply(par_matrix, 2, mean, na.rm = TRUE)
     
     # Convert daily average PAR to µmol/m²/s (multiply by 4.6)
-    # par_day_avg_umol <- par_day_avg * 4.6
+    par_day_avg_umol <- par_day_avg * 4.6
     # Discussed and realized that we use the same unit, no need a conversion.
     
     # Extract time information from the cropped NetCDF data
@@ -164,8 +164,8 @@ process_scenario <- function(scenario) {
     temp_data <- data.frame(
       year = year_month$year,
       month = year_month$month,
-      #par_day = par_day_avg_umol 
-      par_day = par_day_avg
+      par_day = par_day_avg_umol 
+      #par_day = par_day_avg
     )
     
     # Append this data to the final_data_list
