@@ -56,7 +56,8 @@ file_list <- c(
   file.path(data_directory, "par_monthly.csv"),
   file.path(data_directory, "prec_monthly.csv"),
   file.path(data_directory, "tasmax_monthly.csv"),
-  file.path(data_directory, "tasmin_monthly.csv")
+  file.path(data_directory, "tasmin_monthly.csv"),
+  file.path(data_directory, "tas_monthly.csv")
 )
 
 # Loop through files and process each
