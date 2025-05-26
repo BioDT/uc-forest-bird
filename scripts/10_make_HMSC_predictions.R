@@ -14,6 +14,14 @@ print(project_directory)
 scenario <- "4.5_NTLR"   # e.g., current_BAU, 4.5_EXT10
 year <- 40                  # e.g., 5, 10, 50
 
+# Override scenario and year from command-line argument
+args = commandArgs(trailingOnly=TRUE)
+if (length(args) > 0) {
+  split_arg = strsplit(args[1], "/")[[1]]
+  scenario = split_arg[1]
+  year = as.numeric(split_arg[2])
+}
+
 # --- Setup paths
 source_dir <- file.path(project_directory, "data", "HMSC_inputs", scenario, year)
 source2_dir <- file.path(project_directory, "data", "HMSC_inputs", "prediction_layers")
