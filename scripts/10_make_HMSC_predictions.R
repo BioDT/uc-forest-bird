@@ -23,13 +23,13 @@ if (length(args) > 0) {
 }
 
 # --- Setup paths
-source_dir <- file.path(project_directory, "data", "HMSC_inputs", scenario, year)
+source1_dir <- file.path(project_directory, "data", "HMSC_inputs", scenario, year)
 source2_dir <- file.path(project_directory, "data", "HMSC_inputs", "prediction_layers")
 climate_dir <- file.path(project_directory, "data", "HMSC_inputs", "climate")
 out_dir <- file.path(project_directory, "results", "predictions", scenario, year)
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
-if (!dir.exists(source_dir)) stop(paste("Source directory not found:", source_dir))
+if (!dir.exists(source1_dir)) stop(paste("Source directory not found:", source1_dir))
 
 # --- Load HMSC model ---
 model_path <- file.path(project_directory, "models", "HMSC")
@@ -50,7 +50,7 @@ for(i in 1:4){
 m$postList = postList
 
 # --- Load predictor rasters ---
-files <- list.files(c(source_dir, source2_dir), pattern = ".tif$", full.names=TRUE)
+files <- list.files(c(source1_dir, source2_dir), pattern = ".tif$", full.names=TRUE)
 allData <- lapply(files, rast)
 names(allData) <- sub(".tif$", "", basename(files))
 
