@@ -1,13 +1,17 @@
 # Running the pDT on LUMI
 
+The instructions here use a generic LUMI project `$PROJECT`. You can set variable to the actual project code like this:
+
+    export PROJECT=project_462000865
+
 Note that all the input files are not included in this repository.
 
 ## General first-time setup
 
 Clone this repository on LUMI:
 
-    mkdir -p /scratch/project_465000915/$USER/
-    cd /scratch/project_465000915/$USER/
+    mkdir -p /scratch/$PROJECT/$USER/
+    cd /scratch/$PROJECT/$USER/
     git clone https://github.com/BioDT/uc-forest-bird.git
     # git clone git@github.com:BioDT/uc-forest-bird.git  # alternative with ssh and push access
     cd uc-forest-bird
@@ -38,11 +42,11 @@ Fetch the landis container:
 
 Submit a batch job for a single run:
 
-    sbatch -A project_465000915 scripts/submit_single.lumi.sh runs/NAME current BAU
+    sbatch -A $PROJECT scripts/submit_single.lumi.sh runs/NAME current BAU
 
 Submit a batch job for a running all jobs in parallel on a single node:
 
-    sbatch -A project_465000915 scripts/submit_all.lumi.sh runs/NAME
+    sbatch -A $PROJECT scripts/submit_all.lumi.sh runs/NAME
 
 To zip run directory:
 
@@ -63,7 +67,7 @@ Fetch the R container:
 
 Submit a batch job running all analysis scripts for the given run directory (output directory can be changed):
 
-    sbatch -A project_465000915 scripts/run_analysis.lumi.sh runs/NAME/run_JOBID/ runs/NAME/run_JOBID/results_output
+    sbatch -A $PROJECT scripts/run_analysis.lumi.sh runs/NAME/run_JOBID/ runs/NAME/run_JOBID/results_output
 
 ### Running RStudio
 
@@ -74,7 +78,7 @@ Submit a batch job running all analysis scripts for the given run directory (out
 5. In the terminal, run the following commands:
 
        # Enter the project directory
-       cd /scratch/project_465000915/$USER/uc-forest-bird
+       cd /scratch/$PROJECT/$USER/uc-forest-bird
 
        # Launch RStudio
        bash scripts/run_rstudio.lumi.sh
