@@ -14,24 +14,22 @@ print(project_directory)
 scenario <- "4.5_NTLR"   # e.g., current_BAU, 4.5_EXT10
 year <- 40                  # e.g., 5, 10, 50
 
+# Override scenario and year from command-line argument
+args = commandArgs(trailingOnly=TRUE)
+if (length(args) > 0) {
+  split_arg = strsplit(args[1], "/")[[1]]
+  scenario = split_arg[1]
+  year = as.numeric(split_arg[2])
+}
+
 # --- Setup paths
-source_dir <- file.path(project_directory, "data", "HMSC_inputs", scenario, year)
-target_dir <- file.path(project_directory, "data", "HMSC_inputs", "prediction_layers")
+source1_dir <- file.path(project_directory, "data", "HMSC_inputs", scenario, year)
+source2_dir <- file.path(project_directory, "data", "HMSC_inputs", "prediction_layers")
 climate_dir <- file.path(project_directory, "data", "HMSC_inputs", "climate")
 out_dir <- file.path(project_directory, "results", "predictions", scenario, year)
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
-if (!dir.exists(source_dir)) stop(paste("Source directory not found:", source_dir))
-
-# Copy required rasters
-required_files <- c("Spruce_Volume.tif", "Pine_Volume.tif", "Birch_Volume.tif", "Other_Deciduous_Volume.tif", "Stand_Age.tif")
-for (f in required_files) {
-  file.copy(
-    from = file.path(source_dir, f),
-    to = file.path(target_dir, f),
-    overwrite = TRUE
-  )
-}
+if (!dir.exists(source1_dir)) stop(paste("Source directory not found:", source1_dir))
 
 # --- Load HMSC model ---
 model_path <- file.path(project_directory, "models", "HMSC")
@@ -52,10 +50,49 @@ for(i in 1:4){
 m$postList = postList
 
 # --- Load predictor rasters ---
-files <- list.files(target_dir, pattern = ".tif$")
-nf <- length(files)
-allData <- lapply(files, function(f) rast(file.path(target_dir, f)))
-names(allData) <- sub(".tif$", "", files)
+source1_files <- c(
+    "Birch_Volume.tif",
+    "Other_Deciduous_Volume.tif",
+    "Pine_Volume.tif",
+    "Spruce_Volume.tif",
+    "Stand_Age.tif"
+)
+source2_files = c(
+    "Acricultural_Land.tif",
+    "AprMay.tif",
+    "Barren_forest.tif",
+    "Barren.tif",
+    "Coastal.tif",
+    "Coniferous_Forest.tif",
+    "DecFeb.tif",
+    "Deciduous_Forest.tif",
+    "Forest_land.tif",
+    "Grasslands_Wetlands.tif",
+    "Herb_rich_heath_forest.tif",
+    "Herb_rich_site.tif",
+    "JunJul.tif",
+    "Mesic_forest.tif",
+    "Mineral_soil.tif",
+    "Mixed_Forest.tif",
+    "Mountain_birch_dominated_fjelds.tif",
+    "Open_bogs_and_fens.tif",
+    "Open_fjelds.tif",
+    "Pine_mire.tif",
+    "Poorly_productive_forest_land.tif",
+    "Rocky_and_sandy_soils.tif",
+    "Shrubs.tif",
+    "Spruce_mire.tif",
+    "Sub-xeric_forest.tif",
+    "Summit_and_fjeld_land_with_single_coniferous_trees.tif",
+    "Unproductive_land.tif",
+    "Urban.tif",
+    "Water_Bodies.tif",
+    "Xeric_forest.tif"
+)
+files <- c(unlist(lapply(source1_files, function(f) file.path(source1_dir, f))),
+           unlist(lapply(source2_files, function(f) file.path(source2_dir, f))))
+allData <- lapply(files, rast)
+names(allData) <- sub(".tif$", "", basename(files))
 
 # --- Select valid cells ---
 sel <- intersect(cells(allData$Acricultural_Land), cells(allData$Stand_Age))
