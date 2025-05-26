@@ -50,7 +50,47 @@ for(i in 1:4){
 m$postList = postList
 
 # --- Load predictor rasters ---
-files <- list.files(c(source1_dir, source2_dir), pattern = ".tif$", full.names=TRUE)
+source1_files <- c(
+    "Birch_Volume.tif",
+    "Other_Deciduous_Volume.tif",
+    "Pine_Volume.tif",
+    "Spruce_Volume.tif",
+    "Stand_Age.tif"
+)
+source2_files = c(
+    "Acricultural_Land.tif",
+    "AprMay.tif",
+    "Barren_forest.tif",
+    "Barren.tif",
+    "Coastal.tif",
+    "Coniferous_Forest.tif",
+    "DecFeb.tif",
+    "Deciduous_Forest.tif",
+    "Forest_land.tif",
+    "Grasslands_Wetlands.tif",
+    "Herb_rich_heath_forest.tif",
+    "Herb_rich_site.tif",
+    "JunJul.tif",
+    "Mesic_forest.tif",
+    "Mineral_soil.tif",
+    "Mixed_Forest.tif",
+    "Mountain_birch_dominated_fjelds.tif",
+    "Open_bogs_and_fens.tif",
+    "Open_fjelds.tif",
+    "Pine_mire.tif",
+    "Poorly_productive_forest_land.tif",
+    "Rocky_and_sandy_soils.tif",
+    "Shrubs.tif",
+    "Spruce_mire.tif",
+    "Sub-xeric_forest.tif",
+    "Summit_and_fjeld_land_with_single_coniferous_trees.tif",
+    "Unproductive_land.tif",
+    "Urban.tif",
+    "Water_Bodies.tif",
+    "Xeric_forest.tif"
+)
+files <- c(unlist(lapply(source1_files, function(f) file.path(source1_dir, f))),
+           unlist(lapply(source2_files, function(f) file.path(source2_dir, f))))
 allData <- lapply(files, rast)
 names(allData) <- sub(".tif$", "", basename(files))
 
