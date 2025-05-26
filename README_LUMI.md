@@ -53,7 +53,7 @@ To zip run directory:
     zip -r NAME.zip runs/NAME
 
 
-## Running analysis scripts and RStudio on LUMI
+## Running HMSC, analysis scripts, and RStudio on LUMI
 
 ### First-time setup
 
@@ -62,6 +62,12 @@ Fetch the R container:
     export SINGULARITY_DOCKER_USERNAME=...  # github username
     export SINGULARITY_DOCKER_PASSWORD=...  # github token
     singularity pull --disable-cache docker://ghcr.io/biodt/forest-bird:0.3.0
+
+### Running HMSC
+
+Submit a batch job running HMSC for all scenarios:
+
+    sbatch -A $PROJECT scripts/run_hmsc.lumi.sh
 
 ### Running analysis scripts
 
