@@ -16,22 +16,12 @@ year <- 40                  # e.g., 5, 10, 50
 
 # --- Setup paths
 source_dir <- file.path(project_directory, "data", "HMSC_inputs", scenario, year)
-target_dir <- file.path(project_directory, "data", "HMSC_inputs", "prediction_layers")
+source2_dir <- file.path(project_directory, "data", "HMSC_inputs", "prediction_layers")
 climate_dir <- file.path(project_directory, "data", "HMSC_inputs", "climate")
 out_dir <- file.path(project_directory, "results", "predictions", scenario, year)
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 if (!dir.exists(source_dir)) stop(paste("Source directory not found:", source_dir))
-
-# Copy required rasters
-required_files <- c("Spruce_Volume.tif", "Pine_Volume.tif", "Birch_Volume.tif", "Other_Deciduous_Volume.tif", "Stand_Age.tif")
-for (f in required_files) {
-  file.copy(
-    from = file.path(source_dir, f),
-    to = file.path(target_dir, f),
-    overwrite = TRUE
-  )
-}
 
 # --- Load HMSC model ---
 model_path <- file.path(project_directory, "models", "HMSC")
@@ -52,10 +42,9 @@ for(i in 1:4){
 m$postList = postList
 
 # --- Load predictor rasters ---
-files <- list.files(target_dir, pattern = ".tif$")
-nf <- length(files)
-allData <- lapply(files, function(f) rast(file.path(target_dir, f)))
-names(allData) <- sub(".tif$", "", files)
+files <- list.files(c(source_dir, source2_dir), pattern = ".tif$", full.names=TRUE)
+allData <- lapply(files, rast)
+names(allData) <- sub(".tif$", "", basename(files))
 
 # --- Select valid cells ---
 sel <- intersect(cells(allData$Acricultural_Land), cells(allData$Stand_Age))
