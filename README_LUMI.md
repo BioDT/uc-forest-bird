@@ -67,7 +67,11 @@ Fetch the R container:
 
 Submit a batch job running HMSC for all scenarios:
 
-    sbatch -A $PROJECT scripts/run_hmsc.lumi.sh
+    # Run first half of the cases as the number of simultaneous jobs is limited
+    sbatch -A $PROJECT --array=0-199 scripts/run_hmsc.lumi.sh
+
+    # After these jobs have finished, run the remaining cases
+    sbatch -A $PROJECT --array=200-335 scripts/run_hmsc.lumi.sh
 
 ### Running analysis scripts
 
