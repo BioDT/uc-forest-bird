@@ -18,11 +18,15 @@ presence_threshold <- 0.5  # richness = count of species with prob > threshold
 
 # Mammals to exclude (and only those present in your .tif list will be removed)
 mammals_to_exclude <- c(
-  "Alces alces",
-  "Capreolus capreolus",
-  "Lepus europaeus",
-  "Lepus timidus",
-  "Odocoileus virginianus"
+  "Alces alces", "Apodemus agrarius", "Apodemus flavicollis", "Arvicola amphibius", "Arvicolinae",
+  "Capreolus capreolus", "Dama dama", "Eptesicus nilssonii", "Erinaceus europaeus", "Felis catus",
+  "Halichoerus grypus", "Lepus europaeus", "Lepus timidus", "Lynx lynx", "Lutra lutra", "Martes martes",
+  "Meles meles", "Microtus", "Microtus agrestis", "Mus musculus", "Mustela erminea", "Mustela nivalis",
+  "Myodes glareolus", "Myodes rufocanus", "Myodes rutilus", "Myotis daubentonii", "Myotis mystacinus/brandtii",
+  "Myotis nattereri", "Neomys fodiens", "Neovison vison", "Nyctereutes procyonoides", "Odocoileus virginianus",
+  "Ondatra zibethicus", "Oryctolagus cuniculus", "Plecotus auritus", "Pteromys volans", "Pusa hispida",
+  "Rattus norvegicus", "Rangifer tarandus", "Sciurus vulgaris", "Sorex araneus", "Soricidae", "Talpa europaea",
+  "Vulpes vulpes"
 )
 
 # ---- compute richness ----
