@@ -176,7 +176,7 @@ for (i in 1:ncol(EpredY)) {
   a <- allData[[1]]
   a[cells(a)] <- NA
   a[sel] <- EpredY[, i]
-  writeRaster(a, filename = file.path(out_dir, paste0(colnames(EpredY)[i], ".tif")), overwrite = TRUE)
+  writeRaster(a, filename = file.path(out_dir, paste0(colnames(EpredY)[i], ".tif")), overwrite = TRUE, datatype = "FLT4S")
 }
 
 cat(paste("Finished:", scenario, "Year:", year, "\n"))
