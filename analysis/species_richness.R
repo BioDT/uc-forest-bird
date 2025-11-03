@@ -14,7 +14,7 @@ scenarios <- c(
   "8.5_BAU","8.5_EXT10","8.5_EXT30","8.5_GTR30","8.5_NTLR","8.5_NTSR","8.5_SA"
 )
 years <- seq(5, 80, 5)
-presence_threshold <- 0.5  # richness = count of species with prob > threshold
+# presence_threshold <- 0.5  # richness = count of species with prob > threshold
 
 # Mammals to exclude (and only those present in your .tif list will be removed)
 mammals_to_exclude <- c(
@@ -30,7 +30,7 @@ mammals_to_exclude <- c(
 )
 
 # ---- compute richness ----
-richness_summary <- data.frame(Scenario = character(), Year = integer(), MeanRichness = numeric())
+richness_summary <- data.frame(Scenario = character(), Year = integer(), TotalRichness = numeric())
 
 for (sc in scenarios) {
   for (yr in years) {
@@ -57,25 +57,92 @@ for (sc in scenarios) {
     
     # stack and compute richness
     s <- rast(tif_files_birds)
-    richness <- sum(s > presence_threshold, na.rm = TRUE)
+    richness <- sum(s, na.rm = TRUE)
     
     # write richness map
     #out_map <- file.path(project_directory, "results", "richness", sc, paste0("richness_", yr, ".tif"))
     #dir.create(dirname(out_map), recursive = TRUE, showWarnings = FALSE)
     #writeRaster(richness, out_map, overwrite = TRUE)
     
-    # mean richness value for summary
-    mean_rich <- global(richness, "mean", na.rm = TRUE)[[1]]
+    # expected richness value for summary
+    expected_rich <- global(richness, "sum", na.rm = TRUE)[[1]]
     
     richness_summary <- rbind(
       richness_summary,
-      data.frame(Scenario = sc, Year = yr, MeanRichness = mean_rich)
+      data.frame(Scenario = sc, Year = yr, TotalRichness = expected_rich)
     )
     
-    cat("✓", sc, "Year", yr, "→ mean richness:", round(mean_rich, 3), "\n")
+    cat("✓", sc, "Year", yr, "→ expected richness:", round(expected_rich, 3), "\n")
   }
 }
 
-# save summary
+# # save summary
 dir.create(file.path("results"), showWarnings = FALSE)
 write.csv(richness_summary, file.path(project_directory, "results", "richness_summary.csv"), row.names = FALSE)
+
+
+# good_prediction_dir <- file.path(project_directory, "results", "predictions", "current_BAU", "10")
+# tif_good <- list.files(good_prediction_dir, pattern="\\.tif$", full.names=TRUE)
+# r_good <- rast(tif_good)
+# ext(r_good); res(r_good); crs(r_good); origin(r_good)
+# 
+# bad_prediction_dir <- file.path(project_directory, "results", "predictions", "current_BAU", "80")
+# tif_bad <- list.files(bad_prediction_dir, pattern="\\.tif$", full.names=TRUE)
+# r_bad <- rast(tif_bad)
+# ext(r_bad); res(r_bad); crs(r_bad); origin(r_bad)
+# 
+# geom_ok <- sapply(tif_bad, \(f) compareGeom(rast(f), r_good, stopOnError=FALSE))
+# table(geom_ok)                       # FALSE indicates misaligned files
+# basename(tif_bad[!geom_ok])[1:10]    # peek at offenders
+# 
+# 
+# diag_folder <- file.path(project_directory, "results", "predictions", "current_BAU", "80")  # change to "10" to compare
+# tifs <- list.files(diag_folder, pattern="\\.tif$", full.names=TRUE)
+# s <- rast(tifs)
+# 
+# # 1) Pixel coverage: how many pixels have at least one non-NA across species?
+# has_any <- app(s, fun=function(x) any(!is.na(x)))
+# n_any   <- global(has_any, "sum", na.rm=TRUE)[[1]]
+# 
+# # 2) Pixels with any positive probability
+# has_pos <- app(s, fun=function(x) any(x > 0, na.rm=TRUE))
+# n_pos   <- global(has_pos, "sum", na.rm=TRUE)[[1]]
+# 
+# # 3) Per-layer basic stats (quick sanity)
+# mm <- minmax(s)
+# per_layer_mean <- global(s, "mean", na.rm=TRUE)  # one row per layer
+# 
+# # 4) Overall expected richness map summary
+# richness <- sum(s, na.rm=TRUE)
+# total_expected <- global(richness, "sum", na.rm=TRUE)[[1]]
+# mean_expected  <- global(richness, "mean", na.rm=TRUE)[[1]]
+# n_valid        <- global(!is.na(richness), "sum")[[1]]
+# 
+# cat("Pixels with any data:", n_any, "\n")
+# cat("Pixels with any positive prob:", n_pos, "\n")
+# cat("Valid pixels in richness map:", n_valid, "\n")
+# cat("Total expected:", format(total_expected, big.mark=","), "\n")
+# cat("Mean expected per pixel:", signif(mean_expected, 6), "\n")
+# 
+# # 5) How many layers are all-zero or all-NA?
+# all_zero <- sapply(1:nlyr(s), function(i) { z <- global(s[[i]] > 0, "sum", na.rm=TRUE)[[1]]; is.na(z) || z == 0 })
+# all_na   <- sapply(1:nlyr(s), function(i) { !is.finite(mm[1,i]) && !is.finite(mm[2,i]) })  # min & max NA
+# 
+# cat("Layers all-zero:", sum(all_zero), " / ", nlyr(s), "\n")
+# cat("Layers all-NA  :", sum(all_na),   " / ", nlyr(s), "\n")
+# 
+# # 6) Print a few suspicious layers
+# if (any(all_zero)) print(basename(tifs[which(all_zero)[1:min(10,sum(all_zero))]]))
+# if (any(all_na))   print(basename(tifs[which(all_na)[1:min(10,sum(all_na))]]))
+# 
+# sp <- "Accipiter gentilis.tif"
+# 
+# r_bad1  <- rast(file.path(project_directory, "results", "predictions", "current_BAU", "80", sp))
+# r_good1 <- rast(file.path(project_directory, "results", "predictions", "current_BAU", "10", sp))
+# 
+# # Check data type, min/max, and a quick value sample
+# datatype(r_bad1);  datatype(r_good1)
+# minmax(r_bad1);    minmax(r_good1)
+# unique(values(r_bad1)[1:1000])
+# 
+# 
