@@ -79,6 +79,10 @@ Submit a batch job running all analysis scripts for the given run directory (out
 
     sbatch -A $PROJECT scripts/run_analysis.lumi.sh runs/NAME/run_JOBID/ runs/NAME/run_JOBID/results_output
 
+Submit a batch job running HMSC analysis scripts:
+
+    sbatch -A $PROJECT scripts/run_hmsc_analysis.lumi.sh
+
 ### Running RStudio
 
 1. Login to https://www.lumi.csc.fi/
