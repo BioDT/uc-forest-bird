@@ -1,4 +1,5 @@
 library(terra)
+library(future.apply)
 
 # Specify default directories
 if (interactive()) {
@@ -30,53 +31,70 @@ mammals_to_exclude <- c(
 )
 
 # ---- compute richness ----
-richness_summary <- data.frame(Scenario = character(), Year = integer(), TotalRichness = numeric())
 
-for (sc in scenarios) {
-  for (yr in years) {
-    
-    prediction_dir <- file.path(project_directory, "results", "predictions", sc, yr)
-    tif_files <- list.files(prediction_dir, pattern = "\\.tif$", full.names = TRUE)
-    
-    if (length(tif_files) == 0) {
-      warning("No .tif files in: ", prediction_dir)
-      next
-    }
-    
-    # species names from filenames (without extension)
-    species_names <- tools::file_path_sans_ext(basename(tif_files))
-    
-    # keep only birds (exclude mammals that are present)
-    keep_idx <- !(species_names %in% mammals_to_exclude)
-    tif_files_birds <- tif_files[keep_idx]
-    
-    if (length(tif_files_birds) == 0) {
-      warning("All files excluded (mammals) in: ", prediction_dir)
-      next
-    }
-    
-    # stack and compute richness
-    s <- rast(tif_files_birds)
-    richness <- sum(s, na.rm = TRUE)
-    
-    # write richness map
-    #out_map <- file.path(project_directory, "results", "richness", sc, paste0("richness_", yr, ".tif"))
-    #dir.create(dirname(out_map), recursive = TRUE, showWarnings = FALSE)
-    #writeRaster(richness, out_map, overwrite = TRUE)
-    
-    # expected richness value for summary
-    expected_rich <- global(richness, "sum", na.rm = TRUE)[[1]]
-    
-    richness_summary <- rbind(
-      richness_summary,
-      data.frame(Scenario = sc, Year = yr, TotalRichness = expected_rich)
-    )
-    
-    cat("✓", sc, "Year", yr, "→ expected richness:", round(expected_rich, 3), "\n")
-  }
+# Detect number of workers from SLURM or default to 1
+workers <- as.integer(Sys.getenv("SLURM_CPUS_PER_TASK", unset = "1"))
+
+# Choose parallel plan (multicore for Linux, multisession otherwise)
+if (.Platform$OS.type == "unix") {
+  plan(multicore, workers = workers)
+} else {
+  plan(multisession, workers = workers)
 }
 
-# # save summary
+# Create combinations of scenarios and years
+combinations <- expand.grid(Scenario = scenarios, Year = years, stringsAsFactors = FALSE)
+
+compute_richness <- function(row) {
+  sc <- row$Scenario
+  yr <- row$Year
+
+  prediction_dir <- file.path(project_directory, "results", "predictions", sc, yr)
+  tif_files <- list.files(prediction_dir, pattern = "\\.tif$", full.names = TRUE)
+
+  if (length(tif_files) == 0) {
+    warning("No .tif files in: ", prediction_dir)
+    return(data.frame(Scenario = sc, Year = yr, TotalRichness = NA))
+  }
+
+  # species names from filenames (without extension)
+  species_names <- tools::file_path_sans_ext(basename(tif_files))
+
+  # keep only birds (exclude mammals that are present)
+  keep_idx <- !(species_names %in% mammals_to_exclude)
+  tif_files_birds <- tif_files[keep_idx]
+
+  if (length(tif_files_birds) == 0) {
+    warning("All files excluded (mammals) in: ", prediction_dir)
+    return(data.frame(Scenario = sc, Year = yr, TotalRichness = NA))
+  }
+
+  # stack and compute richness
+  s <- rast(tif_files_birds)
+  richness <- sum(s, na.rm = TRUE)
+
+  # expected richness value for summary
+  expected_rich <- global(richness, "sum", na.rm = TRUE)[[1]]
+
+  cat("✓", sc, "Year", yr, "→ expected richness:", round(expected_rich, 3), "\n")
+  flush(stdout())
+
+  return(data.frame(Scenario = sc, Year = yr, TotalRichness = expected_rich))
+}
+
+# Run in parallel
+richness_summary <- future_lapply(seq_len(nrow(combinations)), function(i) {
+  compute_richness(combinations[i, ])
+})
+
+# Combine results
+richness_summary <- do.call(rbind, richness_summary)
+
+# Sort by original scenario order and then by Year
+scenario_order <- match(richness_summary$Scenario, scenarios)
+richness_summary <- richness_summary[order(scenario_order, richness_summary$Year), ]
+
+# Save summary
 dir.create(file.path("results"), showWarnings = FALSE)
 write.csv(richness_summary, file.path(project_directory, "results", "richness_summary.csv"), row.names = FALSE)
 
