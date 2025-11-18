@@ -1,0 +1,152 @@
+LandisData  "Biomass Harvest"
+
+Timestep    5
+
+ManagementAreas managements.tif
+Stands      	stands.tif
+
+
+>>------------------------------------------------------------------------------------------------------------
+>>                      				PRESCRIPTIONS 
+>>------------------------------------------------------------------------------------------------------------
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Prescription clear-cut_normal_pine        << Clearcut plantation at 60 years of age and replant species according to foresters data
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    StandRanking  Random
+	
+	MinimumAge	77     
+	MinimumTimeSinceLastHarvest 30
+	
+ 	ForestTypeTable    << Conifers plantations                   
+    >> InclusionRule   ageRange    %Cells	  species
+    >>--------------------------------------------------------
+	Optional    	    10-999     highest	 piceabies           
+	Optional    	    10-999     highest   pinussyl 
+	Optional    	    10-999     highest   pinussyl piceabies 
+    	Optional    	    10-999     highest   pinussyl piceabies betulaSP
+	Optional    	    10-999     highest   pinussyl piceabies betulaSP other
+	Optional    	    10-999     highest   pinussyl piceabies other
+	Optional    	    10-999     highest   other betulaSP
+ 	Optional    	    10-999     highest   betulaSP
+ 	Optional	    10-999     highest	 other
+	
+	SiteSelection	Complete
+	CohortsRemoved SpeciesList
+	>> Species Selection
+	>> ------- ---------
+	pinussyl    1-20  	21-999(95%)    
+	piceabies   1-20 	21-999(95%)
+	betulaSP    1-20  	21-999(95%)
+	other	    1-20  	21-999(95%)                                           
+	
+
+Plant pinussyl
+
+>>	MultipleRepeat 15
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Prescription clear-cut_normal_Spruce        << Clearcut plantation at 60 years of age and replant species according to foresters data
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    StandRanking  Random
+	
+	MinimumAge	77     
+	MinimumTimeSinceLastHarvest 30
+	
+ 	ForestTypeTable    << Conifers plantations                   
+    >> InclusionRule   ageRange    %Cells	  species
+    >>--------------------------------------------------------
+	Optional    	    10-999     highest	 piceabies           
+	Optional    	    10-999     highest   pinussyl 
+	Optional    	    10-999     highest   pinussyl piceabies 
+        Optional    	    10-999     highest   pinussyl piceabies betulaSP
+	Optional    	    10-999     highest   pinussyl piceabies betulaSP other
+	Optional    	    10-999     highest   pinussyl piceabies other
+	Optional    	    10-999     highest   other betulaSP
+ 	Optional    	    10-999     highest   betulaSP
+ 	Optional	    10-999     highest	 other
+	
+	
+	SiteSelection	Complete
+	CohortsRemoved SpeciesList
+	>> Species Selection
+	>> ------- ---------
+	pinussyl    1-20  	21-999(95%)    
+	piceabies   1-20 	21-999(95%)
+	betulaSP    1-20  	21-999(95%)
+	other	    1-20  	21-999(95%)      
+
+Plant piceabies 
+
+>>	MultipleRepeat 15
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Prescription clear-cut_peat         << Clearcut plantation at 60 years of age and replant species according to foresters data
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    StandRanking  Random
+	
+	MinimumAge	77     
+	MinimumTimeSinceLastHarvest 30
+	
+ 	ForestTypeTable    << Conifers plantations                   
+    >> InclusionRule   ageRange    %Cells	  species
+    >>--------------------------------------------------------
+	Optional    	    10-999     highest	 piceabies           
+	Optional    	    10-999     highest   pinussyl 
+	Optional    	    10-999     highest   pinussyl piceabies 
+    	Optional    	    10-999     highest   pinussyl piceabies betulaSP
+	Optional    	    10-999     highest   pinussyl piceabies betulaSP other
+	Optional    	    10-999     highest   pinussyl piceabies other
+	Optional    	    10-999     highest   other betulaSP
+ 	Optional    	    10-999     highest   betulaSP
+ 	Optional	    10-999     highest	 other
+	
+	SiteSelection	Complete
+	CohortsRemoved SpeciesList
+	>> Species Selection
+	>> ------- ---------
+	pinussyl    1-20  	21-999(95%)    
+	piceabies   1-20 	21-999(95%)
+	betulaSP    1-20  	21-999(95%)
+	other	    1-20  	21-999(95%)      
+	
+
+Plant pinussyl
+
+
+>>--------------------------------------------------------------------
+>>                      HARVESTING IMPLEMENTATION 
+>>--------------------------------------------------------------------
+>>	MgtArea	Description
+>> ------------------------------------
+>>	1		nature reserves (no management)  
+>>	2		outside study area
+>>      3        	non-forest
+>>      4 		management peat forest
+>>      5               managed forest
+
+
+HarvestImplementations   
+>>  Mgmt Area   Prescription    		Harvest Area    Begin Year  End Year
+>>  ---------   ------------    		------------    ----------  --------
+	5			clear-cut_normal_pine		2.25%	
+	5			clear-cut_normal_Spruce 	2.25%		
+		
+	4			clear-cut_peat 			4.5%	
+
+>>	1			unharvested	
+	
+	
+>>-----------------------------------------------------------------
+>> OUTPUTS
+
+PrescriptionMaps    ./output/harvest/prescripts-{timestep}.img
+BiomassMaps			./output/harvest/biomass-removed-{timestep}.img
+EventLog            ./output/harvest/event-log.csv
+SummaryLog	    	./output/harvest/summary-log.csv
