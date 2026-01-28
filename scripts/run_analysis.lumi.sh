@@ -10,12 +10,9 @@
 #SBATCH --array=0-5
 
 analysis_scripts=(\
-    visualize_agbiomass.R \
-    visualize_agbiomass_relative_change.R \
     visualize_based_on_total_cohorts.R \
     visualize_deadwood.R \
     visualize_harvested_biomass.R \
-    visualize_mean_age.R \
 )
 
 RUN_DIR="$1"
