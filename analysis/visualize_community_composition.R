@@ -75,33 +75,59 @@ cluster_summary <- species_totals %>%
     .groups = "drop"
   )
 
-# A. All clusters in one figure
+cluster_summary$Climate <- factor(
+  cluster_summary$Climate,
+  levels = c("current", "4.5", "8.5")
+)
+
+cluster_summary$Management <- factor(cluster_summary$Management)
+
+# Common x axis scale, Year values 5, 30, 55, 80 correspond to 2025, 2050, 2075, 2100
+x_scale_calendar <- scale_x_continuous(
+  limits = c(5, 80),
+  breaks = c(5, 30, 55, 80),
+  labels = c("2025", "2050", "2075", "2100")
+)
+
+# A. All clusters in one figure, save as PDF
+pdf(file.path(results_dir, "cluster_mean_totals_all_clusters.pdf"), width = 12, height = 8)
+
 p_all <- ggplot(
   cluster_summary,
-  aes(x = Year, y = mean_total, colour = Scenario, group = Scenario)
+  aes(x = Year, y = mean_total, colour = Management, group = Scenario)
 ) +
   geom_line(linewidth = 0.7) +
-  facet_wrap(~ Cluster, scales = "free_y") +
+  facet_grid(Cluster ~ Climate, scales = "free_y") +
+  scale_x_continuous(
+    limits = c(5, 80),
+    breaks = c(5, 30, 55, 80),
+    labels = c("2025", "2050", "2075", "2100")
+  ) +
   labs(
-    title = "Cluster mean abundance across scenarios and years",
+    title = "Cluster mean abundance across climates and management",
     x = "Year",
-    y = "Mean total (sum of probabilities across Finland)"
+    y = "Mean total (sum of probabilities across Finland)",
+    colour = "Management"
   ) +
   theme_bw()
 
-ggsave(
-  filename = file.path(results_dir, "cluster_mean_totals_all_clusters.png"),
-  plot = p_all,
-  width = 10,
-  height = 6,
-  dpi = 300
-)
+print(p_all)
+dev.off()
 
-# B. Separate plot per cluster, faceted by climate, coloured by management
+# B. Separate plot per cluster, faceted by climate, coloured by management, save as PDF
 unique_clusters <- sort(unique(cluster_summary$Cluster))
 
 for (cl in unique_clusters) {
   df_cl <- cluster_summary %>% filter(Cluster == cl)
+  
+  pdf(
+    file = file.path(
+      results_dir,
+      paste0("cluster_", cl, "_mean_totals_by_climate_management.pdf")
+    ),
+    width = 10,
+    height = 6
+  )
   
   p_cl <- ggplot(
     df_cl,
@@ -114,20 +140,12 @@ for (cl in unique_clusters) {
       x = "Year",
       y = "Mean total"
     ) +
+    x_scale_calendar +
     theme_bw()
   
-  ggsave(
-    filename = file.path(
-      results_dir,
-      paste0("cluster_", cl, "_mean_totals_by_climate_management.png")
-    ),
-    plot = p_cl,
-    width = 10,
-    height = 6,
-    dpi = 300
-  )
+  print(p_cl)
+  dev.off()
 }
-
 
 ###############################################################################
 # 2. Indicator species for management and climate
