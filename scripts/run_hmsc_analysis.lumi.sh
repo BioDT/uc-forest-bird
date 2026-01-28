@@ -11,4 +11,4 @@
 export OMP_NUM_THREADS=1
 SIF="$PWD/forest-bird_0.3.0.sif"
 export SINGULARITY_BIND="/pfs,/scratch,/projappl,/project,/flash,/appl"
-singularity run "$SIF" "analysis/species_richness.R"
+singularity run "$SIF" "analysis/community_composition.R"
