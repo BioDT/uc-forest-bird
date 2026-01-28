@@ -56,34 +56,33 @@ for (climate in climate_scenarios) {
 # Combine all data frames
 df <- do.call(rbind, all_data)
 
-# Create a single PDF file
-pdf(file = file.path(results_directory, "Deadwood.pdf"), width = 15, height = 5)
+df$Climate <- factor(df$Climate, levels = climate_scenarios)
+df$Management <- factor(df$Management, levels = management_scenarios)
+pdf(
+  file = file.path(results_directory, "Deadwood_by_climate.pdf"),
+  width = 10,
+  height = 6
+)
 
-deadwood_unit = expression(paste("Deadwood (g/m"^2, ")"))
-# Create the plot
-p <- ggplot(df, aes(x = Year, y = TotalAGBiomass, color = Climate)) +
-  geom_line(size = 1) +
-  facet_grid(~ Management, scales = "free_x") +
-  labs(title = "Deadwood over time (until 2100)", x = "Year", y = deadwood_unit, color = "Climate Scenario") +
-  scale_x_continuous(breaks = seq(0, 80, 20)) +
-  theme_minimal(base_size = 14) +
-  theme(
-    plot.title = element_text(size = 24, face = "bold"),
-    axis.title = element_text(size = 20, face = "bold"),
-    axis.text = element_text(size = 16),
-    strip.text = element_text(size = 16, face = "bold"),
-    legend.position = "bottom",
-    legend.text = element_text(size = 14),
-    legend.title = element_text(size = 16, face = "bold"),
-    panel.background = element_rect(fill = "white"),
-    panel.grid.major = element_line(color = "gray90"),
-    panel.grid.minor = element_line(color = "gray95"),
-    strip.background = element_rect(fill = "gray90", color = "gray90"),
-    axis.text.x = element_text(angle = 45, hjust = 1)
-  )
+deadwood_unit <- expression(paste("Deadwood (g/m"^2, ")"))
 
-# Display the plot
-print(p)
+ggplot(
+  df,
+  aes(x = Year, y = TotalAGBiomass, colour = Management, group = Management)
+) +
+  geom_line(linewidth = 0.7) +
+  facet_wrap(~ Climate) +
+  scale_x_continuous(
+    limits = c(5, 80),
+    breaks = c(5, 30, 55, 80),
+    labels = c("2025", "2050", "2075", "2100")
+  ) +
+  labs(
+    title = "Deadwood over time (until 2100)",
+    x = "Year",
+    y = deadwood_unit,
+    colour = "Management"
+  ) +
+  theme_bw()
 
-# Close the PDF file
 dev.off()
