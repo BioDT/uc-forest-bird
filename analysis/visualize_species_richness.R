@@ -20,7 +20,7 @@ if (interactive()) {
   project_directory <- getwd()
 }
 
-rich <- read.csv(file.path(project_directory, "results", "richness_summary.csv"))
+rich <- read.csv(file.path(project_directory, "results", "mean_richness_summary.csv"))
 
 rich2 <- rich %>%
   separate(
@@ -33,7 +33,7 @@ rich2 <- rich %>%
 rich2$Climate <- factor(rich2$Climate, levels = c("4.5", "8.5", "current"))
 
 pdf(
-  file = file.path(project_directory, "results", "Species_richness_all_scenarios.pdf"),
+  file = file.path(project_directory, "results", "Mean_Species_richness_all_scenarios.pdf"),
   width = 15,
   height = 10
 )
@@ -42,7 +42,7 @@ p <- ggplot(rich2, aes(x = Year, y = TotalRichness, color = Climate)) +
   geom_line(size = 1) +
   facet_grid(. ~ Management, scales = "free_x") +
   labs(
-    title = "Total species richness over time (until 2100)",
+    title = "Mean species richness over time (until 2100)",
     x = "Time",
     y = "Species richness",
     color = ""
@@ -71,7 +71,7 @@ dev.off()
 
 
 pdf(
-  file = file.path(project_directory, "results", "Species_richness_by_climate.pdf"),
+  file = file.path(project_directory, "results", "Mean_Species_richness_by_climate.pdf"),
   width = 15,
   height = 10
 )
@@ -80,7 +80,7 @@ p2 <- ggplot(rich2, aes(x = Year, y = TotalRichness, color = Management)) +
   geom_line(size = 1) +
   facet_grid(Climate ~ .) +
   labs(
-    title = "Total species richness by climate scenario (until 2100)",
+    title = "Mean species richness by climate scenario (until 2100)",
     x = "Time",
     y = "Species richness",
     color = ""
