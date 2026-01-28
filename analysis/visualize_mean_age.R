@@ -48,34 +48,30 @@ for (climate in climate_scenarios) {
 # Combine all data frames
 df <- do.call(rbind, all_data)
 
-# Create a single PDF file
-pdf(file = file.path(results_directory, "Mean_Age_All_Species.pdf"), width = 15, height = 5)
+df$Climate <- factor(df$Climate, levels = climate_scenarios)
+df$Management <- factor(df$Management, levels = management_scenarios)
 
-age_unit = expression(paste("Mean Age (years)"))
-# Create the plot
-p <- ggplot(df, aes(x = Year, y = MAge, color = Climate)) +
-  geom_line(size = 1) +
-  facet_grid(~ Management, scales = "free_x") +
-  labs(title = "Mean age over time (until 2100)", x = "Year", y = age_unit, color = "Climate Scenario") +
+pdf(
+  file = file.path(results_directory, "Mean_Age_by_climate.pdf"),
+  width = 10,
+  height = 6
+)
+
+age_unit <- expression(paste("Mean age (years)"))
+
+ggplot(
+  df,
+  aes(x = Year, y = MAge, colour = Management, group = Management)
+) +
+  geom_line(linewidth = 0.7) +
+  facet_wrap(~ Climate, scales = "free_y") +
   scale_x_continuous(breaks = seq(0, 80, 20)) +
-  theme_minimal(base_size = 14) +
-  theme(
-    plot.title = element_text(size = 24, face = "bold"),
-    axis.title = element_text(size = 20, face = "bold"),
-    axis.text = element_text(size = 16),
-    strip.text = element_text(size = 16, face = "bold"),
-    legend.position = "bottom",
-    legend.text = element_text(size = 14),
-    legend.title = element_text(size = 16, face = "bold"),
-    panel.background = element_rect(fill = "white"),
-    panel.grid.major = element_line(color = "gray90"),
-    panel.grid.minor = element_line(color = "gray95"),
-    strip.background = element_rect(fill = "gray90", color = "gray90"),
-    axis.text.x = element_text(angle = 45, hjust = 1)
-  )
+  labs(
+    title = "Mean age over time (until 2100)",
+    x = "Year",
+    y = age_unit,
+    colour = "Management"
+  ) +
+  theme_bw()
 
-# Display the plot
-print(p)
-
-# Close the PDF file
 dev.off()
