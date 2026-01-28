@@ -42,6 +42,9 @@ for (climate in climate_scenarios) {
 # Combine all data into a single data frame
 combined_data <- bind_rows(all_data)
 
+combined_data$Climate <- factor(combined_data$Climate, levels = climate_scenarios)
+combined_data$Management <- factor(combined_data$Management, levels = management_scenarios)
+
 
 ############Average above-ground biomass#############################
 # Filter relevant columns and reshape the data for plotting
@@ -51,35 +54,35 @@ plot_data <- combined_data %>%
 
 # Open a PDF device
 
-# Create a single PDF file
-pdf(file = file.path(results_directory, "AGBiomass_all_species.pdf"), width = 15, height = 5)
+pdf(
+  file = file.path(results_directory, "AGBiomass_by_climate.pdf"),
+  width = 10,
+  height = 6
+)
 
-unit = expression(paste("AGBiomass (g/m"^2, ")"))
+unit <- expression(paste("AGBiomass (g/m"^2, ")"))
 
-# Create the plot
-ggplot(plot_data, aes(x = Time, y = Value, color = Climate, group = Climate)) +
-  geom_line(size = 1) +
-  facet_wrap(~ Management, ncol = 7, scales = "free_x") +
-  scale_x_continuous(breaks = seq(0, 80, 20)) +
-  theme_minimal(base_size = 14) +
-  theme(
-    plot.title = element_text(size = 24, face = "bold"),
-    axis.title = element_text(size = 20),
-    axis.text = element_text(size = 16),
-    strip.text = element_text(size = 16),
-    legend.position = "bottom",
-    legend.text = element_text(size = 16),
-    legend.title = element_blank(),
-    panel.background = element_rect(fill = "white"),
-    panel.grid.major = element_line(color = "gray90"),
-    panel.grid.minor = element_line(color = "gray95"),
-    strip.background = element_rect(fill = "gray90", color = "gray90"),
-    axis.text.x = element_text(angle = 45, hjust = 1)
+ggplot(
+  plot_data,
+  aes(x = Time, y = Value, colour = Management, group = Management)
+) +
+  geom_line(linewidth = 0.7) +
+  facet_wrap(~ Climate) +
+  scale_x_continuous(
+    limits = c(5, 80),
+    breaks = c(5, 30, 55, 80),
+    labels = c("2025", "2050", "2075", "2100")
   ) +
-  labs(title = "Average above-ground biomass over time (until 2100)", x = "Time", y = unit)
+  labs(
+    title = "Average above-ground biomass over time (until 2100)",
+    x = "Time",
+    y = unit,
+    colour = "Management"
+  ) +
+  theme_bw()
 
-# Close the PDF device
 dev.off()
+
 
 
 ############Average below-ground biomass#############################
@@ -90,34 +93,33 @@ plot_data <- combined_data %>%
 
 # Open a PDF device
 
-# Create a single PDF file
-pdf(file = file.path(results_directory, "BGBiomass_all_species.pdf"), width = 15, height = 5)
+pdf(
+  file = file.path(results_directory, "BGBiomass_by_climate_management.pdf"),
+  width = 10,
+  height = 6
+)
 
-unit = expression(paste("BGBiomass (g/m"^2, ")"))
+unit <- expression(paste("BGBiomass (g/m"^2, ")"))
 
-# Create the plot
-ggplot(plot_data, aes(x = Time, y = Value, color = Climate, group = Climate)) +
-  geom_line(size = 1) +
-  facet_wrap(~ Management, ncol = 7, scales = "free_x") +
-  scale_x_continuous(breaks = seq(0, 80, 20)) +
-  theme_minimal(base_size = 14) +
-  theme(
-    plot.title = element_text(size = 24, face = "bold"),
-    axis.title = element_text(size = 20),
-    axis.text = element_text(size = 16),
-    strip.text = element_text(size = 16),
-    legend.position = "bottom",
-    legend.text = element_text(size = 16),
-    legend.title = element_blank(),
-    panel.background = element_rect(fill = "white"),
-    panel.grid.major = element_line(color = "gray90"),
-    panel.grid.minor = element_line(color = "gray95"),
-    strip.background = element_rect(fill = "gray90", color = "gray90"),
-    axis.text.x = element_text(angle = 45, hjust = 1)
+ggplot(
+  plot_data,
+  aes(x = Time, y = Value, colour = Management, group = Management)
+) +
+  geom_line(linewidth = 0.7) +
+  facet_wrap(~ Climate) +
+  scale_x_continuous(
+    limits = c(5, 80),
+    breaks = c(5, 30, 55, 80),
+    labels = c("2025", "2050", "2075", "2100")
   ) +
-  labs(title = "Average below-ground biomass over time (until 2100)", x = "Time", y = unit)
+  labs(
+    title = "Average below-ground biomass over time (until 2100)",
+    x = "Time",
+    y = unit,
+    colour = "Management"
+  ) +
+  theme_bw()
 
-# Close the PDF device
 dev.off()
 
 
@@ -129,36 +131,35 @@ plot_data <- combined_data %>%
   pivot_longer(cols = AverageAge, names_to = "Variable", values_to = "Value")
 
 # Open a PDF device
+pdf(
+  file = file.path(results_directory, "AvAge_by_climate.pdf"),
+  width = 10,
+  height = 6
+)
 
-# Create a single PDF file
-pdf(file = file.path(results_directory, "AvAge_all_species.pdf"), width = 15, height = 5)
+unit <- expression(paste("Age (years)"))
 
-unit = expression(paste("Age (years)"))
-
-# Create the plot
-ggplot(plot_data, aes(x = Time, y = Value, color = Climate, group = Climate)) +
-  geom_line(size = 1) +
-  facet_wrap(~ Management, ncol = 7, scales = "free_x") +
-  scale_x_continuous(breaks = seq(0, 80, 20)) +
-  theme_minimal(base_size = 14) +
-  theme(
-    plot.title = element_text(size = 24, face = "bold"),
-    axis.title = element_text(size = 20),
-    axis.text = element_text(size = 16),
-    strip.text = element_text(size = 16),
-    legend.position = "bottom",
-    legend.text = element_text(size = 16),
-    legend.title = element_blank(),
-    panel.background = element_rect(fill = "white"),
-    panel.grid.major = element_line(color = "gray90"),
-    panel.grid.minor = element_line(color = "gray95"),
-    strip.background = element_rect(fill = "gray90", color = "gray90"),
-    axis.text.x = element_text(angle = 45, hjust = 1)
+ggplot(
+  plot_data,
+  aes(x = Time, y = Value, colour = Management, group = Management)
+) +
+  geom_line(linewidth = 0.7) +
+  facet_wrap(~ Climate) +
+  scale_x_continuous(
+    limits = c(5, 80),
+    breaks = c(5, 30, 55, 80),
+    labels = c("2025", "2050", "2075", "2100")
   ) +
-  labs(title = "Average age over time (until 2100)", x = "Time", y = unit)
+  labs(
+    title = "Average age over time (until 2100)",
+    x = "Time",
+    y = unit,
+    colour = "Management"
+  ) +
+  theme_bw()
 
-# Close the PDF device
 dev.off()
+
 
 
 ############Woody Debris#############################
@@ -168,33 +169,31 @@ plot_data <- combined_data %>%
   pivot_longer(cols = WoodyDebris.kgDW.m2., names_to = "Variable", values_to = "Value")
 
 # Open a PDF device
+pdf(
+  file = file.path(results_directory, "WoodyDebris_by_climate_management.pdf"),
+  width = 10,
+  height = 6
+)
 
-# Create a single PDF file
-pdf(file = file.path(results_directory, "WoodyDebris_all_species.pdf"), width = 15, height = 5)
+unit <- expression(paste("Woody debris (kgDW/m"^2, ")"))
 
-unit = expression(paste("Woody Debris (kgDW/m"^2, ")"))
-
-# Create the plot
-ggplot(plot_data, aes(x = Time, y = Value, color = Climate, group = Climate)) +
-  geom_line(size = 1) +
-  facet_wrap(~ Management, ncol = 7, scales = "free_x") +
-  scale_x_continuous(breaks = seq(0, 80, 20)) +
-  theme_minimal(base_size = 14) +
-  theme(
-    plot.title = element_text(size = 24, face = "bold"),
-    axis.title = element_text(size = 20),
-    axis.text = element_text(size = 16),
-    strip.text = element_text(size = 16),
-    legend.position = "bottom",
-    legend.text = element_text(size = 16),
-    legend.title = element_blank(),
-    panel.background = element_rect(fill = "white"),
-    panel.grid.major = element_line(color = "gray90"),
-    panel.grid.minor = element_line(color = "gray95"),
-    strip.background = element_rect(fill = "gray90", color = "gray90"),
-    axis.text.x = element_text(angle = 45, hjust = 1)
+ggplot(
+  plot_data,
+  aes(x = Time, y = Value, colour = Management, group = Management)
+) +
+  geom_line(linewidth = 0.7) +
+  facet_wrap(~ Climate) +
+  scale_x_continuous(
+    limits = c(5, 80),
+    breaks = c(5, 30, 55, 80),
+    labels = c("2025", "2050", "2075", "2100")
   ) +
-  labs(title = "Woody debris over time (until 2100)", x = "Time", y = unit)
+  labs(
+    title = "Woody debris over time (until 2100)",
+    x = "Time",
+    y = unit,
+    colour = "Management"
+  ) +
+  theme_bw()
 
-# Close the PDF device
 dev.off()
