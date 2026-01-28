@@ -48,31 +48,24 @@ for (climate in climate_scenarios) {
 # Combine all data frames
 df <- do.call(rbind, all_data)
 
+df$Climate <- factor(df$Climate, levels = climate_scenarios)
+df$Management <- factor(df$Management, levels = management_scenarios)
+
 # Create a single PDF file
-pdf(file = file.path(results_directory, "Harvested_biomass.pdf"), width = 15, height = 5)
+pdf(file = file.path(results_directory, "Harvested_biomass_by_climate.pdf"), width = 10, height = 6)
 
 harvest_unit = expression(paste("Harvested Biomass (g/m"^2, ")"))
 # Create the plot
-p <- ggplot(df, aes(x = Year, y = HBiomass, color = Climate)) +
-  geom_line(size = 1) +
-  facet_grid(~ Management, scales = "free_x") +
-  labs(title = "Harvested biomass over time (until 2100)", x = "Year", y = harvest_unit, color = "Climate Scenario") +
-  scale_x_continuous(breaks = seq(0, 80, 20)) +
-  theme_minimal(base_size = 14) +
-  theme(
-    plot.title = element_text(size = 24, face = "bold"),
-    axis.title = element_text(size = 20, face = "bold"),
-    axis.text = element_text(size = 16),
-    strip.text = element_text(size = 16, face = "bold"),
-    legend.position = "bottom",
-    legend.text = element_text(size = 14),
-    legend.title = element_text(size = 16, face = "bold"),
-    panel.background = element_rect(fill = "white"),
-    panel.grid.major = element_line(color = "gray90"),
-    panel.grid.minor = element_line(color = "gray95"),
-    strip.background = element_rect(fill = "gray90", color = "gray90"),
-    axis.text.x = element_text(angle = 45, hjust = 1)
-  )
+p <- ggplot(df, aes(x = Year, y = HBiomass, colour = Management, group = Management)) +
+  geom_line(linewidth = 0.7) +
+  facet_wrap(~ Climate) +
+  labs(title = "Harvested biomass over time (until 2100)", x = "Year", y = harvest_unit, colour = "Management") +
+  scale_x_continuous(
+    limits = c(5, 80),
+    breaks = c(5, 30, 55, 80),
+    labels = c("2025", "2050", "2075", "2100")
+  ) +
+  theme_bw()
 
 # Display the plot
 print(p)
