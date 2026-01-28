@@ -32,6 +32,63 @@ mammals_to_exclude <- c(
   "Vulpes vulpes"
 )
 
+birds_to_exclude <- c(
+  "Acrocephalus dumetorum",
+  "Acrocephalus palustris",
+  "Acrocephalus schoenobaenus",
+  "Actitis hypoleucos",
+  "Alauda arvensis",
+  "Anas crecca",
+  "Anas penelope",
+  "Anas platyrhynchos",
+  "Anser fabalis",
+  "Anthus pratensis",
+  "Asio flammeus",
+  "Aythya fuligula",
+  "Botaurus stellaris",
+  "Bucephala clangula",
+  "Calcarius lapponicus",
+  "Calidris falcinellus",
+  "Carduelis cannabina",
+  "Carpodacus erythrinus",
+  "Columba livia",
+  "Crex crex",
+  "Cygnus cygnus",
+  "Cygnus olor",
+  "Delichon urbicum",
+  "Emberiza rustica",
+  "Gallinago gallinago",
+  "Gavia arctica",
+  "Gavia stellata",
+  "Grus grus",
+  "Haematopus ostralegus",
+  "Hirundo rustica",
+  "Hydrocoloeus minutus",
+  "Lagopus lagopus",
+  "Larus argentatus",
+  "Larus canus",
+  "Larus fuscus",
+  "Larus ridibundus",
+  "Luscinia svecica",
+  "Lymnocryptes minimus",
+  "Mergus merganser",
+  "Motacilla flava",
+  "Numenius arquata",
+  "Numenius phaeopus",
+  "Phasianus colchicus",
+  "Pluvialis apricaria",
+  "Podiceps cristatus",
+  "Sterna hirundo",
+  "Sterna paradisaea",
+  "Sturnus vulgaris",
+  "Tringa erythropus",
+  "Tringa glareola",
+  "Tringa nebularia",
+  "Tringa totanus",
+  "Vanellus vanellus"
+)
+
+
 # ---- compute richness ----
 
 # Detect number of workers from SLURM or default to 1
@@ -66,7 +123,7 @@ compute_species_totals <- function(sc, yr,
   species_names <- tools::file_path_sans_ext(basename(tif_files))
   
   # only birds, remove mammals that are in mammals_to_exclude
-  keep_idx <- !(species_names %in% mammals_to_exclude)
+  keep_idx <- !(species_names %in% mammals_to_exclude | species_names %in% birds_to_exclude)
   tif_files <- tif_files[keep_idx]
   species_names <- species_names[keep_idx]
   
