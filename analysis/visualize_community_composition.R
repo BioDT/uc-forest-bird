@@ -133,15 +133,33 @@ for (cl in unique_clusters) {
     df_cl,
     aes(x = Year, y = mean_total, colour = Management, group = Scenario)
   ) +
-    geom_line(linewidth = 0.7) +
+    geom_smooth(se = FALSE, method = "loess", span = 0.4, linewidth = 1) +
     facet_wrap(~ Climate) +
     labs(
       title = paste("Cluster", cl, "response to management and climate"),
       x = "Year",
-      y = "Mean total"
+      y = "Mean total",
+      colour = "Management"
     ) +
     x_scale_calendar +
-    theme_bw()
+    scale_color_manual(values = c(
+      "#000000",
+      "#E69F00",
+      "#56B4E9",
+      "#009E73",
+      "#F0E442",
+      "#0072B2",
+      "#D55E00"
+    )) +
+    theme_bw(base_size = 14) +
+    theme(
+      plot.title = element_text(size = 16, face = "bold"),
+      axis.title = element_text(size = 14),
+      axis.text = element_text(size = 10),
+      strip.text = element_text(size = 14, face = "bold"),
+      legend.title = element_text(size = 12),
+      legend.text = element_text(size = 10)
+    )
   
   print(p_cl)
   dev.off()
