@@ -84,7 +84,7 @@ ggplot(
   )) +
   labs(
     title = "Average above-ground biomass over time (until 2100)",
-    x = "Time",
+    x = "Year",
     y = unit,
     colour = "Management"
   ) +
@@ -140,7 +140,7 @@ ggplot(
   )) +
   labs(
     title = "Average below-ground biomass over time (until 2100)",
-    x = "Time",
+    x = "Year",
     y = unit,
     colour = "Management"
   ) +
@@ -195,7 +195,7 @@ ggplot(
   )) +
   labs(
     title = "Average age over time (until 2100)",
-    x = "Time",
+    x = "Year",
     y = unit,
     colour = "Management"
   ) +
@@ -250,7 +250,7 @@ ggplot(
   )) +
   labs(
     title = "Woody debris over time (until 2100)",
-    x = "Time",
+    x = "Year",
     y = unit,
     colour = "Management"
   ) +
