@@ -73,13 +73,30 @@ ggplot(
     breaks = c(5, 30, 55, 80),
     labels = c("2025", "2050", "2075", "2100")
   ) +
+  scale_color_manual(values = c(
+    "#000000",
+    "#E69F00",
+    "#56B4E9",
+    "#009E73",
+    "#F0E442",
+    "#0072B2",
+    "#D55E00"
+  )) +
   labs(
     title = "Average above-ground biomass over time (until 2100)",
     x = "Time",
     y = unit,
     colour = "Management"
   ) +
-  theme_bw()
+  theme_bw(base_size = 14) +
+  theme(
+    plot.title = element_text(size = 16, face = "bold"),
+    axis.title = element_text(size = 14),
+    axis.text = element_text(size = 10),
+    strip.text = element_text(size = 14, face = "bold"),
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10)
+  )
 
 dev.off()
 
@@ -112,13 +129,30 @@ ggplot(
     breaks = c(5, 30, 55, 80),
     labels = c("2025", "2050", "2075", "2100")
   ) +
+  scale_color_manual(values = c(
+    "#000000",
+    "#E69F00",
+    "#56B4E9",
+    "#009E73",
+    "#F0E442",
+    "#0072B2",
+    "#D55E00"
+  )) +
   labs(
     title = "Average below-ground biomass over time (until 2100)",
     x = "Time",
     y = unit,
     colour = "Management"
   ) +
-  theme_bw()
+  theme_bw(base_size = 14) +
+  theme(
+    plot.title = element_text(size = 16, face = "bold"),
+    axis.title = element_text(size = 14),
+    axis.text = element_text(size = 10),
+    strip.text = element_text(size = 14, face = "bold"),
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10)
+  )
 
 dev.off()
 
@@ -150,13 +184,30 @@ ggplot(
     breaks = c(5, 30, 55, 80),
     labels = c("2025", "2050", "2075", "2100")
   ) +
+  scale_color_manual(values = c(
+    "#000000",
+    "#E69F00",
+    "#56B4E9",
+    "#009E73",
+    "#F0E442",
+    "#0072B2",
+    "#D55E00"
+  )) +
   labs(
     title = "Average age over time (until 2100)",
     x = "Time",
     y = unit,
     colour = "Management"
   ) +
-  theme_bw()
+  theme_bw(base_size = 14) +
+  theme(
+    plot.title = element_text(size = 16, face = "bold"),
+    axis.title = element_text(size = 14),
+    axis.text = element_text(size = 10),
+    strip.text = element_text(size = 14, face = "bold"),
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10)
+  )
 
 dev.off()
 
@@ -188,12 +239,29 @@ ggplot(
     breaks = c(5, 30, 55, 80),
     labels = c("2025", "2050", "2075", "2100")
   ) +
+  scale_color_manual(values = c(
+    "#000000",
+    "#E69F00",
+    "#56B4E9",
+    "#009E73",
+    "#F0E442",
+    "#0072B2",
+    "#D55E00"
+  )) +
   labs(
     title = "Woody debris over time (until 2100)",
     x = "Time",
     y = unit,
     colour = "Management"
   ) +
-  theme_bw()
+  theme_bw(base_size = 14) +
+  theme(
+    plot.title = element_text(size = 16, face = "bold"),
+    axis.title = element_text(size = 14),
+    axis.text = element_text(size = 10),
+    strip.text = element_text(size = 14, face = "bold"),
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10)
+  )
 
 dev.off()
