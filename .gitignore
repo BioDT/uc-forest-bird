@@ -17,3 +17,4 @@
 *.out
 run_landis_*
 runs/
+models/
