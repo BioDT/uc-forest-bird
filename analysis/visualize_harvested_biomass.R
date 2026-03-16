@@ -59,7 +59,7 @@ harvest_unit = expression(paste("Harvested Biomass (g/m"^2, ")"))
 p <- ggplot(df, aes(x = Year, y = HBiomass, colour = Management, group = Management)) +
   geom_line(linewidth = 0.7) +
   facet_wrap(~ Climate) +
-  labs(title = "Harvested biomass over time (until 2100)", x = "Year", y = harvest_unit, colour = "Management") +
+  labs(title = "Average harvested biomass over time (until 2100)", x = "Year", y = harvest_unit, colour = "Management") +
   scale_x_continuous(
     limits = c(5, 80),
     breaks = c(5, 30, 55, 80),
