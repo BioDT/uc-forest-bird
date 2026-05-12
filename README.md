@@ -1,13 +1,13 @@
-# BioDT: Forest Biodiversity Dynamics
+# ForestBioDT: Forest Biodiversity Digital Twin (DT)
 
-# Prototype Digital Twin (pDT) for Forest Biodiversity under Different Management and Climate Change Scenarios
+# Forest Biodiversity Dynamics under Different Management and Climate Change Scenarios
 
 ## Overview
 
 - **Title:** Forest biodiversity under different management and climate change scenarios: Implications for adaptive forest management
 - **Responsible Organization:** University of Jyväskylä
-- **pDT Leader:** Bekir Afsar
-- **pDT Participants:** Otso Ovaskainen, Tuomas Rossi, Martijn Versluijs, Kyle Eyvindson
+- **DT Leader:** Bekir Afsar
+- **DT Contributors:** Otso Ovaskainen, Tuomas Rossi, Martijn Versluijs, Kyle Eyvindson, Radek Halfar, Tomáš Martinovič, Ossi Nokelainen
 
 ## Key Scientific Questions
 
@@ -16,11 +16,11 @@
 
 ## Purpose
 
-This pDT aims to investigate the impact of different forest management strategies and climate change scenarios on forests and biodiversity. The goal is to identify the most appropriate treatment option that improves biodiversity for a specific forest stand under various climate scenarios.
+ForestBioDT aims to investigate the impact of different forest management strategies and climate change scenarios on forests and biodiversity. The goal is to identify the most appropriate treatment option that improves biodiversity for a specific forest stand under various climate scenarios.
 
 ## Scope
 
-Initial focus: Forests and bird species in Finland. Future consideration for expansion to other European countries and different species.
+Initial focus: Forests and bird species in Southern Finland. Future consideration for expansion to other European countries and different species.
 
 ## Methodologies
 
